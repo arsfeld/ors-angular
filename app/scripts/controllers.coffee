@@ -87,7 +87,7 @@ angular.module('app.controllers', ['app.models'])
   'Product'
 
 ($scope, $location, $routeParams, Product) ->
-  $scope.loading = $routeParams.productId?
+  $scope.loading = if $routeParams.productId? then 'Loading...' else false
   console.log $scope.loading
   if $routeParams.productId?
     Product.get id: $routeParams.productId, (product) =>
