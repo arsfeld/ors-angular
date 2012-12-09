@@ -1,5 +1,6 @@
 statik = require 'statik'
 server = statik.createServer('_public')
 
-console.log "Serving at " + process.env.PORT || 3333
-server.listen process.env.PORT || 3333
+port = process.env.PORT || 3333
+console.log "Serving at #{port}"
+server.listen port
