@@ -8,8 +8,8 @@
       <div ng-controller="ProductsEditController">
         <div class="row-fluid">
           <h2 ng-show="product._id">Edit product</h2>
-          <h2 ng-hide="product._id" class="ng-cloak">Create product</h2>
-          <div name="productForm" class="form">
+          <h2 ng-hide="product._id" class="ng-cloak">Create product</h2><img src="img/loader.gif" ng-show="loading"/>
+          <div name="officeForm" ng-hide="loading" class="form ng-cloak">
             <div ng-class="{error: productForm.name.$invalid}" class="control-group">
               <label>Name</label>
               <input type="text" name="name" ng-model="product.name" required="required"/><span ng-show="productForm.name.$error.required" class="help-inline">Required</span>
