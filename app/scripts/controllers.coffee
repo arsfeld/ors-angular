@@ -54,8 +54,7 @@ angular.module('app.controllers', ['app.models'])
   if $routeParams.officeId?
     Office.get id: $routeParams.officeId, (office) =>
       $scope.loading = false
-      @original = office
-      $scope.office = new Office(@original)
+      $scope.office = new Office(@original = office)
   else
     $scope.loading = false
 
