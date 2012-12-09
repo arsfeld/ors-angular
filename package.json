@@ -1,8 +1,7 @@
 {
   "author": "Alexandre Rosenfeld <alexandre.rosenfeld@gmail.com>",
-  "name": "sapling-seed",
-  "description": "AngularJS + Brunch",
-  "version": "0.0.5",
+  "name": "ors-angular",
+  "version": "0.0.1",
   "homepage": "https://github.com/scotch/angular-brunch-seed",
   "repository": {
     "type": "git",
