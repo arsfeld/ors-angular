@@ -77,7 +77,7 @@ angular.module('app.controllers', ['app.models'])
 ($scope, Product) ->
   $scope.loading = "Loading..."
   $scope.products = Product.query () ->
-    $scope.loading = "Loading..."
+    $scope.loading = false
 ])
 
 .controller('ProductsEditController', [
