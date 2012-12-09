@@ -61,7 +61,7 @@ angular.module('app.controllers', ['app.models'])
 
   $scope.isClean = () =>
     angular.equals(@original, $scope.office)
-  $scope.destroy = () ->
+  $scope.destroy = () =>
     @original.destroy () ->
       $location.path '#/admin/offices'
   $scope.save = () ->
@@ -95,9 +95,9 @@ angular.module('app.controllers', ['app.models'])
     Product.get id: $routeParams.productId, (product) =>
       $scope.product = new Product(@original = product)
 
-  $scope.isClean = () ->
-    angular.equals(self.original, $scope.product)
-  $scope.destroy = () ->
+  $scope.isClean = () =>
+    angular.equals(@original, $scope.product)
+  $scope.destroy = () =>
     @original.destroy () ->
       $location.path '/#/admin/products'
   $scope.save = () ->
