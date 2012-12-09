@@ -9,7 +9,8 @@ div
         .row-fluid
           h2(ng-show="product._id") Edit product
           h2.ng-cloak(ng-hide="product._id") Create product
-          img(src="img/loader.gif", ng-show="loading")
+          div(ng-show="loading")
+            img(src="img/loader.gif")
           .form(name="officeForm", ng-hide="loading")
             .control-group(ng-class="{error: productForm.name.$invalid}")
               label Name
