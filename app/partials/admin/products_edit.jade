@@ -11,6 +11,7 @@ div
           h2.ng-cloak(ng-hide="product._id") Create product
           div(ng-show="loading")
             img(src="img/loader.gif")
+            span {{loading}}
           .form(name="officeForm", ng-hide="loading")
             .control-group(ng-class="{error: productForm.name.$invalid}")
               label Name
