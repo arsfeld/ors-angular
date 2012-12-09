@@ -1,0 +1,34 @@
+
+
+div
+  .row-fluid
+    .span3
+      div(ng-include="'/partials/admin/nav.html'")
+    .span6
+      div(ng-controller='OfficesController')
+        .row-fluid
+          h2 Offices
+          //img(src="img/loader.gif", ng-show="loading")
+          //div(ng-hide="loading")
+          .btn-toolbar
+            a.btn.btn-primary(href='#/admin/offices/new')
+              i.icon-plus
+              span Add Office
+            input.span8.search-query(type="text", ng-model="search", class="offices-query", placeholder="Search")
+          span
+          table.table.table-striped.table
+            thead
+            tr
+              th Office
+              th Nickname
+              th
+            tbody
+              tr(ng-repeat="office in offices | filter: search | orderBy: 'name' ")
+                td
+                  div {{office.name}}
+                td {{office.nick}}
+                td
+                  a.btn(href="#/admin/offices/edit/{{office._id.$oid}}") 
+                    i.icon-edit
+                    span Edit
+          img(src="img/loader.gif", ng-show="loading")

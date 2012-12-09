@@ -1,0 +1,27 @@
+
+
+div
+  .row-fluid
+    .span3
+      div(ng-include="'/partials/admin/nav.html'")
+    .span6
+      div(ng-controller='ProductsEditController')
+        .row-fluid
+          h2(ng-show="product._id") Edit product
+          h2.ng-cloak(ng-hide="product._id") Create product
+          .form(name="productForm")
+            .control-group(ng-class="{error: productForm.name.$invalid}")
+              label Name
+              input(type="text", name="name", ng-model="product.name", required)
+              span.help-inline(ng-show="productForm.name.$error.required") Required
+            .control-group(ng-class="{error: productForm.line.$invalid}")
+              label Tagline
+              input(type="text", name="line", ng-model="product.tagline", required)
+              span.help-inline(ng-show="productForm.line.$error.required") Required
+            .control-group(ng-class="{error: productForm.tagline.$invalid}")
+              label Slug
+              input(type="text", name="nick", ng-model="product.slug", required)
+              span.help-inline(ng-show="productForm.slug.$error.required") Required
+            a.btn(href="#/admin/products") Cancel
+            button.btn.btn-primary(ng-click="save()", ng-disabled="isClean() || productForm.$invalid") Save
+            button.btn.btn-danger(ng-click="destroy()") Delete

@@ -1,0 +1,29 @@
+
+<div>
+  <div class="row-fluid">
+    <div class="span3">
+      <div ng-include="'/partials/admin/nav.html'"></div>
+    </div>
+    <div class="span6">
+      <div ng-controller="OfficesEditController">
+        <div class="row-fluid">
+          <h2 ng-show="office._id">Edit office</h2>
+          <h2 ng-hide="office._id">Create office</h2>
+          <h3 ng-show="loading"><img src="img/loader.gif"/></h3>
+          <div name="officeForm" ng-hide="loading" class="form">
+            <div ng-class="{error: officeForm.name.$invalid}" class="control-group">
+              <label>Name</label>
+              <input type="text" name="name" ng-model="office.name" required="required"/><span ng-show="officeForm.name.$error.required" class="help-inline">Required</span>
+            </div>
+            <div ng-class="{error: officeForm.nick.$invalid}" class="control-group">
+              <label>Nickname</label>
+              <input type="text" name="nick" ng-model="office.nick" required="required"/><span ng-show="officeForm.nick.$error.required" class="help-inline">Required</span>
+            </div><a href="#/admin/offices" class="btn">Cancel</a>
+            <button ng-click="save()" ng-disabled="isClean() || officeForm.$invalid" class="btn btn-primary">Save</button>
+            <button ng-click="destroy()" class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

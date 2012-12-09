@@ -1,0 +1,32 @@
+
+
+div
+  .row-fluid
+    .span3
+      div(ng-include="'/partials/admin/nav.html'")
+    .span6
+      div(ng-controller='ProductsController')
+        .row-fluid
+          h2 Products
+          .btn-toolbar
+            a.btn.btn-primary(href='#/admin/products/new')
+              i.icon-plus
+              span Add Product
+          span
+          table.table.table-striped.table
+            thead
+            tr
+              th Name
+              th Tagline
+              th Slug
+              th
+            tbody
+              tr(ng-repeat="product in products | orderBy: 'name' ")
+                td {{product.name}}
+                td {{product.tagline}}
+                td {{product.slug}}
+                td
+                  a.btn(href="#/admin/products/edit/{{product._id.$oid}}") 
+                    i.icon-edit
+                    span Edit
+        img(src="img/loader.gif", ng-show="loading")
