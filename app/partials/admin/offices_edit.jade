@@ -9,7 +9,9 @@ div
         .row-fluid
           h2(ng-show="office._id") Edit office
           h2.ng-cloak(ng-hide="office._id") Create office
-          img(src="img/loader.gif", ng-show="loading") {{loading}}
+          div(ng-show="loading")
+            img(src="img/loader.gif")
+            span {{loading}}
           .form(name="officeForm", ng-hide="loading")
             .control-group(ng-class="{error: officeForm.name.$invalid}")
               label Name
