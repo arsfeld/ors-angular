@@ -85,6 +85,7 @@ angular.module('app.controllers', ['app.models'])
   'Product'
 
 ($scope, $location, $routeParams, Product) ->
+  $scope.loading = $routeParams.productId?
   if $routeParams.productId?
     Product.get id: $routeParams.productId, (product) =>
       $scope.product = new Product(@original = product)
