@@ -101,7 +101,7 @@ angular.module('app.controllers', ['app.models'])
     self.original.destroy () ->
       $location.path '/#/admin/products'
   $scope.save = () ->
-    Product.save $scope.product?, () ->
+    new Product($scope.product).save () ->
       $location.path '/#/admin/products'
 ])
 
