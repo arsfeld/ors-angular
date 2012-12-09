@@ -3,7 +3,7 @@
   "name": "ors-angular",
   "version": "0.0.1",
   "engines": {
-    "node": "~0.6.10 || 0.8 || 0.9"
+    "node": "0.8 || 0.9"
   },
   "scripts": {
     "start": "node_modules/.bin/brunch watch --server",
