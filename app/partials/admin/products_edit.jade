@@ -10,7 +10,7 @@ div
           h2(ng-show="product._id") Edit product
           h2.ng-cloak(ng-hide="product._id") Create product
           img(src="img/loader.gif", ng-show="loading")
-          .form.ng-cloak(name="officeForm", ng-hide="loading")
+          .form(name="officeForm", ng-hide="loading")
             .control-group(ng-class="{error: productForm.name.$invalid}")
               label Name
               input(type="text", name="name", ng-model="product.name", required)
