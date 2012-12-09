@@ -65,13 +65,8 @@ angular.module('app.controllers', ['app.models'])
     @original.destroy () ->
       $location.path '#/admin/offices'
   $scope.save = () ->
-    console.log $scope.office
-    if $scope.office?._id?
-      $scope.office.update () ->
-        $location.path '#/admin/offices'
-    else
-      Office.save $scope.office, () ->
-        $location.path '#/admin/offices'
+    new Office($scope.office).save () ->
+      $location.path '/#/admin/offices'
 ])
 
 .controller('ProductsController', [
