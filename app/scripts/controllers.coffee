@@ -61,7 +61,7 @@ angular.module('app.controllers', ['app.models'])
   $scope.isClean = () =>
     angular.equals(@original, $scope.office)
   $scope.destroy = () =>
-    @original.destroy () ->
+    @original.remove () ->
       $location.path '#/admin/offices'
   $scope.save = () ->
     new Office($scope.office).save () ->
