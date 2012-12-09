@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "node_modules/.bin/brunch watch --server",
-    "test": "node_modules/.bin/testacular start test/testacular.conf.js"
+    "test": "node_modules/.bin/testacular start test/testacular.conf.js",
     "postinstall": "brunch build --minify"
   },
   "dependencies": {
