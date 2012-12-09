@@ -1,0 +1,1 @@
+statik = require 'statik'
