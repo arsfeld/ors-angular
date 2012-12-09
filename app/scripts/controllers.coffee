@@ -49,7 +49,7 @@ angular.module('app.controllers', ['app.models'])
   'Office'
 
 ($scope, $location, $routeParams, Office) ->
-  $scope.loading = true
+  $scope.loading = "Loading..."
 
   if $routeParams.officeId?
     Office.get id: $routeParams.officeId, (office) =>
@@ -61,11 +61,11 @@ angular.module('app.controllers', ['app.models'])
   $scope.isClean = () =>
     angular.equals(@original, $scope.office)
   $scope.destroy = () =>
-    $scope.loading = true
+    $scope.loading = "Deleting..."
     @original.remove () ->
       $location.path '#/admin/offices'
   $scope.save = () ->
-    $scope.loading = true
+    $scope.loading = "Saving..."
     new Office($scope.office).save () ->
       $location.path '/#/admin/offices'
 ])
