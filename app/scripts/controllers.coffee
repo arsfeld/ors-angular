@@ -101,7 +101,7 @@ angular.module('app.controllers', ['app.models'])
     @original.remove () ->
       $location.path '/#/admin/products'
   $scope.save = () ->
-    $scope.loading = true
+    $scope.loading = "Saving..."
     new Product($scope.product).save () ->
       $location.path '/#/admin/products'
 ])
