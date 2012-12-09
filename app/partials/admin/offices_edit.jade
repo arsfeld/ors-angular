@@ -9,8 +9,7 @@ div
         .row-fluid
           h2(ng-show="office._id") Edit office
           h2.ng-clock(ng-hide="office._id") Create office
-          h3(ng-show="loading")
-            img(src="img/loader.gif")
+          img(src="img/loader.gif", ng-show="loading")
           .form(name="officeForm", ng-hide="loading")
             .control-group(ng-class="{error: officeForm.name.$invalid}")
               label Name

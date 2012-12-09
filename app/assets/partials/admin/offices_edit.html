@@ -8,8 +8,7 @@
       <div ng-controller="OfficesEditController">
         <div class="row-fluid">
           <h2 ng-show="office._id">Edit office</h2>
-          <h2 ng-hide="office._id" class="ng-clock">Create office</h2>
-          <h3 ng-show="loading"><img src="img/loader.gif"/></h3>
+          <h2 ng-hide="office._id" class="ng-clock">Create office</h2><img src="img/loader.gif" ng-show="loading"/>
           <div name="officeForm" ng-hide="loading" class="form">
             <div ng-class="{error: officeForm.name.$invalid}" class="control-group">
               <label>Name</label>
