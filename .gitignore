@@ -8,6 +8,7 @@ build.xml
 .idea/*
 
 _public
+public
 node_modules/*
 npm-debug.log
 
