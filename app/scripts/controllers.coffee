@@ -97,7 +97,7 @@ angular.module('app.controllers', ['app.models'])
   $scope.isClean = () =>
     angular.equals(@original, $scope.product)
   $scope.destroy = () =>
-    $scope.loading = true
+    $scope.loading = "Deleting..."
     @original.remove () ->
       $location.path '/#/admin/products'
   $scope.save = () ->
