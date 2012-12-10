@@ -32,7 +32,9 @@
             <tbody>
               <tr ng-repeat="office in offices | filter: search | orderBy: 'name' ">
                 <td>
-                  <div ng-hide="editing">{{office.name}}</div>
+                  <div ng-hide="editing"> 
+                    <p>{{office.name}}</p>
+                  </div>
                   <input ng-show="editing" type="text" name="name" ng-model="office.name"/>
                 </td>
                 <td> 
