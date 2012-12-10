@@ -33,7 +33,7 @@ div
                   div(ng-hide="editing") 
                     span {{office.name}}
                     br
-                    small {{office.nick}}
+                    small @{{office.nick}}
 
                   input(ng-show="editing", type="text", name="name", ng-model="office.name")
                 td 
