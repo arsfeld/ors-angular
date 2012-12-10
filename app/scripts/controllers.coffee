@@ -45,6 +45,10 @@ angular.module('app.controllers', ['app.models'])
 
   $scope.offices = Office.query () ->
     $scope.loading = false
+
+
+  $scope.save = (office) ->
+    console.log office
 ])
 
 .controller('OfficesEditController', [
@@ -89,9 +93,6 @@ angular.module('app.controllers', ['app.models'])
   $scope.deleteProduct = (id) ->
     Product.remove id:id, () ->
       loadProducts()
-
-  $scope.save = (product) ->
-    console.log product
 ])
 
 .controller('ProductsEditController', [
