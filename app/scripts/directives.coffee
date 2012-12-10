@@ -8,3 +8,10 @@ angular.module('app.directives', [
   'app.models'
 ])
 
+.directive 'tooltip', () ->
+  restrict:'A',
+  link: (scope, element, attrs) ->
+    $(element)
+      .attr 'title', scope.$eval attrs.tooltip
+      .tooltip placement: "right"
+
