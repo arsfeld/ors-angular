@@ -31,7 +31,8 @@ div
               tr(ng-repeat="office in offices | filter: search | orderBy: 'name' ")
                 td
                   div(ng-hide="editing") 
-                    p {{office.name}}
+                    span {{office.name}}
+                    br
                     small {{office.nick}}
 
                   input(ng-show="editing", type="text", name="name", ng-model="office.name")
