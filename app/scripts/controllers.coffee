@@ -87,7 +87,7 @@ angular.module('app.controllers', ['app.models'])
 
   $scope.deleteProduct = (id) ->
     console.log id
-    Product.remove id
+    Product.remove id:id
 ])
 
 .controller('ProductsEditController', [
