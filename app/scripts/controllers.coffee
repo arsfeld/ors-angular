@@ -115,12 +115,13 @@ angular.module('app.controllers', ['app.models'])
 
 ])
 
-.controller('WelcomeController', [
+.controller('RegistrationController', [
   '$scope'
+  '$routeParams'
   'Product'
   'Office'
 
-($scope, Product, Office) ->
+($scope, $routeParams, Product, Office) ->
   if $routeParams.productId?
     Product.get id: $routeParams.productId, (product) =>
       $scope.product = new Product(@original = product)
