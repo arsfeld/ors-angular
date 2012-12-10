@@ -32,6 +32,7 @@ div
                 td
                   div(ng-hide="editing") 
                     p {{office.name}}
+                    small {{office.nick}}
 
                   input(ng-show="editing", type="text", name="name", ng-model="office.name")
                 td 
