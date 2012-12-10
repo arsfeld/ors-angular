@@ -18,6 +18,8 @@ exports.config =
           'vendor/scripts/angular/angular.js'
           'vendor/scripts/angular/angular-resource.min.js'
           'vendor/scripts/angular/angular-cookies.min.js'
+
+          'vendor/scripts/bootstrap-2.2.2.js'
         ]
 
     stylesheets:
