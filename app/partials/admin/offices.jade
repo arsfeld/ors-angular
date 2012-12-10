@@ -38,7 +38,7 @@ div
                   //div(ng-hide="editing") @{{office.nick}}
                   .input-prepend(ng-show="editing")
                     span.add-on @
-                    input.small(type="text", name="nick", ng-model="office.nick")
+                    input.input-small(type="text", name="nick", ng-model="office.nick")
                 td
                   a.btn(ng-hide="editing", ng-disabled="saving", ng-click="editing = true")
                     i.icon-edit
