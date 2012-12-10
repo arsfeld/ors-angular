@@ -15,6 +15,7 @@ angular.module('app.controllers', ['app.models'])
 
   $rootScope.loadingProducts = true
   $rootScope.allProducts = Product.query () ->
+    console.log 'Query finished'
     $rootScope.loadingProducts = false
 
   # Uses the url to determine if the selected
