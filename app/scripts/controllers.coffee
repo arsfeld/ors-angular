@@ -106,7 +106,7 @@ angular.module('app.controllers', ['app.models'])
       $location.path '/#/admin/products'
 ])
 
-.controller('RegistrationController', [
+.controller('WelcomeController', [
   '$scope'
   'Product'
 
