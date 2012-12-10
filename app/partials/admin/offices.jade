@@ -31,6 +31,7 @@ div
               tr(ng-repeat="office in offices | filter: search | orderBy: 'name' ")
                 td
                   div {{office.name}}
+                  input(type="text", name="name", ng-model="office.name")
                 td {{office.nick}}
                 td
                   a.btn(href="#/admin/offices/edit/{{office._id.$oid}}") 
