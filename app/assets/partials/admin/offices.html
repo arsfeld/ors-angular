@@ -8,12 +8,10 @@
       <div ng-controller="OfficesController">
         <div class="row-fluid">
           <h2>Offices</h2>
-          <!--img(src="img/loader.gif", ng-show="loading")-->
-          <!--div(ng-hide="loading")-->
           <form name="officeForm" class="form-inline">
             <input type="text" placeholder="São Carlos" class="input-medium"/>
             <div class="input-prepend"><span class="add-on">@</span>
-              <input type="text" placeholder="SC" class="input-mini"/>
+              <input type="text" placeholder="SC" tooltip="Two letter name of the office" rel="tooltip" class="input-mini"/>
             </div>
             <button type="submit" class="btn btn-primary">Add office</button><br/>
             <smal class="muted">Nick is the two letter name for this office</smal>
