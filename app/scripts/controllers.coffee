@@ -48,7 +48,7 @@ angular.module('app.controllers', ['app.models'])
 
 
   $scope.save = (office) ->
-    console.log office
+    console.log Office(office)
 ])
 
 .controller('OfficesEditController', [
