@@ -40,7 +40,7 @@
                   <input ng-show="editing" type="text" name="nick" ng-model="office.nick" class="small"/>
                 </td>
                 <td><a ng-hide="editing" ng-click="editing = true" class="btn"><i class="icon-edit"></i><span>Edit</span></a>
-                  <button ng-show="editing" ng-click="save(office)" class="btn btn-primary"><span>Save</span></button>
+                  <button ng-show="editing" ng-click="save(this, office)" class="btn btn-primary"><span>Save</span></button>
                 </td>
               </tr>
             </tbody>

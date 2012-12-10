@@ -48,6 +48,7 @@ angular.module('app.controllers', ['app.models'])
 
 
   $scope.save = (scope, office) ->
+    console.log scope
     console.log new Office(office)
     new Office(office).save () ->
       console.log("done")
