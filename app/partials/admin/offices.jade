@@ -36,7 +36,7 @@ div
                   div(ng-hide="editing") {{office.nick}}
                   input.small(ng-show="editing", type="text", name="nick", ng-model="office.nick")
                 td
-                  a.btn(ng-click="editing = true")
+                  a.btn(ng-hide="editing", ng-click="editing = true")
                     i.icon-edit
                     span Edit
           img(src="img/loader.gif", ng-show="loading")
