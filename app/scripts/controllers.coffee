@@ -121,6 +121,10 @@ angular.module('app.controllers', ['app.models'])
   'Office'
 
 ($scope, Product, Office) ->
+  if $routeParams.productId?
+    Product.get id: $routeParams.productId, (product) =>
+      #$scope.loading = false
+      $scope.product = new Product(@original = product)
   #$scope.products = Product.query()
 
 ])
