@@ -2,3 +2,8 @@
 div(ng-controller='RegistrationController')
   .row-fluid
     h3 Registering in {{product.name}}
+    .form(name="registrationForm")
+            .control-group(ng-class="{error: officeForm.name.$invalid}")
+              label Name
+              input(type="text", name="name", ng-model="office.name", required)
+              span.help-inline(ng-show="officeForm.name.$error.required") Required
