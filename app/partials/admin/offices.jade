@@ -38,7 +38,7 @@ div
                     .input-prepend(ng-show="editing")
                       span.add-on @
                       input.input-small(type="text", name="nick", ng-model="office.nick",
-                        title="Two letter name of the office", ui-jq="tooltip")
+                        title="Two letter name of the office", rel="tooltip")
                 td
                   a.btn(ng-hide="editing", ng-disabled="saving", ng-click="editing = true")
                     i.icon-edit
