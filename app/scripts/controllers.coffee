@@ -86,6 +86,7 @@ angular.module('app.controllers', ['app.models'])
     $scope.loading = false
 
   $scope.deleteProduct = (id) ->
+    console.log id
     Product.remove id
 ])
 
