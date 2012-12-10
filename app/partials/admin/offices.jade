@@ -21,9 +21,9 @@ div
           table.table.table-striped.table
             thead
               tr
-                th Office
                 th 
                   input.search-query(type="text", ng-model="search", class="offices-query", placeholder="Search")
+                th
             tbody
               tr(ng-repeat="office in offices | filter: search | orderBy: 'name' ")
                 td
