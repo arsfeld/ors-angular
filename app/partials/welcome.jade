@@ -4,7 +4,7 @@ div(ng-controller='WelcomeController')
   h3 Select below which program you are interested:
   .row-fluid
     ul.nav.nav-pills
-      li.span3(ng-repeat="product in products | orderBy: 'name' ")
+      li.span3(ng-repeat="product in all_products | orderBy: 'name' ")
         //a(href="#/register/{{product.slug}}")
         a(href="#/register/{{product._id.$oid}}")
           h2 {{product.name}}
