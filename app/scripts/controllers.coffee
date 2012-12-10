@@ -47,10 +47,8 @@ angular.module('app.controllers', ['app.models'])
     $scope.loading = false
 
 
-  $scope.save = (childScope, office) ->
-    console.log this
-    console.log childScope
-    childScope.editing = false
+  $scope.save = (office) ->
+    this.editing = false
     console.log new Office(office)
     new Office(office).save () ->
       console.log("done")
