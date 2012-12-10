@@ -39,7 +39,7 @@
                   {{office.nick}}
                   <input type="text" name="nick" ng-model="office.nick" class="small"/>
                 </td>
-                <td><a ng-click="$parent.edit($scope)" class="btn"><i class="icon-edit"></i><span>Edit</span></a></td>
+                <td><a ng-click="editing = true" class="btn"><i class="icon-edit"></i><span>Edit</span></a></td>
               </tr>
             </tbody>
           </table><img src="img/loader.gif" ng-show="loading"/>
