@@ -15,7 +15,7 @@
               <label>Name</label>
               <input type="text" name="name" ng-model="product.name" ng-change="name_changed()" required="required"/><span ng-show="productForm.name.$error.required" class="help-inline">Required</span>
             </div>
-            <p><small>Link name: {{product.slug}}</small></p>
+            <p class="muted"><small>Link name: {{product.slug}}</small></p>
             <div ng-class="{error: productForm.line.$invalid}" class="control-group">
               <label>Tagline</label>
               <input type="text" name="line" ng-model="product.tagline" required="required"/><span ng-show="productForm.line.$error.required" class="help-inline">Required</span>
