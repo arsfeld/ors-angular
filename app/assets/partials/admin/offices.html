@@ -37,7 +37,9 @@
                 </td>
                 <td> 
                   <div ng-hide="editing">@{{office.nick}}</div>
-                  <input ng-show="editing" type="text" name="nick" ng-model="office.nick" class="small"/>
+                  <div class="input-prepend"><span class="add-on">@</span>
+                    <input ng-show="editing" type="text" name="nick" ng-model="office.nick" class="small"/>
+                  </div>
                 </td>
                 <td><a ng-hide="editing" ng-click="editing = true" class="btn"><i class="icon-edit"></i><span>Edit</span></a>
                   <button ng-show="editing" ng-click="save(office)" class="btn btn-primary"><span>Save</span></button>
