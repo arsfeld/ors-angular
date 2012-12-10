@@ -36,7 +36,7 @@ div
                   {{office.nick}}
                   input.small(type="text", name="nick", ng-model="office.nick")
                 td
-                  a.btn(href="#/admin/offices/edit/{{office._id.$oid}}") 
+                  a.btn(ng-click="save()")
                     i.icon-edit
                     span Edit
           img(src="img/loader.gif", ng-show="loading")
