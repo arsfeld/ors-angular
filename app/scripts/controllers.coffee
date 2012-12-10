@@ -13,7 +13,9 @@ angular.module('app.controllers', ['app.models'])
 
 ($scope, $location, $resource, $rootScope, Product) ->
 
-  $rootScope.all_products = Product.query()
+  $rootScope.loadingProducts = true
+  $rootScope.allProducts = Product.query () -> 
+    $rootScope.loadingProducts = false
 
   # Uses the url to determine if the selected
   # menu item should have the class active.
