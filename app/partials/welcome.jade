@@ -3,6 +3,7 @@ div(ng-controller='WelcomeController')
 
   h3 Select below which program you are interested:
   .row-fluid
+    img(src="img/loader.gif", ng-show="loadingProducts")
     ul.nav.nav-pills
       li.span3(ng-repeat="product in all_products | orderBy: 'name' ")
         //a(href="#/register/{{product.slug}}")
