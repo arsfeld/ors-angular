@@ -17,14 +17,13 @@ div
             button.btn.btn-primary(type="submit") Add office
             br
             smal.muted Nick is the two letter name for this office
-          .btn-toolbar
-            input.span8.search-query(type="text", ng-model="search", class="offices-query", placeholder="Search")
           span
           table.table.table-striped.table
             thead
               tr
                 th Office
-                th
+                th 
+                  input.search-query(type="text", ng-model="search", class="offices-query", placeholder="Search")
             tbody
               tr(ng-repeat="office in offices | filter: search | orderBy: 'name' ")
                 td
