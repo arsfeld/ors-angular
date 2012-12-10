@@ -115,3 +115,12 @@ angular.module('app.controllers', ['app.models'])
 
 ])
 
+.controller('WelcomeController', [
+  '$scope'
+  'Product'
+  'Office'
+
+($scope, Product, Office) ->
+  #$scope.products = Product.query()
+
+])
