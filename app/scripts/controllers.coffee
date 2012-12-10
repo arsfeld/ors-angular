@@ -94,6 +94,8 @@ angular.module('app.controllers', ['app.models'])
       $scope.loading = false
       $scope.product = new Product(@original = product)
 
+  $scope.name_changed = () ->
+    $scope.product.slug = $scope.product.name
   $scope.isClean = () =>
     angular.equals(@original, $scope.product)
   $scope.destroy = () =>
