@@ -33,7 +33,7 @@ div
                   div(ng-hide="editing") {{office.name}}
                   input(ng-show="editing", type="text", name="name", ng-model="office.name")
                 td 
-                  div(ng-hide="editing") {{office.nick}}
+                  div(ng-hide="editing") @{{office.nick}}
                   input.small(ng-show="editing", type="text", name="nick", ng-model="office.nick")
                 td
                   a.btn(ng-hide="editing", ng-click="editing = true")
