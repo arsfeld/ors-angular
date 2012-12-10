@@ -95,7 +95,8 @@ angular.module('app.controllers', ['app.models'])
       $scope.product = new Product(@original = product)
 
   $scope.name_changed = () ->
-    $scope.product.slug = $scope.product.name
+    $scope.product.slug = $scope.product.namevalue.toLowerCase()
+       .replace(/-+/g, '').replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')
   $scope.isClean = () =>
     angular.equals(@original, $scope.product)
   $scope.destroy = () =>
