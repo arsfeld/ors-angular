@@ -14,7 +14,7 @@ angular.module('app.controllers', ['app.models'])
 ($scope, $location, $resource, $rootScope, Product) ->
 
   $rootScope.loadingProducts = true
-  $rootScope.allProducts = Product.query () -> 
+  $rootScope.allProducts = Product.query () ->
     $rootScope.loadingProducts = false
 
   # Uses the url to determine if the selected
