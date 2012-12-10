@@ -22,12 +22,13 @@
             <input type="text" ng-model="search" placeholder="Search" class="span8 search-query offices-query"/>
           </div><span></span>
           <table class="table table-striped table">
-            <thead></thead>
-            <tr>
-              <th>Office</th>
-              <th>Nickname</th>
-              <th></th>
-            </tr>
+            <thead>
+              <tr>
+                <th>Office</th>
+                <th>Nickname</th>
+                <th></th>
+              </tr>
+            </thead>
             <tbody>
               <tr ng-repeat="office in offices | filter: search | orderBy: 'name' ">
                 <td>
