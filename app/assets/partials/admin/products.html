@@ -22,7 +22,7 @@
                 <td>{{product.name}}</td>
                 <td>{{product.tagline}}</td>
                 <td>{{product.slug}}</td>
-                <td><a href="#/admin/products/edit/{{product._id.$oid}}" class="btn"> <i class="icon-edit"></i><span>Edit</span></a></td>
+                <td><a href="#/admin/products/edit/{{product._id.$oid}}" class="btn"> <i class="icon-edit"></i><span>Edit</span></a><a ng-click="destroy()" class="btn btn-danger">Delete</a></td>
               </tr>
             </tbody>
           </table>
