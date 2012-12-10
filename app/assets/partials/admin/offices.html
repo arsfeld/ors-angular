@@ -39,7 +39,7 @@
                   <div ng-hide="editing">{{office.nick}}</div>
                   <input ng-show="editing" type="text" name="nick" ng-model="office.nick" class="small"/>
                 </td>
-                <td><a ng-hide="editing" ng-click="editing = true" class="btn"><i class="icon-edit"></i><span>Edit</span></a><a ng-show="editing" ng-click="$parent.save($scope); console.log($parent);" class="btn btn-primary"><span>Save</span></a></td>
+                <td><a ng-hide="editing" ng-click="editing = true" class="btn"><i class="icon-edit"></i><span>Edit</span></a><a ng-show="editing" ng-click="$parent.save($scope)" class="btn btn-primary"><span>Save</span></a></td>
               </tr>
             </tbody>
           </table><img src="img/loader.gif" ng-show="loading"/>
