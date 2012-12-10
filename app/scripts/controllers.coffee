@@ -49,7 +49,7 @@ angular.module('app.controllers', ['app.models'])
 
   $scope.save = (childScope, office) ->
     console.log this
-    console.log scope
+    console.log childScope
     scope.editing = false
     console.log new Office(office)
     new Office(office).save () ->
