@@ -84,6 +84,9 @@ angular.module('app.controllers', ['app.models'])
   $scope.loading = "Loading..."
   $scope.products = Product.query () ->
     $scope.loading = false
+
+  $scope.deleteProduct = (id) ->
+    Product.remove id
 ])
 
 .controller('ProductsEditController', [
