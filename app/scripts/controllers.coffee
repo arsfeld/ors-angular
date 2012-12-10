@@ -47,7 +47,7 @@ angular.module('app.controllers', ['app.models'])
     $scope.loading = false
 
 
-  $scope.save = (office) ->
+  $scope.save = (scope, office) ->
     console.log new Office(office)
     new Office(office).save () ->
       console.log("done")
