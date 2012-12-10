@@ -12,6 +12,6 @@ angular.module('app.directives', [
   restrict:'A',
   link: (scope, element, attrs) ->
     $(element)
-      .attr 'title', scope.$eval attrs.tooltip
+      .attr 'title', attrs.tooltip
       .tooltip placement: "right"
 
