@@ -36,9 +36,10 @@ div
                       input.input-small(type="text", name="nick", ng-model="office.nick",
                         tooltip="Two letter name of the office", rel="tooltip")
                 td
-                  a.btn(ng-hide="editing", ng-disabled="saving", ng-click="editing = true")
-                    i.icon-edit
-                    span Edit
+                  div(ng-hide="editing")
+                    a.btn(ng-disabled="saving", ng-click="editing = true")
+                      i.icon-edit
+                      span Edit
                   button.btn.btn-primary(ng-show="editing", ng-click="save(office)")
                     span Save
           img(src="img/loader.gif", ng-show="loading")
