@@ -20,6 +20,8 @@ App.config([
 
       .when '/welcome',
         templateUrl: '/partials/welcome.html'
+      .when '/register/:productId',
+        templateUrl: '/partials/registration.html'
       .when '/admin/offices',
         templateUrl: '/partials/admin/offices.html'
       .when '/admin/offices/edit/:officeId',
