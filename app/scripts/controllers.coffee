@@ -89,8 +89,8 @@ angular.module('app.controllers', ['app.models'])
 
   $scope.deleteProduct = (id) ->
     console.log id
-    Product.remove id:id
-    loadProducts()
+    Product.remove id:id, () ->
+      loadProducts()
 ])
 
 .controller('ProductsEditController', [
