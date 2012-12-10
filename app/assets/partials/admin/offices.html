@@ -10,6 +10,11 @@
           <h2>Offices</h2>
           <!--img(src="img/loader.gif", ng-show="loading")-->
           <!--div(ng-hide="loading")-->
+          <form class="form-inline">
+            <input type="text" placeholder="Name" class="input-small"/>
+            <input type="text" placeholder="Nick" class="input-small"/>
+            <button type="submit" class="btn">Add office</button>
+          </form>
           <div class="btn-toolbar"><a href="#/admin/offices/new" class="btn btn-primary"><i class="icon-plus"></i><span>Add Office</span></a>
             <input type="text" ng-model="search" placeholder="Search" class="span8 search-query offices-query"/>
           </div><span></span>

@@ -10,6 +10,10 @@ div
           h2 Offices
           //img(src="img/loader.gif", ng-show="loading")
           //div(ng-hide="loading")
+          form.form-inline
+            input.input-small(type="text", placeholder="Name")
+            input.input-small(type="text", placeholder="Nick")
+            button.btn(type="submit") Add office
           .btn-toolbar
             a.btn.btn-primary(href='#/admin/offices/new')
               i.icon-plus
