@@ -32,11 +32,11 @@
               <tr ng-repeat="office in offices | filter: search | orderBy: 'name' ">
                 <td>
                   <div ng-hide="editing"> <span>{{office.name}}</span><br/><small>@{{office.nick}}</small></div>
-                  <input ng-show="editing" type="text" name="name" ng-model="office.name"/>
-                  <!--td -->
-                  <!--div(ng-hide="editing") @{{office.nick}}-->
-                  <div ng-show="editing" class="input-prepend"><span class="add-on">@</span>
-                    <input type="text" name="nick" ng-model="office.nick" class="input-small"/>
+                  <div class="form-inline">
+                    <input ng-show="editing" type="text" name="name" ng-model="office.name"/>
+                    <div ng-show="editing" class="input-prepend"><span class="add-on">@</span>
+                      <input type="text" name="nick" ng-model="office.nick" class="input-small"/>
+                    </div>
                   </div>
                 </td>
                 <td><a ng-hide="editing" ng-disabled="saving" ng-click="editing = true" class="btn"><i class="icon-edit"></i><span>Edit</span></a>
