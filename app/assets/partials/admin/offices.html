@@ -34,9 +34,8 @@
                 <td>
                   <div ng-hide="editing"> <span>{{office.name}}</span><br/><small>@{{office.nick}}</small></div>
                   <input ng-show="editing" type="text" name="name" ng-model="office.name"/>
-                </td>
-                <td> 
-                  <div ng-hide="editing">@{{office.nick}}</div>
+                  <!--td -->
+                  <!--div(ng-hide="editing") @{{office.nick}}-->
                   <div ng-show="editing" class="input-prepend"><span class="add-on">@</span>
                     <input type="text" name="nick" ng-model="office.nick" class="small"/>
                   </div>
