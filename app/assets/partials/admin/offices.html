@@ -12,7 +12,9 @@
           <!--div(ng-hide="loading")-->
           <form class="form-inline">
             <input type="text" placeholder="Name" class="input-small"/>
-            <input type="text" placeholder="Nick" class="input-small"/>
+            <div class="input-prepend"><span class="add-on">@</span>
+              <input type="text" placeholder="Nick" class="input-small"/>
+            </div>
             <button type="submit" class="btn">Add office</button>
           </form>
           <div class="btn-toolbar"><a href="#/admin/offices/new" class="btn btn-primary"><i class="icon-plus"></i><span>Add Office</span></a>

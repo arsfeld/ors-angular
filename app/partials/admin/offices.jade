@@ -12,7 +12,9 @@ div
           //div(ng-hide="loading")
           form.form-inline
             input.input-small(type="text", placeholder="Name")
-            input.input-small(type="text", placeholder="Nick")
+            .input-prepend
+              span.add-on @
+              input.input-small(type="text", placeholder="Nick")
             button.btn(type="submit") Add office
           .btn-toolbar
             a.btn.btn-primary(href='#/admin/offices/new')
