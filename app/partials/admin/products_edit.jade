@@ -17,7 +17,7 @@ div
               label Name
               input(type="text", name="name", ng-model="product.name", ng-change="name_changed()", required)
               span.help-inline(ng-show="productForm.name.$error.required") Required
-            p {{product.slug}}
+            p.small Link name: {{product.slug}}
             .control-group(ng-class="{error: productForm.line.$invalid}")
               label Tagline
               input(type="text", name="line", ng-model="product.tagline", required)
