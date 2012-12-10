@@ -23,7 +23,7 @@ angular.module('mongolabResource', ['ngResource'])
 
         Collection::save = (savecb, updatecb, errorSavecb, errorUpdatecb) ->
           if @_id?.$oid?
-            @update updatecb, errorUpdatecb
+            @update savecb, errorUpdatecb
           else
             @$save savecb, errorSavecb
 
