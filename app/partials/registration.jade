@@ -1,10 +1,7 @@
 
-div(ng-controller='WelcomeController')
-
-  h3 Select below which program you are interested:
+div(ng-controller='RegistrationController')
   .row-fluid
-    ul.nav.nav-pills
-      li.span3(ng-repeat="product in products | orderBy: 'name' ")
+  	h3 Registering in {{product.name}}
         a(href="#/register/{{product.slug}}")
           h2 {{product.name}}
           h4 {{product.tagline}}
