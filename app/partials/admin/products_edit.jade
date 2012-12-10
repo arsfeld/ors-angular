@@ -15,7 +15,7 @@ div
           .form(name="officeForm", ng-hide="loading")
             .control-group(ng-class="{error: productForm.name.$invalid}")
               label Name
-              input(type="text", name="name", ng-model="product.name", required)
+              input(type="text", name="name", ng-model="product.name", ng-change="name_changed()", required)
               span.help-inline(ng-show="productForm.name.$error.required") Required
             .control-group(ng-class="{error: productForm.line.$invalid}")
               label Tagline

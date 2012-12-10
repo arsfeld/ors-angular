@@ -13,7 +13,7 @@
           <div name="officeForm" ng-hide="loading" class="form">
             <div ng-class="{error: productForm.name.$invalid}" class="control-group">
               <label>Name</label>
-              <input type="text" name="name" ng-model="product.name" required="required"/><span ng-show="productForm.name.$error.required" class="help-inline">Required</span>
+              <input type="text" name="name" ng-model="product.name" ng-change="name_changed()" required="required"/><span ng-show="productForm.name.$error.required" class="help-inline">Required</span>
             </div>
             <div ng-class="{error: productForm.line.$invalid}" class="control-group">
               <label>Tagline</label>
