@@ -49,9 +49,7 @@ angular.module('app.controllers', ['app.models'])
 
   $scope.save = (office) ->
     this.editing = false
-    console.log new Office(office)
-    new Office(office).save () ->
-      console.log("done")
+    new Office(office).save()
 ])
 
 .controller('OfficesEditController', [
