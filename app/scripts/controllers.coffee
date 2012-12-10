@@ -90,6 +90,9 @@ angular.module('app.controllers', ['app.models'])
   $scope.deleteProduct = (id) ->
     Product.remove id:id, () ->
       loadProducts()
+
+  $scope.save = (scope) ->
+    console.log scope
 ])
 
 .controller('ProductsEditController', [
