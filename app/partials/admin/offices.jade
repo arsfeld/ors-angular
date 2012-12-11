@@ -24,7 +24,8 @@ div
             thead
               tr
                 th 
-                  input.search-query(type="text", ng-model="search", class="offices-query", placeholder="Search")
+                  input.search-query(type="text", ng-model="search", 
+                    class="offices-query", placeholder="Search", ui-reset)
                 th
             tbody
               tr(ng-repeat="office in offices | filter: search | orderBy: 'name' ")
