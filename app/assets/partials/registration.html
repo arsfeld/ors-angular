@@ -41,6 +41,12 @@
           <input type="text" name="university" ng-model="registration.university" required="required" placeholder="Universidade"/><span ng-show="registrationForm.university.$error.required" class="help-inline">Obrigatório</span>
         </div>
       </div>
+      <div ng-class="{error: registrationForm.career.$invalid}" class="control-group">
+        <label for="career" class="control-label">Curso</label>
+        <div class="controls">
+          <input type="text" name="career" ng-model="registration.career" required="required" placeholder=""/><span ng-show="registrationForm.career.$error.required" class="help-inline">Obrigatório</span>
+        </div>
+      </div>
     </form>
   </div>
 </div>

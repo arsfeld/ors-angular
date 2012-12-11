@@ -38,4 +38,9 @@ div(ng-controller='RegistrationController')
           input(type="text", name="university", ng-model="registration.university", 
           	required, placeholder="Universidade")
           span.help-inline(ng-show="registrationForm.university.$error.required") Obrigatório
-
+      .control-group(ng-class="{error: registrationForm.career.$invalid}")
+        label.control-label(for="career") Curso
+        .controls
+          input(type="text", name="career", ng-model="registration.career", 
+          	required, placeholder="")
+          span.help-inline(ng-show="registrationForm.career.$error.required") Obrigatório
