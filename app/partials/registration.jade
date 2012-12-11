@@ -36,7 +36,7 @@ div(ng-controller='RegistrationController')
         label.control-label(for="university") Universidade
         .controls
           input(type="text", name="university", ng-model="registration.university", 
-          	required, placeholder="Universidade")
+          	placeholder="Universidade")
           span.help-inline(ng-show="registrationForm.university.$error.required") Obrigatório
       .control-group(ng-class="{error: registrationForm.career.$invalid}")
         label.control-label(for="career") Curso
