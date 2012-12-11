@@ -14,9 +14,7 @@ angular.module('app.controllers', ['app.models', 'ui'])
 
 ($scope, $location, $resource, $rootScope, Product, Office) ->
 
-  $rootScope.loadingProducts = true
   products = Product.query () ->
-    $rootScope.loadingProducts = false
     $rootScope.allProducts = products
   offices = Office.query () ->
     $rootScope.allOffices = offices
