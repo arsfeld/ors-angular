@@ -43,6 +43,6 @@ div
                   span(ng-show="editing")
                     button.btn.btn-primary(ng-click="save(office)")
                       span Save
-                    button.btn(ng-click="office = angular.copy(original); editing = false")
+                    button.btn(ng-click="office = original; editing = false")
                       span Cancel
           img(src="img/loader.gif", ng-show="loading")
