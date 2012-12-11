@@ -31,7 +31,7 @@
                   <form name="officeForm" ng-show="editing" class="form-inline">
                     <input type="text" name="name" ng-model="office.name"/>
                     <div class="input-prepend"><span class="add-on">@</span>
-                      <input type="text" name="nick" ng-model="office.nick" ng-pattern="/[A-Z]{2}/" tooltip="Two letter name of the office" rel="tooltip" class="input-small"/>
+                      <input type="text" name="nick" ng-model="office.nick" ng-pattern="/^[A-Z]{2}$/" tooltip="Two letter name of the office" rel="tooltip" class="input-small"/>
                     </div>
                   </form>
                 </td>
