@@ -3,6 +3,10 @@
   <div class="span6 offset2">
     <h3>Cadastrando em {{product.name}}</h3>
     <form name="registrationForm" class="form-horizontal">
+      <p>Primeiro, selecione o escritório mais próximo de você:</p>
+      <select ui-select2 ng-model="registration.office">
+        <option ng-repeat="office in allOffices" value="{{office._id.$oid}}">{{office.name}}</option>
+      </select>
       <div ng-class="{error: registrationForm.name.$invalid}" class="control-group">
         <label for="name" class="control-label">Nome completo</label>
         <div class="controls">
