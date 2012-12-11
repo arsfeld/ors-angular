@@ -166,7 +166,7 @@ angular.module('app.controllers', ['app.models', 'ui'])
 ($scope, $rootScope, $routeParams, Product, Office) ->
   console.log $scope.allProducts
   console.log $routeParams.productId
-  $scope.$watch 'allProducts', () ->
+  $rootScope.$watch 'allProducts', () ->
     product = (product for product in $scope.allProducts when \
       product.slug = $routeParams.productId)
     $scope.product = product[0]
