@@ -17,7 +17,7 @@ div
         .row-fluid
           h2 Offices
           form.form-inline(name="officeForm")
-            div(ng-include="officeEdit")
+            ng-include(src="officeEdit")
             button.btn.btn-primary(type="submit") Add office
           span
           table.table.table-striped.table
