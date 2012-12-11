@@ -1,6 +1,6 @@
 
 <div ng-controller="WelcomeController">
-  <h3>Select below which program you are interested:</h3>
+  <h3 translate="translate">Select below which program you are interested:</h3>
   <div class="row-fluid"><img src="img/loader.gif" ng-show="loadingProducts"/>
     <ul class="nav nav-pills">
       <li ng-repeat="product in allProducts | orderBy: 'name' " class="span3">
