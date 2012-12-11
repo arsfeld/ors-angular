@@ -23,7 +23,7 @@ div
               input.input-mini(type="text", name="nick", ng-model="office.nick",
                 ng-pattern="/^[A-Z]{2}$/",
                 tooltip="Two letter name of the office", rel="tooltip")
-            button.btn.btn-primary() Add office
+            button.btn.btn-primary(ng-click="save()") Add office
           div(ng-include="'officeEdit'")
           
           span
@@ -72,7 +72,7 @@ div
 
                   // Editing controls
                   span(ng-show="editing")
-                    button.btn.btn-primary(ng-click="save(office)")
+                    button.btn.btn-primary(ng-click="save()")
                       span Save
                     button.btn(ng-click="cancelEdit()")
                       span Cancel

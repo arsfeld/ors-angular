@@ -21,7 +21,7 @@
             <div class="input-prepend"><span class="add-on">@</span>
               <input type="text" name="nick" ng-model="office.nick" ng-pattern="/^[A-Z]{2}$/" tooltip="Two letter name of the office" rel="tooltip" class="input-mini"/>
             </div>
-            <button class="btn btn-primary">Add office</button>
+            <button ng-click="save()" class="btn btn-primary">Add office</button>
           </form>
           <div ng-include="'officeEdit'"></div><span></span>
           <table class="table table-striped table">
@@ -58,7 +58,7 @@
                       <div class="modal-footer"><a ng-click="deleteDialog = false" class="btn">Cancel</a><a ng-click="delete()" class="btn btn-danger">Delete</a></div>
                     </div></span>
                   <!-- Editing controls--><span ng-show="editing">
-                    <button ng-click="save(office)" class="btn btn-primary"><span>Save</span></button>
+                    <button ng-click="save()" class="btn btn-primary"><span>Save</span></button>
                     <button ng-click="cancelEdit()" class="btn"><span>Cancel</span></button></span>
                 </td>
               </tr>
