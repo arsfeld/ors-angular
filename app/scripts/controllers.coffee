@@ -46,6 +46,8 @@ angular.module('app.controllers', ['app.models', 'ui'])
   $scope.offices = Office.query () ->
     $scope.loading = false
 
+  validate = (office) ->
+    office.name? && office.name.length > 0 && office.nick.length == 2
 
   $scope.save = (office) ->
     this.editing = false
