@@ -9,7 +9,7 @@ div
         .row-fluid
           h2 Products
           .btn-toolbar
-            a.btn.btn-primary(href='#/admin/products/new')
+            a.btn.btn-primary(href='/admin/products/new')
               i.icon-plus
               span Add Product
           span
@@ -26,7 +26,7 @@ div
                 td {{product.tagline}}
                 td {{product.slug}}
                 td
-                  a.btn(href="#/admin/products/edit/{{product._id.$oid}}") 
+                  a.btn(href="/admin/products/edit/{{product._id.$oid}}") 
                     i.icon-edit
                     span Edit
                   a.btn.btn-danger(ng-click="deleteProduct(product._id.$oid)") Delete
