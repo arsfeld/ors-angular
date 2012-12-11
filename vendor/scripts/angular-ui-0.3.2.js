@@ -650,9 +650,11 @@ angular.module('ui.directives').directive('uiSelect2', ['ui.config', '$http', fu
           elm.select2(value && 'disable' || 'enable');
         });
 
-        scope.$watch(attrs.ngMultiple, function(newVal) {
-          elm.select2(opts);
-        });
+        if (attrs.ngMultiple) {
+          scope.$watch(attrs.ngMultiple, function(newVal) {
+            elm.select2(opts);
+          });
+        }
 
         // Set initial value since Angular doesn't
         elm.val(scope.$eval(attrs.ngModel));
