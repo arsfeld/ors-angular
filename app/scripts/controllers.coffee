@@ -166,6 +166,6 @@ angular.module('app.controllers', ['app.models', 'ui'])
   console.log $scope.allProducts
   console.log $routeParams.productId
   product = (product for product in $scope.allProducts when \
-    product.slug = $routeParams.productId)
+    product.slug = $routeParams.productId)[0]
   console.log product
 ])
