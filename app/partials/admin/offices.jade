@@ -73,7 +73,7 @@ div
 
                   // Editing controls
                   span(ng-show="editing")
-                    button.btn.btn-primary(ng-click="save()")
+                    button.btn.btn-primary(ng-click="save()", ng-disabled="officeForm.$invalid")
                       span Save
                     button.btn(ng-click="cancelEdit()")
                       span Cancel
