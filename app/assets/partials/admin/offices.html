@@ -39,7 +39,8 @@
                     </div>
                   </form>
                 </td>
-                <td><span ng-hide="editing"><a ng-disabled="saving" ng-click="edit()" class="btn"><i class="icon-edit"></i><span>Edit</span></a>
+                <td>
+                  <!-- Edit and delete buttons--><span ng-hide="editing"><a ng-disabled="saving" ng-click="edit()" class="btn"><i class="icon-edit"></i><span>Edit</span></a>
                     <button ng-disabled="saving" ng-click="deleteDialog = true" class="btn btn-danger"><i class="icon-trash icon-white"></i><span>Delete</span></button>
                     <!-- Delete confirmation dialog-->
                     <div ui-modal="ui-modal" ng-model="deleteDialog" class="modal fade">
@@ -50,9 +51,11 @@
                         <p>Are you sure you want to delete {{office.name}}?</p>
                       </div>
                       <div class="modal-footer"><a ng-click="deleteDialog = false" class="btn">Cancel</a><a ng-click="delete()" class="btn btn-danger">Delete</a></div>
-                    </div></span><span ng-show="editing">
+                    </div></span>
+                  <!-- Editing controls--><span ng-show="editing">
                     <button ng-click="save(office)" class="btn btn-primary"><span>Save</span></button>
-                    <button ng-click="cancelEdit()" class="btn"><span>Cancel</span></button></span></td>
+                    <button ng-click="cancelEdit()" class="btn"><span>Cancel</span></button></span>
+                </td>
               </tr>
             </tbody>
           </table><img src="img/loader.gif" ng-show="loading"/>

@@ -42,6 +42,8 @@ div
                         ng-pattern="/^[A-Z]{2}$/",
                         tooltip="Two letter name of the office", rel="tooltip")
                 td
+
+                  // Edit and delete buttons
                   span(ng-hide="editing")
                     a.btn(ng-disabled="saving", ng-click="edit()")
                       i.icon-edit
@@ -61,6 +63,7 @@ div
                         a.btn(ng-click='deleteDialog = false') Cancel
                         a.btn.btn-danger(ng-click="delete()") Delete
 
+                  // Editing controls
                   span(ng-show="editing")
                     button.btn.btn-primary(ng-click="save(office)")
                       span Save
