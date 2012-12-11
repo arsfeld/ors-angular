@@ -51,10 +51,11 @@ angular.module('app.controllers', ['app.models', 'ui'])
     @editing = true
   $scope.cancelEdit = () ->
     console.log @office
-    @office = @original
+    this.office = @original
     console.log @office
     console.log this
     @editing = false
+
   $scope.save = (office) ->
     this.editing = false
     this.saving = true
