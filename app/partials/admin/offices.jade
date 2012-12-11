@@ -50,8 +50,14 @@ div
                       ng-click="deleteDialog = true")
                       i.icon-trash.icon-white
                       span Delete
-                    div#deleteModal.fade(ui-modal, ng-model="deleteDialog")
-                      span Are you sure you want to delete {{office.name}}?
+                    div.modal.fade(ui-modal, ng-model="deleteDialog")
+                      .modal-header
+                        h3 Confirmation
+                      .modal-body
+                        p Are you sure you want to delete {{office.name}}?
+                      .modal-footer
+                        a.btn Cancel
+                        a.btn.btn-delete Delete
                   span(ng-show="editing")
                     button.btn.btn-primary(ng-click="save(office)")
                       span Save
