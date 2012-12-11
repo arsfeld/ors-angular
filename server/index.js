@@ -55,6 +55,7 @@ app.configure('production', function () {
 app.configure('development', function () {
   mongoose.connect(app.get('dbUrl'));
   app.use(express.errorHandler());
+  /*
   var exec = require('child_process').exec;
   exec('node_modules/brunch/bin/brunch watch', function callback(error, stdout, stderr) {
     if (error) {
@@ -63,6 +64,7 @@ app.configure('development', function () {
       throw error;
     }
   });
+*/
 });
 
 app.configure('test', function () {
