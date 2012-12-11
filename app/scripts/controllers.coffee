@@ -163,6 +163,6 @@ angular.module('app.controllers', ['app.models', 'ui'])
   'Office'
 
 ($scope, $routeParams, Product, Office) ->
-  product = (product for product in $scope.allProducts when 
+  product = (product for product in $scope.allProducts when
     product.slug = $routeParams.productId)
 ])
