@@ -52,10 +52,12 @@ angular.module('app.controllers', ['app.models', 'ui'])
   $scope.cancelEdit = () ->
     angular.copy(this.original, @office)
     @editing = false
+  $scope.delete = () ->
+    @original.remove () ->
   $scope.save = (office) ->
     this.editing = false
     this.saving = true
-    new Office(office).save () =>
+    new Office(@office).save () =>
       this.saving = false
 ])
 
