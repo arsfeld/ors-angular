@@ -3,9 +3,9 @@
   <div class="span6 offset2">
     <h3>Cadastrando em {{product.name}}</h3>
     <form name="registrationForm" class="form-horizontal">
+      <p>Primeiro, selecione o escritório mais próximo de você.</p>
       <div class="control-group">
         <div class="controls">
-          <p>Primeiro, selecione o escritório mais próximo de você.</p>
           <select ui-select2="{width: 'resolve'}" ng-model="registration.office">
             <option ng-repeat="office in allOffices" value="{{office._id.$oid}}">{{office.name}}</option>
           </select>
