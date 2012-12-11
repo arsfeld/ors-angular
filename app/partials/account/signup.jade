@@ -1,0 +1,38 @@
+section(ng-controller='AccountSignupCtrl')
+    .row
+        .span3  
+        .span4
+          header
+            h1 Sign Up
+          form.form(nonvalidate='nonvalidate', name='form')
+            .alert.alert-error(ng-show='FormErrors')
+              ul
+                li(ng-repeat='err in ErrMsgs', ng-bind-html-unsafe='err')
+            fieldset
+              .well
+                .control-group
+                  label.control-label(for='name.givenName')
+                    strong Name
+                  .controls
+                    input#name.givenName.input-small(required='required', ng-model='user.name.givenName', placeholder='First', type='text')
+                    input#name.familyName.input-small(required='required', ng-model='user.name.familyName', placeholder='Last', type='text')
+                .control-group
+                  label.control-label(for='email')
+                    strong Email
+                  .controls
+                    input#email(required='required', ng-model='user.email', type='email', name='email')
+                    span.help-inline(ng-hide='form.email.$invalid')
+                      i.icon-ok
+                .control-group
+                  label.control-label(for='password')
+                    strong Password
+                  .controls
+                    input#password(required='required', pattern='.{4,31}', ng-model='user.password.new', type='password', name='password')
+                    p.help-block Password must be between 4 - 31 characters
+              .form-actions
+                input.btn.btn-success(type='submit', ng-click='createAccount(user)', ng-disabled='form.$invalid || WaitText', value='{{WaitText || \'Signup\'}}')
+              .control-group
+                .controls
+                  p
+                    small
+                      a(href='/login') Already have an account?
