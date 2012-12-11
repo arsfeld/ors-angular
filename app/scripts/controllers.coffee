@@ -165,8 +165,8 @@ angular.module('app.controllers', ['app.models', 'ui'])
   'Office'
 
 ($scope, $rootScope, $routeParams, Product, Office) ->
-  console.log $scope.allProducts
-  console.log $routeParams.productId
+  #console.log $scope.allProducts
+  #console.log $routeParams.productId
   $rootScope.$watch 'allProducts', () ->
     product = (product for product in $rootScope.allProducts when \
       product.slug = $routeParams.productId)
