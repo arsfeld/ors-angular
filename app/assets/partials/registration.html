@@ -2,11 +2,11 @@
 <div ng-controller="RegistrationController">
   <div class="row-fluid">
     <h3>Registering in {{product.name}}</h3>
-    <div name="registrationForm" class="form">
+    <form name="registrationForm" class="form-horizontal">
       <div ng-class="{error: registrationForm.name.$invalid}" class="control-group">
         <label>Full name</label>
         <input type="text" name="name" ng-model="registration.name" required="required"/><span ng-show="registrationForm.name.$error.required" class="help-inline">Required</span>
       </div>
-    </div>
+    </form>
   </div>
 </div>
