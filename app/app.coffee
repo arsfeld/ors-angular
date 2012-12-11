@@ -8,6 +8,7 @@ App = angular.module('app', [
   'app.models'
   'app.directives'
   'app.filters'
+  'app.translations'
 ])
 
 App.config([
