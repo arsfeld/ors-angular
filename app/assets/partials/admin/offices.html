@@ -41,6 +41,7 @@
                 </td>
                 <td><span ng-hide="editing"><a ng-disabled="saving" ng-click="edit()" class="btn"><i class="icon-edit"></i><span>Edit</span></a>
                     <button ng-disabled="saving" ng-click="deleteDialog = true" class="btn btn-danger"><i class="icon-trash icon-white"></i><span>Delete</span></button>
+                    <!-- Delete confirmation dialog-->
                     <div ui-modal="ui-modal" ng-model="deleteDialog" class="modal fade">
                       <div class="modal-header">
                         <h3>Confirmation</h3>
