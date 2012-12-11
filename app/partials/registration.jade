@@ -6,5 +6,5 @@ div(ng-controller='RegistrationController')
       .control-group(ng-class="{error: registrationForm.name.$invalid}")
         label.control-label(for="name") Full name
         .controls
-        	input(type="text", name="name", ng-model="registration.name", required)
-        	span.help-inline(ng-show="registrationForm.name.$error.required") Required
+          input(type="text", name="name", ng-model="registration.name", required)
+          span.help-inline(ng-show="registrationForm.name.$error.required") Required
