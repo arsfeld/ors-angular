@@ -50,6 +50,8 @@ angular.module('app.controllers', ['app.models', 'ui'])
     office.name? && office.name.length > 0 && office.nick.length == 2
 
   $scope.save = (office) ->
+    if not validate(office)
+      return
     this.editing = false
     this.saving = true
     new Office(office).save () =>
