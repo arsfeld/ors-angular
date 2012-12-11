@@ -169,5 +169,6 @@ angular.module('app.controllers', ['app.models', 'ui'])
   $scope.$watch 'allProducts', () ->
     product = (product for product in $scope.allProducts when \
       product.slug = $routeParams.productId)
-    console.log product[0]
+    $scope.product = product[0]
+
 ])
