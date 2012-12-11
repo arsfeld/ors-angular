@@ -34,7 +34,7 @@ div
                     .input-prepend
                       span.add-on @
                       input.input-small(type="text", name="nick", ng-model="office.nick",
-                        ng-minlength="2", ng-maxlength="2",
+                        ng-minlength="2", ng-maxlength="2", ng-pattern="/[A-Z]{2}/",
                         tooltip="Two letter name of the office", rel="tooltip")
                 td
                   span(ng-hide="editing")
