@@ -105,8 +105,9 @@ angular.module('app.controllers', ['app.models', 'ui'])
 ($scope, Product) ->
   loadProducts = () ->
     $scope.loading = "Loading..."
-    $scope.products = Product.query () ->
+    products = Product.query () ->
       $scope.loading = false
+      $scope.products = products
   loadProducts()
 
   $scope.deleteProduct = (id) ->
