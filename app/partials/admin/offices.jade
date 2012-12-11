@@ -49,6 +49,7 @@ div
                     button.btn.btn-danger(ng-disabled="saving", ng-click="delete()")
                       i.icon-trash.icon-white
                       span Delete
+                    div#deleteModal.fade(ui-modal, ng-model="deleteDialog")
                   span(ng-show="editing")
                     button.btn.btn-primary(ng-click="save(office)")
                       span Save
