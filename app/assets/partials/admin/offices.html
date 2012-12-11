@@ -17,9 +17,9 @@
         <div class="row-fluid">
           <h2>Offices</h2>
           <form name="officeForm" novalidate="novalidate" class="form-inline">
-            <input type="text" name="name" ng-model="office.name" required="required" class="input-medium"/>
+            <input type="text" name="name" ng-model="office.name" required="required" placeholder="São Carlos" class="input-medium"/>
             <div class="input-prepend"><span class="add-on">@</span>
-              <input type="text" name="nick" ng-model="office.nick" ng-pattern="/^[A-Z]{2}$/" tooltip="Two letter name of the office" rel="tooltip" required="required" class="input-mini"/>
+              <input type="text" name="nick" ng-model="office.nick" ng-pattern="/^[A-Z]{2}$/" placeholder="SC" tooltip="Two letter name of the office" rel="tooltip" required="required" class="input-mini"/>
             </div>
             <button ng-click="save()" ng-disabled="officeForm.$invalid" class="btn btn-primary">Add office</button>
           </form>
