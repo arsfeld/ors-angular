@@ -7,7 +7,7 @@ div(ng-controller='RegistrationController')
       .control-group
         .controls
           p Primeiro, selecione o escritório mais próximo de você.
-          select(ui-select2 ng-model="registration.office")
+          select(ui-select2="{width: 'resolve'}", ng-model="registration.office")
             option(ng-repeat="office in allOffices", value="{{office._id.$oid}}") {{office.name}}
       .control-group(ng-class="{error: registrationForm.name.$invalid}")
         label.control-label(for="name") Nome completo
