@@ -168,7 +168,6 @@ angular.module('app.controllers', ['app.models', 'ui'])
   $rootScope.$watch 'allProducts', () ->
     if not $rootScope.allProducts?
       return
-    console.log $scope.allProducts
     product = (product for product in $rootScope.allProducts when \
       product.slug == $routeParams.productId)
     $scope.product = product[0]
