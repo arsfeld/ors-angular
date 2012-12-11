@@ -22,6 +22,14 @@ App.config([
         templateUrl: '/partials/welcome.html'
       .when '/register/:productId',
         templateUrl: '/partials/registration.html'
+
+      # Authentication
+      .when('/auth', {redirectTo : '/auth/login'})
+      .when('/auth/login', {templateUrl : '/partials/auth/login.html'})
+      .when('/signup', {templateUrl : '/partials/account/signup.html'})
+      .when('/login', {templateUrl : '/partials/account/login.html'})
+
+      # Admin Section
       .when '/admin/offices',
         templateUrl: '/partials/admin/offices.html'
       .when '/admin/offices/edit/:officeId',
