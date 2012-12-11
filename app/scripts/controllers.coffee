@@ -44,7 +44,7 @@ angular.module('app.controllers', ['app.models', 'ui'])
   $scope.loading = true
 
   loadOffices = () ->
-    var update = Office.query () ->
+    update = Office.query () ->
       $scope.offices = update
       $scope.loading = false
   loadOffices()
