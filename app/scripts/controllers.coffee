@@ -56,8 +56,9 @@ angular.module('app.controllers', ['app.models', 'ui'])
     @editing = false
   $scope.delete = () ->
     @deleting = true
-    @original.remove () ->
+    @office.remove () =>
       @deleting = false
+      @
   $scope.save = (office) ->
     this.editing = false
     this.saving = true
