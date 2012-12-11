@@ -14,8 +14,8 @@ div(ng-controller='RegistrationController')
           input(type="text", name="email", ng-model="registration.email", required)
           span.help-inline(ng-show="registrationForm.email.$error.required") Required
       .control-group(ng-class="{error: registrationForm.phone.$invalid}")
-        label.control-label(for="name") Telefone
+        label.control-label(for="phone") Telefone
         .controls
-          input(type="text", name="name", ng-model="registration.name", 
+          input(type="text", name="phone", ng-model="registration.phone", 
           	required, placeholder="(0xx) XXXX-XXXX")
-          span.help-inline(ng-show="registrationForm.name.$error.required") Required
+          span.help-inline(ng-show="registrationForm.phone.$error.required") Required
