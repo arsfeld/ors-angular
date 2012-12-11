@@ -42,3 +42,8 @@ div(ng-controller='RegistrationController')
         .controls
           input(type="text", name="career", ng-model="registration.career", 
           	placeholder="")
+      .control-group(ng-class="{error: registrationForm.yearIngress.$invalid}")
+        label.control-label(for="yearIngress") Ano de ingresso
+        .controls
+          input(type="text", name="yearIngress", ng-model="registration.yearIngress", 
+          	placeholder="")

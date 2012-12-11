@@ -47,6 +47,12 @@
           <input type="text" name="career" ng-model="registration.career" placeholder=""/>
         </div>
       </div>
+      <div ng-class="{error: registrationForm.yearIngress.$invalid}" class="control-group">
+        <label for="yearIngress" class="control-label">Ano de ingresso</label>
+        <div class="controls">
+          <input type="text" name="yearIngress" ng-model="registration.yearIngress" placeholder=""/>
+        </div>
+      </div>
     </form>
   </div>
 </div>
