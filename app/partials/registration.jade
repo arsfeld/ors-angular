@@ -19,9 +19,9 @@ div(ng-controller='RegistrationController')
           input(type="text", name="phone", ng-model="registration.phone", 
           	required, placeholder="(0xx) XXXX-XXXX")
           span.help-inline(ng-show="registrationForm.phone.$error.required") Obrigatório
-      .control-group(ng-class="{error: registrationForm.Cidade.$invalid}")
-        label.control-label(for="phone") Cidade
+      .control-group(ng-class="{error: registrationForm.city.$invalid}")
+        label.control-label(for="city") Cidade
         .controls
-          input(type="text", name="phone", ng-model="registration.phone", 
-          	required, placeholder="(0xx) XXXX-XXXX")
-          span.help-inline(ng-show="registrationForm.phone.$error.required") Obrigatório
+          input(type="text", name="city", ng-model="registration.phone", 
+          	required, placeholder="Cidade")
+          span.help-inline(ng-show="registrationForm.city.$error.required") Obrigatório
