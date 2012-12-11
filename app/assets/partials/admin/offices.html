@@ -16,10 +16,9 @@
       <div ng-controller="OfficesController">
         <div class="row-fluid">
           <h2>Offices</h2>
-          <form name="officeForm" class="form-inline">
-            <ng-include src="officeEdit"></ng-include>
-            <button class="btn btn-primary">Add office</button>
-          </form><span></span>
+          <!--form.form-inline(name="officeForm")-->
+          <ng-include src="officeEdit"></ng-include>
+          <button class="btn btn-primary">Add office</button><span></span>
           <table class="table table-striped table">
             <thead>
               <tr>
