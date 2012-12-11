@@ -41,7 +41,7 @@ div
                     a.btn(ng-disabled="saving", ng-click="edit()")
                       i.icon-edit
                       span Edit
-                    button.btn.btn-danger(ng-click="delete()")
+                    button.btn.btn-danger(ng-disabled="saving", ng-click="delete()")
                       span Delete
                   span(ng-show="editing")
                     button.btn.btn-primary(ng-click="save(office)")
