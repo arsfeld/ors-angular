@@ -4,7 +4,7 @@
     <h3>Registering in {{product.name}}</h3>
     <form name="registrationForm" class="form-horizontal">
       <div ng-class="{error: registrationForm.name.$invalid}" class="control-group">
-        <label class="control-label">Full name</label>
+        <label for="name" class="control-label">Full name</label>
         <input type="text" name="name" ng-model="registration.name" required="required"/><span ng-show="registrationForm.name.$error.required" class="help-inline">Required</span>
       </div>
     </form>

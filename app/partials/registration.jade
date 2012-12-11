@@ -4,6 +4,6 @@ div(ng-controller='RegistrationController')
     h3 Registering in {{product.name}}
     form.form-horizontal(name="registrationForm")
       .control-group(ng-class="{error: registrationForm.name.$invalid}")
-        label.control-label Full name
+        label.control-label(for="name") Full name
         input(type="text", name="name", ng-model="registration.name", required)
         span.help-inline(ng-show="registrationForm.name.$error.required") Required
