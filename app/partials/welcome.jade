@@ -7,7 +7,7 @@ div(ng-controller='WelcomeController')
     ul.nav.nav-pills
       li.span3(ng-repeat="product in allProducts | orderBy: 'name' ")
         //a(href="/#/register/{{product._id.$oid}}")
-        a(href="/#/register/{{product.slug}}")
+        a(href="/register/{{product.slug}}")
         
           h2 {{product.name}}
           h4 {{product.tagline}}
