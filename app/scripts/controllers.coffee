@@ -152,7 +152,8 @@ angular.module('app.controllers', ['app.models', 'ui'])
   'Product'
 
 ($scope, Product) ->
-  $scope.products = Product.query()
+  products = Product.query () ->
+    $scope.products = products
 
 ])
 
