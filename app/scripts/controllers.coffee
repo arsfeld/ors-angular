@@ -163,8 +163,5 @@ angular.module('app.controllers', ['app.models', 'ui'])
   'Office'
 
 ($scope, $routeParams, Product, Office) ->
-  if $routeParams.productId?
-    Product.get id: $routeParams.productId, (product) =>
-      $scope.product = new Product(@original = product)
-
+  console.log $scope.allProducts
 ])
