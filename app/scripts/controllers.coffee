@@ -163,5 +163,6 @@ angular.module('app.controllers', ['app.models', 'ui'])
   'Office'
 
 ($scope, $routeParams, Product, Office) ->
-  console.log $scope.allProducts
+  product = (product for product in $scope.allProducts when 
+    product.slug = $routeParams.productId)
 ])
