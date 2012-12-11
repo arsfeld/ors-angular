@@ -38,13 +38,13 @@
       <div ng-class="{error: registrationForm.university.$invalid}" class="control-group">
         <label for="university" class="control-label">Universidade</label>
         <div class="controls">
-          <input type="text" name="university" ng-model="registration.university" placeholder="Universidade"/><span ng-show="registrationForm.university.$error.required" class="help-inline">Obrigatório</span>
+          <input type="text" name="university" ng-model="registration.university" placeholder="Universidade"/>
         </div>
       </div>
       <div ng-class="{error: registrationForm.career.$invalid}" class="control-group">
         <label for="career" class="control-label">Curso</label>
         <div class="controls">
-          <input type="text" name="career" ng-model="registration.career" required="required" placeholder=""/><span ng-show="registrationForm.career.$error.required" class="help-inline">Obrigatório</span>
+          <input type="text" name="career" ng-model="registration.career" placeholder=""/>
         </div>
       </div>
     </form>
