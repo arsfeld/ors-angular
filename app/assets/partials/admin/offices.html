@@ -1,10 +1,11 @@
 
 <script type="text/ng-template" id="officeEdit">
-  <form name="officeForm" ng-show="editing" class="form-inline"></form>
-  <input type="text" name="name" ng-model="office.name" class="input-medium"/>
-  <div class="input-prepend"><span class="add-on">@</span>
-    <input type="text" name="nick" ng-model="office.nick" ng-pattern="/^[A-Z]{2}$/" tooltip="Two letter name of the office" rel="tooltip" class="input-mini"/>
-  </div>
+  <form name="officeForm" ng-show="editing" class="form-inline">
+    <input type="text" name="name" ng-model="office.name" class="input-medium"/>
+    <div class="input-prepend"><span class="add-on">@</span>
+      <input type="text" name="nick" ng-model="office.nick" ng-pattern="/^[A-Z]{2}$/" tooltip="Two letter name of the office" rel="tooltip" class="input-mini"/>
+    </div>
+  </form>
 </script>
 <div>
   <div class="row-fluid">
