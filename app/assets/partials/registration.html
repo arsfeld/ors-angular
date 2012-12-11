@@ -12,7 +12,7 @@
       <div ng-class="{error: registrationForm.email.$invalid}" class="control-group">
         <label for="email" class="control-label">Email</label>
         <div class="controls">
-          <input type="text" name="email" ng-model="registration.email" required="required"/><span ng-show="registrationForm.email.$error.required" class="help-inline">Obrigatório</span>
+          <input type="text" name="email" ng-model="registration.email" required="required" placeholder="usuario@gmail.com"/><span ng-show="registrationForm.email.$error.required" class="help-inline">Obrigatório</span>
         </div>
       </div>
       <div ng-class="{error: registrationForm.phone.$invalid}" class="control-group">
