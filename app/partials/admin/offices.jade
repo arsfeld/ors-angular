@@ -29,9 +29,9 @@ div
                     span {{office.name}}
                     br
                     small @{{office.nick}}
-                  form.form-inline(name="officeForm")
-                    input(ng-show="editing", type="text", name="name", ng-model="office.name")
-                    .input-prepend(ng-show="editing")
+                  form.form-inline(name="officeForm", ng-show="editing")
+                    input(type="text", name="name", ng-model="office.name")
+                    .input-prepend
                       span.add-on @
                       input.input-small(type="text", name="nick", ng-model="office.nick",
                         ng-minlength="2", ng-maxlength="2",
