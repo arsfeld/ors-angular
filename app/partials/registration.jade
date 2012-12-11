@@ -3,6 +3,9 @@ div(ng-controller='RegistrationController')
   .span6.offset2
     h3 Cadastrando em {{product.name}}
     form.form-horizontal(name="registrationForm")
+      p Primeiro, selecione o escritório mais próximo de você:
+      select(ui-select2 ng-model="registration.office")
+      	option(ng-repeat="office in allOffices", value="{{office._id.$oid}}") {{office.name}}
       .control-group(ng-class="{error: registrationForm.name.$invalid}")
         label.control-label(for="name") Nome completo
         .controls
