@@ -6,19 +6,19 @@
       <div ng-class="{error: registrationForm.name.$invalid}" class="control-group">
         <label for="name" class="control-label">Nome completo</label>
         <div class="controls">
-          <input type="text" name="name" ng-model="registration.name" required="required"/><span ng-show="registrationForm.name.$error.required" class="help-inline">Requerido</span>
+          <input type="text" name="name" ng-model="registration.name" required="required"/><span ng-show="registrationForm.name.$error.required" class="help-inline">Obrigatório</span>
         </div>
       </div>
       <div ng-class="{error: registrationForm.email.$invalid}" class="control-group">
         <label for="email" class="control-label">Email</label>
         <div class="controls">
-          <input type="text" name="email" ng-model="registration.email" required="required"/><span ng-show="registrationForm.email.$error.required" class="help-inline">Required</span>
+          <input type="text" name="email" ng-model="registration.email" required="required"/><span ng-show="registrationForm.email.$error.required" class="help-inline">Obrigatório</span>
         </div>
       </div>
       <div ng-class="{error: registrationForm.phone.$invalid}" class="control-group">
         <label for="phone" class="control-label">Telefone</label>
         <div class="controls">
-          <input type="text" name="phone" ng-model="registration.phone" required="required" placeholder="(0xx) XXXX-XXXX"/><span ng-show="registrationForm.phone.$error.required" class="help-inline">Required</span>
+          <input type="text" name="phone" ng-model="registration.phone" required="required" placeholder="(0xx) XXXX-XXXX"/><span ng-show="registrationForm.phone.$error.required" class="help-inline">Obrigatório</span>
         </div>
       </div>
     </form>
