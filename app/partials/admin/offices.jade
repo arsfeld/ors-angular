@@ -16,7 +16,7 @@ div
       div(ng-controller='OfficesController')
         .row-fluid
           h2 Offices
-          form.form-inline(name="officeForm")
+          form.form-inline(name="officeForm", novalidate)
             input.input-medium(type="text", name="name", ng-model="office.name")
             .input-prepend
               span.add-on @
