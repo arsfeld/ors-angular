@@ -50,6 +50,7 @@ div
                       i.icon-trash.icon-white
                       span Delete
                     div#deleteModal.fade(ui-modal, ng-model="deleteDialog")
+                      span Are you sure you want to delete {{office.name}}?
                   span(ng-show="editing")
                     button.btn.btn-primary(ng-click="save(office)")
                       span Save

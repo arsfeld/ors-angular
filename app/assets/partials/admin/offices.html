@@ -41,7 +41,7 @@
                 </td>
                 <td><span ng-hide="editing"><a ng-disabled="saving" ng-click="edit()" class="btn"><i class="icon-edit"></i><span>Edit</span></a>
                     <button ng-disabled="saving" ng-click="delete()" class="btn btn-danger"><i class="icon-trash icon-white"></i><span>Delete</span></button>
-                    <div id="deleteModal" ui-modal="ui-modal" ng-model="deleteDialog" class="fade"></div></span><span ng-show="editing">
+                    <div id="deleteModal" ui-modal="ui-modal" ng-model="deleteDialog" class="fade"><span>Are you sure you want to delete {{office.name}}?</span></div></span><span ng-show="editing">
                     <button ng-click="save(office)" class="btn btn-primary"><span>Save</span></button>
                     <button ng-click="cancelEdit()" class="btn"><span>Cancel</span></button></span></td>
               </tr>
