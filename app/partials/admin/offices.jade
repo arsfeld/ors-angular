@@ -37,7 +37,7 @@ div
                         tooltip="Two letter name of the office", rel="tooltip")
                 td
                   span(ng-hide="editing")
-                    a.btn(ng-disabled="saving", ng-click="original = new Office(office); editing = true")
+                    a.btn(ng-disabled="saving", ng-click="original = angular.copy(office); editing = true")
                       i.icon-edit
                       span Edit
                   span(ng-show="editing")
