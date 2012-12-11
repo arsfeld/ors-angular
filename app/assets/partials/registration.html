@@ -15,6 +15,12 @@
           <input type="text" name="email" ng-model="registration.email" required="required"/><span ng-show="registrationForm.email.$error.required" class="help-inline">Required</span>
         </div>
       </div>
+      <div ng-class="{error: registrationForm.name.$invalid}" class="control-group">
+        <label for="name" class="control-label">Full name</label>
+        <div class="controls">
+          <input type="text" name="name" ng-model="registration.name" required="required"/><span ng-show="registrationForm.name.$error.required" class="help-inline">Required</span>
+        </div>
+      </div>
     </form>
   </div>
 </div>
