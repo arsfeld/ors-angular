@@ -35,9 +35,9 @@
                     </div>
                   </div>
                 </td>
-                <td><span ng-hide="editing"><a ng-disabled="saving" ng-click="editing = true" class="btn"><i class="icon-edit"></i><span>Edit</span></a></span>
-                  <button ng-show="editing" ng-click="save(office)" class="btn btn-primary"><span>Save</span></button>
-                </td>
+                <td><span ng-hide="editing"><a ng-disabled="saving" ng-click="original = office; editing = true" class="btn"><i class="icon-edit"></i><span>Edit</span></a></span><span ng-show="editing">
+                    <button ng-click="save(office)" class="btn btn-primary"><span>Save</span></button>
+                    <button ng-click="office = original; editing = false" class="btn"><span>Cancel</span></button></span></td>
               </tr>
             </tbody>
           </table><img src="img/loader.gif" ng-show="loading"/>
