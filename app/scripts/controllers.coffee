@@ -43,8 +43,10 @@ angular.module('app.controllers', ['app.models', 'ui'])
 ($scope, Office) ->
   $scope.loading = true
 
-  $scope.offices = Office.query () ->
-    $scope.loading = false
+  loadOffices = () ->
+    $scope.offices = Office.query () ->
+      $scope.loading = false
+  loadOffices()
 
   $scope.edit = () ->
     @original = angular.copy(@office)
@@ -54,6 +56,7 @@ angular.module('app.controllers', ['app.models', 'ui'])
     @editing = false
   $scope.delete = () ->
     @original.remove () ->
+
   $scope.save = (office) ->
     this.editing = false
     this.saving = true
