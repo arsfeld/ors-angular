@@ -36,6 +36,6 @@ div(ng-controller='RegistrationController')
         label.control-label(for="university") Universidade
         .controls
           input(type="text", name="university", ng-model="registration.university", 
-          	required, placeholder="Cidade")
-          span.help-inline(ng-show="registrationForm.city.$error.required") Obrigatório
+          	required, placeholder="Universidade")
+          span.help-inline(ng-show="registrationForm.university.$error.required") Obrigatório
 
