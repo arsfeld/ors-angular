@@ -17,11 +17,7 @@ div
         .row-fluid
           h2 Offices
           form.form-inline(name="officeForm")
-            input.input-medium(type="text", placeholder="São Carlos")
-            .input-prepend
-              span.add-on @
-              input.input-mini(type="text", placeholder="SC",
-                tooltip="Two letter name of the office", rel="tooltip")
+            div(ng-include="officeEdit")
             button.btn.btn-primary(type="submit") Add office
           span
           table.table.table-striped.table

@@ -16,10 +16,7 @@
         <div class="row-fluid">
           <h2>Offices</h2>
           <form name="officeForm" class="form-inline">
-            <input type="text" placeholder="São Carlos" class="input-medium"/>
-            <div class="input-prepend"><span class="add-on">@</span>
-              <input type="text" placeholder="SC" tooltip="Two letter name of the office" rel="tooltip" class="input-mini"/>
-            </div>
+            <div ng-include="officeEdit"></div>
             <button type="submit" class="btn btn-primary">Add office</button>
           </form><span></span>
           <table class="table table-striped table">
