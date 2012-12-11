@@ -1,0 +1,13 @@
+ul.nav.pull-right
+    li#user-nav.dropdown
+        span(ng-hide='user.isAuthenticated()')
+          a(ng-class='getClass(\'/login\')', href='/login') Login
+          | |
+          a(ng-class='getClass(\'/signup\')', href='/signup') Sign Up
+        span(ng-show='user.isAuthenticated()')
+          a(ng-class='getClass(\'/account\')', href='/account/') Account
+          | |
+          a(href='/account/')
+            span(ng-bind='user.displayName()')
+          | |
+          a(href='', ng-click='logout()') logout
