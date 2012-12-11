@@ -4,7 +4,7 @@
   <div class="row-fluid"><img src="img/loader.gif" ng-show="loadingProducts"/>
     <ul class="nav nav-pills">
       <li ng-repeat="product in allProducts | orderBy: 'name' " class="span3">
-        <!--a(href="#/register/{{product._id.$oid}}")--><a href="#/register/{{product.slug}}">
+        <!--a(href="/#/register/{{product._id.$oid}}")--><a href="/#/register/{{product.slug}}">
           <h2>{{product.name}}</h2>
           <h4>{{product.tagline}}</h4></a>
       </li>
