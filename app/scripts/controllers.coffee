@@ -171,5 +171,4 @@ angular.module('app.controllers', ['app.models', 'ui'])
       product.slug = $routeParams.productId)
     console.log 'Product: ' + product
     $rootScope.product = product[0]
-
 ])
