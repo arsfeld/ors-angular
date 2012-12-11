@@ -158,11 +158,12 @@ angular.module('app.controllers', ['app.models', 'ui'])
 
 .controller('RegistrationController', [
   '$scope'
+  '$rootScope'
   '$routeParams'
   'Product'
   'Office'
 
-($scope, $routeParams, Product, Office) ->
+($scope, $rootScope, $routeParams, Product, Office) ->
   console.log $scope.allProducts
   console.log $routeParams.productId
   product = (product for product in $scope.allProducts when \
