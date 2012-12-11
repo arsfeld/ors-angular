@@ -32,7 +32,13 @@
       <div ng-class="{error: registrationForm.city.$invalid}" class="control-group">
         <label for="city" class="control-label">Cidade</label>
         <div class="controls">
-          <input type="text" name="city" ng-model="registration.phone" required="required" placeholder="Cidade"/><span ng-show="registrationForm.city.$error.required" class="help-inline">Obrigatório</span>
+          <input type="text" name="city" ng-model="registration.city" required="required" placeholder="Cidade"/><span ng-show="registrationForm.city.$error.required" class="help-inline">Obrigatório</span>
+        </div>
+      </div>
+      <div ng-class="{error: registrationForm.university.$invalid}" class="control-group">
+        <label for="university" class="control-label">Universidade</label>
+        <div class="controls">
+          <input type="text" name="university" ng-model="registration.university" required="required" placeholder="Cidade"/><span ng-show="registrationForm.city.$error.required" class="help-inline">Obrigatório</span>
         </div>
       </div>
     </form>
