@@ -4,7 +4,7 @@ div(ng-controller='RegistrationController')
     h3 Registering in {{product.name}}
     form.form-horizontal(name="registrationForm")
       .control-group(ng-class="{error: registrationForm.name.$invalid}")
-        label.control-label(for="name") Full name
+        label.control-label(for="name") Nome completo
         .controls
           input(type="text", name="name", ng-model="registration.name", required)
           span.help-inline(ng-show="registrationForm.name.$error.required") Required
@@ -13,9 +13,9 @@ div(ng-controller='RegistrationController')
         .controls
           input(type="text", name="email", ng-model="registration.email", required)
           span.help-inline(ng-show="registrationForm.email.$error.required") Required
-      .control-group(ng-class="{error: registrationForm.name.$invalid}")
-        label.control-label(for="name") Full name
+      .control-group(ng-class="{error: registrationForm.phone.$invalid}")
+        label.control-label(for="name") Telefone
         .controls
-          input(type="text", name="name", ng-model="registration.name", required)
+          input(type="text", name="name", ng-model="registration.name", 
+          	required, placeholder="(0xx) XXXX-XXXX")
           span.help-inline(ng-show="registrationForm.name.$error.required") Required
-      
