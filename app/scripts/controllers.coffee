@@ -17,6 +17,8 @@ angular.module('app.controllers', ['app.models', 'ui'])
   products = Product.query () ->
     $rootScope.loadingProducts = false
     $rootScope.allProducts = products
+  offices = Office.query () ->
+    $rootScope.allOffices = offices
 
   # Uses the url to determine if the selected
   # menu item should have the class active.

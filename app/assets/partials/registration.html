@@ -6,7 +6,7 @@
       <div ng-class="{error: registrationForm.name.$invalid}" class="control-group">
         <label for="name" class="control-label">Nome completo</label>
         <div class="controls">
-          <input type="text" name="name" ng-model="registration.name" required="required"/><span ng-show="registrationForm.name.$error.required" class="help-inline">Obrigatório</span>
+          <input type="text" name="name" ng-model="registration.name" required="required" placeholder="Nome Sobrenome"/><span ng-show="registrationForm.name.$error.required" class="help-inline">Obrigatório</span>
         </div>
       </div>
       <div ng-class="{error: registrationForm.email.$invalid}" class="control-group">
