@@ -17,13 +17,14 @@ div
         .row-fluid
           h2 Offices
           form.form-inline(name="officeForm", novalidate)
-            input.input-medium(type="text", name="name", ng-model="office.name")
+            input.input-medium(type="text", name="name", ng-model="office.name",
+              )
             .input-prepend
               span.add-on @
               input.input-mini(type="text", name="nick", ng-model="office.nick",
                 ng-pattern="/^[A-Z]{2}$/",
                 tooltip="Two letter name of the office", rel="tooltip")
-            button.btn.btn-primary(ng-click="save()") Add office
+            button.btn.btn-primary(ng-click="save()", ng-disabled="officeForm.valid") Add office
           div(ng-include="'officeEdit'")
           
           span
