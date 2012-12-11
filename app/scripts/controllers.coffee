@@ -169,6 +169,7 @@ angular.module('app.controllers', ['app.models', 'ui'])
   $rootScope.$watch 'allProducts', () ->
     product = (product for product in $rootScope.allProducts when \
       product.slug = $routeParams.productId)
+    console.log 'Product: ' + product
     $rootScope.product = product[0]
 
 ])
