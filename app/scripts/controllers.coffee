@@ -50,13 +50,8 @@ angular.module('app.controllers', ['app.models', 'ui'])
     @original = angular.copy(@office)
     @editing = true
   $scope.cancelEdit = () ->
-    console.log this.office
     angular.copy(this.original, this.office)
-    console.log this.office
-    console.log this
-
     @editing = false
-
   $scope.save = (office) ->
     this.editing = false
     this.saving = true
