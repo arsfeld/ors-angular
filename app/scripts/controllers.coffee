@@ -10,8 +10,9 @@ angular.module('app.controllers', ['app.models', 'ui'])
   '$resource'
   '$rootScope'
   'Product'
+  'Office'
 
-($scope, $location, $resource, $rootScope, Product) ->
+($scope, $location, $resource, $rootScope, Product, Office) ->
 
   $rootScope.loadingProducts = true
   products = Product.query () ->
