@@ -5,7 +5,7 @@ div(ng-controller='RegistrationController')
     form.form-horizontal(name="registrationForm")
       p Primeiro, selecione o escritório mais próximo de você:
       .control-group
-        .controls.span4
+        .controls
           select(ui-select2 ng-model="registration.office")
             option(ng-repeat="office in allOffices", value="{{office._id.$oid}}") {{office.name}}
       .control-group(ng-class="{error: registrationForm.name.$invalid}")
