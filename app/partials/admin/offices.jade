@@ -24,7 +24,7 @@ div
               input.input-mini(type="text", name="nick", ng-model="office.nick",
                 ng-pattern="/^[A-Z]{2}$/",
                 tooltip="Two letter name of the office", rel="tooltip")
-            button.btn.btn-primary(ng-click="save()", ng-disabled="officeForm.valid") Add office
+            button.btn.btn-primary(ng-click="save()", ng-disabled="officeForm.$invalid") Add office
           div(ng-include="'officeEdit'")
           
           span
