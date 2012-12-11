@@ -48,7 +48,7 @@ angular.module('app.controllers', ['app.models', 'ui'])
 
   $scope.edit = () ->
     @original = angular.copy(@office)
-    editing = true
+    @editing = true
   $scope.save = (office) ->
     this.editing = false
     this.saving = true
