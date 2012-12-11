@@ -21,6 +21,12 @@
           <input type="text" name="phone" ng-model="registration.phone" required="required" placeholder="(0xx) XXXX-XXXX"/><span ng-show="registrationForm.phone.$error.required" class="help-inline">Obrigatório</span>
         </div>
       </div>
+      <div ng-class="{error: registrationForm.Cidade.$invalid}" class="control-group">
+        <label for="phone" class="control-label">Cidade</label>
+        <div class="controls">
+          <input type="text" name="phone" ng-model="registration.phone" required="required" placeholder="(0xx) XXXX-XXXX"/><span ng-show="registrationForm.phone.$error.required" class="help-inline">Obrigatório</span>
+        </div>
+      </div>
     </form>
   </div>
 </div>
