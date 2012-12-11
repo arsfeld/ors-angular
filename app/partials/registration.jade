@@ -1,6 +1,6 @@
 
 div(ng-controller='RegistrationController')
-  .row-fluid
+  .span4.offset4
     h3 Registering in {{product.name}}
     form.form-horizontal(name="registrationForm")
       .control-group(ng-class="{error: registrationForm.name.$invalid}")
