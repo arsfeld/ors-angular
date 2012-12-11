@@ -65,6 +65,7 @@ angular.module('app.controllers', ['app.models', 'ui'])
     this.saving = true
     new Office(@office).save () =>
       this.saving = false
+      @office = {}
       loadOffices()
 ])
 
