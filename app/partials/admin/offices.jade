@@ -12,12 +12,12 @@ div
   .row-fluid
     .span3
       div(ng-include="'/partials/admin/nav.html'")
-    .span6
+    .span9
       div(ng-controller='OfficesController')
         .row-fluid
           h2 Offices
           form#office-add-form.form-inline(name="officeForm", novalidate)
-            input.input-medium(type="text", name="name", ng-model="office.name",
+            input.input(type="text", name="name", ng-model="office.name",
               required, placeholder="São Carlos")
             .input-prepend
               span.add-on @
@@ -28,12 +28,13 @@ div
           div(ng-include="'officeEdit'")
           
           span
-          table.table.table-striped.table
+          table.table-striped.table
             thead
               tr
-                th#office-header
-                  input#office-search.search-query(type="text", ng-model="search", 
-                    class="offices-query", placeholder="Search", ui-reset)
+                th
+                  input.search-query(type="text", ng-model="search", 
+                    class="offices-query", placeholder="Search")
+                th.centered Admin
                 th
             tbody
               tr(ng-repeat="office in offices | filter: search | orderBy: 'name' ")
@@ -49,17 +50,25 @@ div
                       input.input-mini(type="text", name="nick", ng-model="office.nick",
                         ng-pattern="/^[A-Z]{2}$/", required,
                         tooltip="Two letter name of the office", rel="tooltip")
-                td#office-buttons
-
+                td.centered
+                  a(data-original-title="{{office.admin.join('\\n')}}", ui-jq="tooltip")
+                    ng-pluralize(count="office.admin.length",
+                      when="{'0': 'No responsible!', 'one': '{{office.admin[0]}}', \
+                          'other': '{} admins'}", ng-model="admin_count")
+                  div(ng-hide="office.admin")
+                    p.text-warning 
+                      i.icon-warning-sign
+                      |  No admin!
+                td.edit-buttons
                   // Edit and delete buttons
                   span(ng-hide="editing")
                     a.btn(ng-disabled="saving", ng-click="edit()")
                       i.icon-edit
-                      span Edit
+                      |  Edit
                     button.btn.btn-danger(ng-disabled="saving", 
                       ng-click="deleteDialog = true")
                       i.icon-trash.icon-white
-                      span Delete
+                      |  Delete
 
                     // Delete confirmation dialog
                     div.modal.fade(ui-modal, ng-model="deleteDialog")
@@ -77,4 +86,4 @@ div
                       span Save
                     button.btn(ng-click="cancelEdit()")
                       span Cancel
-          img(src="img/loader.gif", ng-show="loading")
+          img(src="/img/loader.gif", ng-hide="offices")

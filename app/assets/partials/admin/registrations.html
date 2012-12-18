@@ -9,15 +9,16 @@
         <div class="row-fluid">
           <h2>Registrations</h2><span></span>
           <table class="table table-striped table">
-            <thead></thead>
-            <tr>
-              <th>Name</th>
-              <th></th>
-            </tr>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Product</th>
+              </tr>
+            </thead>
             <tbody>
               <tr ng-repeat="registration in registrations | orderBy: 'name' ">
                 <td>{{registration.name}}</td>
-                <td> </td>
+                <td>{{registration.product}}</td>
               </tr>
             </tbody>
           </table>

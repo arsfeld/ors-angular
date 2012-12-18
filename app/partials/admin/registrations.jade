@@ -11,10 +11,10 @@ div
           span
           table.table.table-striped.table
             thead
-            tr
-              th Name
-              th
+              tr
+                th Name
+                th Product
             tbody
               tr(ng-repeat="registration in registrations | orderBy: 'name' ")
                 td {{registration.name}}
-                td 
+                td {{registration.product}}

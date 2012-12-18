@@ -12,24 +12,25 @@
     <div class="span3">
       <div ng-include="'/partials/admin/nav.html'"></div>
     </div>
-    <div class="span6">
+    <div class="span9">
       <div ng-controller="OfficesController">
         <div class="row-fluid">
           <h2>Offices</h2>
           <form id="office-add-form" name="officeForm" novalidate="novalidate" class="form-inline">
-            <input type="text" name="name" ng-model="office.name" required="required" placeholder="São Carlos" class="input-medium"/>
+            <input type="text" name="name" ng-model="office.name" required="required" placeholder="São Carlos" class="input"/>
             <div class="input-prepend"><span class="add-on">@</span>
               <input type="text" name="nick" ng-model="office.nick" ng-pattern="/^[A-Z]{2}$/" placeholder="SC" tooltip="Two letter name of the office" rel="tooltip" required="required" class="input-mini"/>
             </div>
             <button ng-click="save()" ng-disabled="officeForm.$invalid" class="btn btn-primary">Add office</button>
           </form>
           <div ng-include="'officeEdit'"></div><span></span>
-          <table class="table table-striped table">
+          <table class="table-striped table">
             <thead>
               <tr>
-                <th id="office-header">
-                  <input id="office-search" type="text" ng-model="search" placeholder="Search" ui-reset="ui-reset" class="search-query offices-query"/>
+                <th>
+                  <input type="text" ng-model="search" placeholder="Search" class="search-query offices-query"/>
                 </th>
+                <th class="centered">Admin</th>
                 <th></th>
               </tr>
             </thead>
@@ -44,9 +45,16 @@
                     </div>
                   </form>
                 </td>
-                <td id="office-buttons">
-                  <!-- Edit and delete buttons--><span ng-hide="editing"><a ng-disabled="saving" ng-click="edit()" class="btn"><i class="icon-edit"></i><span>Edit</span></a>
-                    <button ng-disabled="saving" ng-click="deleteDialog = true" class="btn btn-danger"><i class="icon-trash icon-white"></i><span>Delete</span></button>
+                <td class="centered"><a data-original-title="{{office.admin.join('
+')}}" ui-jq="tooltip">
+                    <ng-pluralize count="office.admin.length" when="{'0': 'No responsible!', 'one': '{{office.admin[0]}}',                           'other': '{} admins'}" ng-model="admin_count"></ng-pluralize></a>
+                  <div ng-hide="office.admin">
+                    <p class="text-warning"> <i class="icon-warning-sign"></i> No admin!</p>
+                  </div>
+                </td>
+                <td class="edit-buttons">
+                  <!-- Edit and delete buttons--><span ng-hide="editing"><a ng-disabled="saving" ng-click="edit()" class="btn"><i class="icon-edit"></i> Edit</a>
+                    <button ng-disabled="saving" ng-click="deleteDialog = true" class="btn btn-danger"><i class="icon-trash icon-white"></i> Delete</button>
                     <!-- Delete confirmation dialog-->
                     <div ui-modal="ui-modal" ng-model="deleteDialog" class="modal fade">
                       <div class="modal-header">
@@ -63,7 +71,7 @@
                 </td>
               </tr>
             </tbody>
-          </table><img src="img/loader.gif" ng-show="loading"/>
+          </table><img src="/img/loader.gif" ng-hide="offices"/>
         </div>
       </div>
     </div>

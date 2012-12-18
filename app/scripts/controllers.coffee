@@ -43,13 +43,16 @@ angular.module('app.controllers', ['app.models', 'ui'])
  'Office'
 
 ($scope, Office) ->
-  $scope.loading = true
 
-  loadOffices = () ->
+  refresh = () ->
     update = Office.query () ->
       $scope.offices = update
-      $scope.loading = false
-  loadOffices()
+  refresh()
+
+  $scope.$watch 'offices', () ->
+    #return unless @offices
+    #_.each @offices, (office) ->
+    #  console.log office
 
   $scope.edit = () ->
     @original = angular.copy(@office)
@@ -62,42 +65,14 @@ angular.module('app.controllers', ['app.models', 'ui'])
     @office.remove () =>
       @deleting = false
       @deleteDialog = false
-      loadOffices()
+      refresh()
   $scope.save = () ->
     this.editing = false
     this.saving = true
     new Office(@office).save () =>
       this.saving = false
       @office = {}
-      loadOffices()
-])
-
-.controller('OfficesEditController', [
-  '$scope'
-  '$location'
-  '$routeParams'
-  'Office'
-
-($scope, $location, $routeParams, Office) ->
-  $scope.loading = "Loading..."
-
-  if $routeParams.officeId?
-    Office.get id: $routeParams.officeId, (office) =>
-      $scope.loading = false
-      $scope.office = new Office(@original = office)
-  else
-    $scope.loading = false
-
-  $scope.isClean = () =>
-    angular.equals(@original, $scope.office)
-  $scope.destroy = () =>
-    $scope.loading = "Deleting..."
-    @original.remove () ->
-      $location.path '#/admin/offices'
-  $scope.save = () ->
-    $scope.loading = "Saving..."
-    new Office($scope.office).save () ->
-      $location.path '/#/admin/offices'
+      refresh()
 ])
 
 .controller('ProductsController', [
@@ -173,8 +148,7 @@ angular.module('app.controllers', ['app.models', 'ui'])
     product = (product for product in $rootScope.allProducts when \
       product.slug == $routeParams.productId)
     $scope.product = product[0]
-
-  $scope.registration = {subscribe: true}
+    $scope.registration = {product: $scope.product.slug, subscribe: true}
 
   $scope.register = () ->
     new Registration($scope.registration).save()
