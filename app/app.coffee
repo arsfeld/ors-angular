@@ -32,6 +32,8 @@ App.config([
       # Admin Section
       .when '/admin'
         redirectTo: '/admin/offices'
+      .when '/admin/registrations',
+        templateUrl: '/partials/admin/registrations.html'
       .when '/admin/offices',
         templateUrl: '/partials/admin/offices.html'
       .when '/admin/offices/edit/:officeId',
