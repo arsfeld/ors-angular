@@ -179,3 +179,11 @@ angular.module('app.controllers', ['app.models', 'ui'])
   $scope.register = () ->
     new Registration($scope.registration).save()
 ])
+
+.controller('RegistrationsController', [
+  '$scope'
+  'Registration'
+
+($scope, Registration) ->
+  $scope.registrations = Registrations.query()
+])
