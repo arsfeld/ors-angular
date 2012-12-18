@@ -173,7 +173,7 @@ angular.module('app.controllers', ['app.models', 'ui'])
       product.slug == $routeParams.productId)
     $scope.product = product[0]
 
-  $scope.registration.subscribe = true
+  $scope.registration?.subscribe = true
 
   $scope.register = () ->
     console.log $scope.registration
