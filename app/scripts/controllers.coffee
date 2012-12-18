@@ -177,6 +177,5 @@ angular.module('app.controllers', ['app.models', 'ui'])
   $scope.registration = {subscribe: true}
 
   $scope.register = () ->
-    console.log $scope.registration
-    console.log "Help!"
+    Registration.$insert $scope.registration
 ])
