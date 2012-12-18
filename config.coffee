@@ -24,7 +24,7 @@ exports.config =
 
     stylesheets:
       joinTo:
-        'css/app.css': /^(app|vendor)/
+        'css/app.css': /^(client|vendor)/
     templates:
       joinTo: 'js/templates.js'
 
