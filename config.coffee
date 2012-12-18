@@ -5,6 +5,7 @@ exports.config =
     wrapper: false
   paths:
     public: '_public'
+    app: 'client'
   files:
     javascripts:
       joinTo:
