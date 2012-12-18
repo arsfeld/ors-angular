@@ -185,5 +185,5 @@ angular.module('app.controllers', ['app.models', 'ui'])
   'Registration'
 
 ($scope, Registration) ->
-  $scope.registrations = Registrations.query()
+  $scope.registrations = Registration.query()
 ])
