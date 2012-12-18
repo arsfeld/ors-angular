@@ -1,8 +1,9 @@
 
 div(ng-controller='WelcomeController')
 
+  img(src="img/loader.gif", ng-hide="allProducts")
   div(ng-show="allProducts")
-      img(src="img/loader.gif", ng-hide="allProducts")
+
       h3(translate) Select below which program you are interested:
       .row-fluid
         
