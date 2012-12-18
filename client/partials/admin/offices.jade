@@ -42,7 +42,7 @@ div
                     span {{office.name}}
                     br
                     small @{{office.nick}}
-                  form#office-form.form-inline(name="officeForm", ng-show="editing")
+                  form.form-inline(id="office-form, name="officeForm", ng-show="editing")
                     input.input-medium(type="text", name="name", ng-model="office.name", required)
                     .input-prepend
                       span.add-on @
