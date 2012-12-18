@@ -1,4 +1,7 @@
-==Acre==
+{
+
+"Acre": [
+
 ;Pública
 :;Federais
 *Ifac - Instituto Federal do Acre
@@ -12,7 +15,9 @@
 *Faeuc - Faculdade Euclides da Cunha
 *Firb - Faculdade Integrada Rio Branco
 
-==Alagoas==
+],
+"Alagoas": [
+
 ;Públicas
 :;Estaduais
 *Uneal - Universidade Estadual de Alagoas
@@ -26,7 +31,10 @@ Centro de Estudos Superiores de Maceió
 
 Faculdade Integrada Tiradentes
 
-==Amapá==
+
+],
+"Amapá": [
+
 ;Públicas
 :;Estadual
 * Ueap - Universidade Estadual do Amapá
@@ -38,7 +46,10 @@ Faculdade Integrada Tiradentes
 * SEAMA|Faculdade SEAMA
 * Faculdade FAMA
 
-==Amazonas==
+
+],
+"Amazonas": [
+
 ;Públicas
 :;Estadual
 * Uea - Universidade do Estado do Amazonas
@@ -65,10 +76,16 @@ Faculdade Integrada Tiradentes
 * Uninorte - Centro Universitário do Norte
 * Unip - Universidade Paulista
 
-==Bahia==
+
+],
+"Bahia": [
+
 {{Artigo principal|Anexo:Lista de instituições de ensino superior da Bahia}}
 
-==Ceará==
+
+],
+"Ceará": [
+
 ;Públicas
 :;Estaduais
 * Uece - Universidade Estadual do Ceará
@@ -104,7 +121,10 @@ Faculdade Integrada Tiradentes
 * FVJ - Faculdade Vale do Jaguaribe
 * FGF - Faculdade Integrada da Grande Fortaleza
 
-== Distrito Federal (Brasil)|Distrito Federal ==
+
+],
+" Distrito Federal (Brasil)|Distrito Federal ": [
+
 ;Públicas
 :;Federal
 * IFB - Instituto Federal de Brasília
@@ -132,7 +152,10 @@ Faculdade Integrada Tiradentes
 * UPIS -  Faculdades Integradas
 * Unicesp - 
 
-==Espírito Santo (estado)|Espírito Santo==
+
+],
+"Espírito Santo (estado)|Espírito Santo": [
+
 ;Públicas
 :;Federais
 * IFES - Instituto Federal do Espírito Santo
@@ -164,7 +187,10 @@ Faculdade Integrada Tiradentes
 * FAACZ - Faculdade de Aracruz
 * FACE - Faculdade Casa do Estudante
 
-==Goiás==
+
+],
+"Goiás": [
+
 ;Públicas
 :;Estadual
 *UEG - UEG|Universidade Estadual de Goiás
@@ -193,7 +219,10 @@ Faculdade Integrada Tiradentes
 *UniEvangelica-  Universidade Evangelica
 *Unianhanguera-  Universidade Anhanguera
 
-==Maranhão==
+
+],
+"Maranhão": [
+
 ;Públicas
 :;Estaduais
 * UEMA - Universidade Estadual do Maranhão
@@ -214,7 +243,10 @@ Faculdade Integrada Tiradentes
 * UNICEUMA - Centro Universitário do Maranhão (São Luís)
 * FAMA - Faculdade Atenas Maranhense
 
-==Mato Grosso==
+
+],
+"Mato Grosso": [
+
 ;Públicas
 ;;Estadual
 *UNEMAT - Universidade do Estado de Mato Grosso
@@ -229,7 +261,10 @@ Faculdade Integrada Tiradentes
 *UNIVAR - Universidades Unidas do Vale do Araguaia-Barra do Garças
 *CATHEDRAL - Faculdades Cathedral-Barra do Garças
 
-==Mato Grosso do Sul==
+
+],
+"Mato Grosso do Sul": [
+
 ;Públicas
 ;;Estadual
 *UEMS - Universidade Estadual do Mato Grosso do Sul
@@ -247,7 +282,10 @@ Faculdade Integrada Tiradentes
 *UNIDERP - Universidade para o Desenvolvimento do Estado e Região do Pantanal
 *UNIGRAN - Centro Universitário da Grande Dourados
 
-== Minas Gerais ==
+
+],
+" Minas Gerais ": [
+
  
 
 
@@ -337,7 +375,10 @@ Faculdade Integrada Tiradentes
 * UNIVERSITAS - Centro Universitário de Itajubá
 * UNIVIÇOSA  -  União de Ensino Superior de Viçosa - Univiçosa
 
-==Pará==
+
+],
+"Pará": [
+
 ;Públicas
 :;Federais
 * IFPA - Instituto Federal do Pará    
@@ -368,7 +409,10 @@ Faculdade Integrada Tiradentes
 * UNIP - Universidade Paulista
 * FACETE - Faculdade de Ensino Tecnológico do Estado do Pará
 
-== Paraíba==
+
+],
+" Paraíba": [
+
 ;Públicas
 :;Estadual
 * UEPB - Universidade Estadual da Paraíba
@@ -386,7 +430,10 @@ Faculdade Integrada Tiradentes
 * FIP - Faculdades Integradas de Patos
 * IESP - Instituto de Educação Superior da Paraíba
 
-== Paraná ==
+
+],
+" Paraná ": [
+
 ;Públicas
 :;Estaduais
 * UNESPAR - Universidade Estadual do Paraná
@@ -437,11 +484,17 @@ Faculdade Integrada Tiradentes
 * FAAB - Faculdade Alfa Brasil
 * UNISEP - União de Ensino do Sudoeste do Paraná
 
-==Pernambuco==
+
+],
+"Pernambuco": [
+
 
 {{Anexo|Lista de instituições de ensino superior de Pernambuco}}
 
-==Piauí==
+
+],
+"Piauí": [
+
 ;Públicas
 :;Federais
 * UFPI - Universidade Federal do Piauí
@@ -463,7 +516,10 @@ Faculdade Integrada Tiradentes
 * NovaUnesc
 * Aespi/Fapi
 
-==Rio de Janeiro==
+
+],
+"Rio de Janeiro": [
+
 
 
 ;Públicas
@@ -524,7 +580,10 @@ Faculdade Integrada Tiradentes
 *UBM - Centro Universitário de Barra Mansa
 *UNESA - Universidade Estácio de Sá
 
-== Rio Grande do Norte ==
+
+],
+" Rio Grande do Norte ": [
+
 
 ;Públicas
 :;Estadual
@@ -551,7 +610,10 @@ Faculdade Integrada Tiradentes
 * Facene - Faculdade de Enfermagem e Medicina Nova Esperança de Mossoró
 * Faculdade Mater Christi
 
-== Rio Grande do Sul ==
+
+],
+" Rio Grande do Sul ": [
+
 ;Públicas
 :;Estadual
 * UERGS - Universidade Estadual do Rio Grande do Sul
@@ -603,7 +665,10 @@ Faculdade Integrada Tiradentes
 * CASTELLI - Escola Superior de Hotelaria Castelli
 * FAE - Faculdade Anglicana de Erechim
 
-==Rondônia==
+
+],
+"Rondônia": [
+
 ;Públicas
 * UNIR - Universidade Federal de Rondônia
 * IFRO - Instituto Federal de Rondônia
@@ -626,7 +691,10 @@ Faculdade Integrada Tiradentes
 * CLARETIANO-centro universitário                                                                                                                                      * Unopar-universidade á distancia do norte do Paraná
 * Funorte-Faculdades Unidas do Norte de Minas
 
-==Roraima==
+
+],
+"Roraima": [
+
 ;Públicas
 :;Estadual
 * UERR - Universidade Estadual de Roraima
@@ -639,7 +707,10 @@ Faculdade Integrada Tiradentes
 * Faculdades Cathedral
 * FARES - Faculdade Roraimense de Ensino Superior
 
-== Santa Catarina ==
+
+],
+" Santa Catarina ": [
+
 ;Públicas
 :;Estadual
 *UDESC - Universidade do Estado de Santa Catarina
@@ -669,7 +740,10 @@ Faculdade Integrada Tiradentes
 *UNIPLAC - Universidade do Planalto Catarinense
 *ACE - Associação Catarinense de Ensino
 
-== São Paulo ==
+
+],
+" São Paulo ": [
+
 
 
 ;Públicas
@@ -828,7 +902,10 @@ Faculdade Integrada Tiradentes
 ::* TECMED - Faculdade de Tecnologia Tecmed
 ::* BANDTEC - Faculdade de Tecnologia Bandeirantes
 
-==Sergipe==
+
+],
+"Sergipe": [
+
 ;Públicas
 ;;Federais
 * Universidade Federal de Sergipe (UFS)
@@ -849,7 +926,10 @@ Faculdade Integrada Tiradentes
 * Faculdade Interativa COC (UniCOC)
 * Faculdade de Tecnologia e Ciências (FTC-EAD)
 
-==Tocantins==
+
+],
+"Tocantins": [
+
 ;Públicas
 ;;Estaduais
 * UNITINS - Fundação Universidade do Tocantins 
@@ -872,27 +952,6 @@ Faculdade Integrada Tiradentes
 * ITPAC de Porto Nacional - Instituto Tocantinense Presidente Antônio Carlos de Porto Nacional
 * UNEST - União Educacional de Ensino Superior do Médio Tocantins
 
-==Ver Também==
 
-*Anexo:Lista de Universidades Estaduais do Brasil|Lista de universidades estaduais do Brasil
-*Anexo:Lista universidades federais do Brasil
-*Anexo:Lista universidades municipais do Brasil
-
-=={{Ligações externas}}== 
-* 
-* 
-* 
-* 
-* 
-* 
-
-{{ref-section}}
-
-Categoria:Instituições de ensino superior do Brasil|*
-Categoria:Listas de instituições|Instituições
-
-de:Liste der Universitäten in Brasilien
-en:List of universities in Brazil
-eo:Universitatoj kaj altlernejoj en Brazilo
-no:Liste over universiteter og høyere utdanning i Brasil
-ru:Университеты Бразилии
+]
+}
