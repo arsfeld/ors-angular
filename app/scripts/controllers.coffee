@@ -177,5 +177,5 @@ angular.module('app.controllers', ['app.models', 'ui'])
   $scope.registration = {subscribe: true}
 
   $scope.register = () ->
-    Registration.$insert $scope.registration
+    new Registration($scope.registration).save()
 ])
