@@ -32,6 +32,38 @@ div(ng-controller='RegistrationController')
           input(type="text", name="city", ng-model="registration.city", 
           	required, placeholder="Cidade")
           span.help-inline(ng-show="registrationForm.city.$error.required") Obrigatório
+      .control-group
+        label.control-label(for="state") Estado
+        .controls
+        select(name='state', ng-model="registration.state")
+    option(value='estado') Selecione o Estado
+      option(value='ac') Acre
+      option(value='al') Alagoas
+      option(value='am') Amazonas
+      option(value='ap') Amapá
+      option(value='ba') Bahia
+      option(value='ce') Ceará
+      option(value='df') Distrito Federal
+      option(value='es') Espírito Santo
+      option(value='go') Goiás
+      option(value='ma') Maranhão
+      option(value='mt') Mato Grosso
+      option(value='ms') Mato Grosso do Sul
+      option(value='mg') Minas Gerais
+      option(value='pa') Pará
+      option(value='pb') Paraíba
+      option(value='pr') Paraná
+      option(value='pe') Pernambuco
+      option(value='pi') Piauí
+      option(value='rj') Rio de Janeiro
+      option(value='rn') Rio Grande do Norte
+      option(value='ro') Rondônia
+      option(value='rs') Rio Grande do Sul
+      option(value='rr') Roraima
+      option(value='sc') Santa Catarina
+      option(value='se') Sergipe
+      option(value='sp') São Paulo
+      option(value='to') Tocantins
       .control-group(ng-class="{error: registrationForm.university.$invalid}")
         label.control-label(for="university") Universidade
         .controls
