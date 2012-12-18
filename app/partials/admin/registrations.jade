@@ -5,13 +5,9 @@ div
     .span3
       div(ng-include="'/partials/admin/nav.html'")
     .span6
-      div(ng-controller='ProductsController')
+      div(ng-controller='RegistrationController')
         .row-fluid
-          h2 Products
-          .btn-toolbar
-            a.btn.btn-primary(href='/admin/products/new')
-              i.icon-plus
-              span Add Product
+          h2 Registrations
           span
           table.table.table-striped.table
             thead
