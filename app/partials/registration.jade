@@ -49,4 +49,6 @@ div(ng-controller='RegistrationController')
           	placeholder="")
       .control-group
         .controls
+          label.checkbox
+            input(type="checkbox") Desejo receber notícias sobre a AIESEC
           button.btn.btn-primary(ng-click="register()", ng-disabled="registrationForm.$invalid") Enviar
