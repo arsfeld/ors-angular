@@ -50,6 +50,6 @@ div(ng-controller='RegistrationController')
       .control-group
         .controls
           label.checkbox
-            input(type="checkbox") 
+            input(type="checkbox", ng-model="registration.subscribe") 
             | Desejo receber notícias sobre a AIESEC
           button.btn.btn-primary(ng-click="register()", ng-disabled="registrationForm.$invalid") Enviar
