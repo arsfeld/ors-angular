@@ -164,8 +164,9 @@ angular.module('app.controllers', ['app.models', 'ui'])
   '$routeParams'
   'Product'
   'Office'
+  'Registration'
 
-($scope, $rootScope, $routeParams, Product, Office) ->
+($scope, $rootScope, $routeParams, Product, Office, Registration) ->
   $rootScope.$watch 'allProducts', () ->
     if not $rootScope.allProducts?
       return
