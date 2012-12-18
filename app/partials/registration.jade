@@ -50,7 +50,7 @@ div(ng-controller='RegistrationController')
       .control-group(ng-class="{error: registrationForm.indication.$invalid}")
         label.control-label(for="yearIngress") Como ficou sabendo da AIESEC?
         .controls
-          select(ng-model="registration.indication")
+          select(ui-select2="{width: 'resolve'}", ng-model="registration.indication")
             option Facebook
             option Amigos
             option Anúncios

@@ -56,7 +56,7 @@
       <div ng-class="{error: registrationForm.indication.$invalid}" class="control-group">
         <label for="yearIngress" class="control-label">Como ficou sabendo da AIESEC?</label>
         <div class="controls">
-          <select ng-model="registration.indication">
+          <select ui-select2="{width: 'resolve'}" ng-model="registration.indication">
             <option>Facebook</option>
             <option>Amigos</option>
             <option>Anúncios</option>
