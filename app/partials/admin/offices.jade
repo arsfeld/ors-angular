@@ -49,10 +49,10 @@ div
                       input.input-mini(type="text", name="nick", ng-model="office.nick",
                         ng-pattern="/^[A-Z]{2}$/", required,
                         tooltip="Two letter name of the office", rel="tooltip")
-                td
+                td#office-buttons
 
                   // Edit and delete buttons
-                  #office-buttons(ng-hide="editing")
+                  span(ng-hide="editing")
                     a.btn(ng-disabled="saving", ng-click="edit()")
                       i.icon-edit
                       span Edit
