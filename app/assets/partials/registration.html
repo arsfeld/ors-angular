@@ -53,13 +53,27 @@
           <input type="text" name="yearIngress" ng-model="registration.yearIngress" placeholder=""/>
         </div>
       </div>
+      <div ng-class="{error: registrationForm.indication.$invalid}" class="control-group">
+        <label for="yearIngress" class="control-label">Como ficou sabendo da AIESEC?</label>
+        <div class="controls">
+          <select ng-model="registration.indication">
+            <option>Facebook</option>
+            <option>Amigos</option>
+            <option>Anúncios</option>
+            <option>Eventos</option>
+            <option>Outro</option>
+          </select>
+        </div>
+      </div>
       <div ng-class="{error: registrationForm.indicatedBy.$invalid}" class="control-group">
         <label for="yearIngress" class="control-label">Como ficou sabendo da AIESEC?</label>
         <div class="controls">
           <select ng-model="registration.indicatedBy">
             <option>Facebook</option>
+            <option>Friends</option>
+            <option>Ads</option>
+            <option>Event</option>
           </select>
-          <input type="text" name="yearIngress" ng-model="registration.yearIngress" placeholder=""/>
         </div>
       </div>
       <div class="control-group">

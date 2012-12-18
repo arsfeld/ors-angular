@@ -47,14 +47,24 @@ div(ng-controller='RegistrationController')
         .controls
           input(type="text", name="yearIngress", ng-model="registration.yearIngress", 
           	placeholder="")
+      .control-group(ng-class="{error: registrationForm.indication.$invalid}")
+        label.control-label(for="yearIngress") Como ficou sabendo da AIESEC?
+        .controls
+          select(ng-model="registration.indication")
+            option Facebook
+            option Amigos
+            option Anúncios
+            option Eventos
+            option Outro
       .control-group(ng-class="{error: registrationForm.indicatedBy.$invalid}")
         label.control-label(for="yearIngress") Como ficou sabendo da AIESEC?
         .controls
           select(ng-model="registration.indicatedBy")
             option Facebook
+            option Friends
+            option Ads
+            option Event
 
-          input(type="text", name="yearIngress", ng-model="registration.yearIngress", 
-            placeholder="")
       .control-group
         .controls
           label.checkbox
