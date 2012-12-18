@@ -15,7 +15,9 @@ div
     .span9
       div(ng-controller='OfficesController')
         .row-fluid
-          h2 Offices
+          h2 
+            i.icon-globe
+            |  Offices
           form#office-add-form.form-inline(name="officeForm", novalidate)
             input.input(type="text", name="name", ng-model="office.name",
               required, placeholder="São Carlos")
