@@ -37,7 +37,7 @@
               <tr ng-repeat="office in offices | filter: search | orderBy: 'name' ">
                 <td>
                   <div ng-hide="editing"> <span>{{office.name}}</span><br/><small>@{{office.nick}}</small></div>
-                  <form name="officeForm" ng-show="editing" class="form-inline">
+                  <form id="office-form" name="officeForm" ng-show="editing" class="form-inline">
                     <input type="text" name="name" ng-model="office.name" required="required" class="input-medium"/>
                     <div class="input-prepend"><span class="add-on">@</span>
                       <input type="text" name="nick" ng-model="office.nick" ng-pattern="/^[A-Z]{2}$/" required="required" tooltip="Two letter name of the office" rel="tooltip" class="input-mini"/>
