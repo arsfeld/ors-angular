@@ -36,10 +36,6 @@ App.config([
         templateUrl: '/partials/admin/registrations.html'
       .when '/admin/offices',
         templateUrl: '/partials/admin/offices.html'
-      .when '/admin/offices/edit/:officeId',
-        templateUrl: '/partials/admin/offices_edit.html'
-      .when '/admin/offices/new',
-        templateUrl: '/partials/admin/offices_edit.html'
       .when '/admin/products',
         templateUrl: '/partials/admin/products.html'
       .when '/admin/products/edit/:productId',
