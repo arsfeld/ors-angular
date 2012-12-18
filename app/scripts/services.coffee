@@ -14,3 +14,7 @@ angular.module('app.models', ['ngResource', 'mongolabResource'])
 .factory('Product', ($mongolabResource) ->
   Product = $mongolabResource 'product'
 )
+
+.factory('Registration', ($mongolabResource) ->
+  Registration = $mongolabResource 'registration'
+)
