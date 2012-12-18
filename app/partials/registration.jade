@@ -57,7 +57,7 @@ div(ng-controller='RegistrationController')
             option Eventos
             option Outro
       .control-group(ng-class="{error: registrationForm.indicatedBy.$invalid}")
-        label.control-label(for="yearIngress") Como ficou sabendo da AIESEC?
+        label.control-label(for="yearIngress") Se você selecionou amigos, eventos ou outro, por favor diga o nome aqui:
         .controls
           select(ng-model="registration.indicatedBy")
             option Facebook
