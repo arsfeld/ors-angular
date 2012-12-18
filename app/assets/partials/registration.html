@@ -66,14 +66,9 @@
         </div>
       </div>
       <div ng-class="{error: registrationForm.indicatedBy.$invalid}" class="control-group">
-        <label for="yearIngress" class="control-label">Nome do amigo, evento ou outro:</label>
+        <label for="indicatedBy" class="control-label">Nome do amigo, evento ou outro:</label>
         <div class="controls">
-          <select ng-model="registration.indicatedBy">
-            <option>Facebook</option>
-            <option>Friends</option>
-            <option>Ads</option>
-            <option>Event</option>
-          </select>
+          <input type="text" name="indicatedBy" ng-model="registration.indicatedBy" placeholder=""/>
         </div>
       </div>
       <div class="control-group">

@@ -57,14 +57,10 @@ div(ng-controller='RegistrationController')
             option Eventos
             option Outro
       .control-group(ng-class="{error: registrationForm.indicatedBy.$invalid}")
-        label.control-label(for="yearIngress") Nome do amigo, evento ou outro:
+        label.control-label(for="indicatedBy") Nome do amigo, evento ou outro:
         .controls
-          select(ng-model="registration.indicatedBy")
-            option Facebook
-            option Friends
-            option Ads
-            option Event
-
+          input(type="text", name="indicatedBy", ng-model="registration.indicatedBy", 
+            placeholder="")
       .control-group
         .controls
           label.checkbox
