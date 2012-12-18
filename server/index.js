@@ -65,17 +65,6 @@ app.configure('development', function () {
   brunch.stdout.on('data', function (data) {
     console.log('Brunch: ' + data);
   });
-    if (error) {
-      console.log('An error occurred while attempting to start brunch.\n' +
-                  'Make sure that it is not running in another window.\n');
-      throw error;
-    } else {
-      .stdout.on('data', function (data) {
-        console.log('stdout: ' + data);
-      });
-    }
-
-  });
 
 });
 
