@@ -56,6 +56,8 @@ app.configure('development', function () {
   mongoose.connect(app.get('dbUrl'));
   app.use(express.errorHandler());
   
+  console.log("Starting Brunch...");
+
   var spawn = require('child_process').spawn;
   var brunch = spawn('node_modules/brunch/bin/brunch', ['watch']);
   brunch.on('exit', function (code) {
