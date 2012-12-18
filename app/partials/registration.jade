@@ -50,6 +50,9 @@ div(ng-controller='RegistrationController')
       .control-group(ng-class="{error: registrationForm.indicatedBy.$invalid}")
         label.control-label(for="yearIngress") Como ficou sabendo da AIESEC?
         .controls
+          select(ng-model="registration.indicatedBy")
+            option Facebook
+
           input(type="text", name="yearIngress", ng-model="registration.yearIngress", 
             placeholder="")
       .control-group
