@@ -30,6 +30,8 @@ App.config([
       .when('/login', {templateUrl : '/partials/account/login.html'})
 
       # Admin Section
+      .when '/admin'
+        redirectTo: '/admin/offices'
       .when '/admin/offices',
         templateUrl: '/partials/admin/offices.html'
       .when '/admin/offices/edit/:officeId',
