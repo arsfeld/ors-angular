@@ -13,18 +13,8 @@ div
             thead
             tr
               th Name
-              th Tagline
-              th Slug
               th
             tbody
-              tr(ng-repeat="product in products | orderBy: 'name' ")
-                td {{product.name}}
-                td {{product.tagline}}
-                td {{product.slug}}
+              tr(ng-repeat="registration in registrations | orderBy: 'name' ")
+                td {{registration.name}}
                 td
-                  a.btn(href="/admin/products/edit/{{product._id.$oid}}") 
-                    i.icon-edit
-                    span Edit
-                  a.btn.btn-danger(ng-click="deleteProduct(product._id.$oid)") Delete
-        div(ng-show="loading")
-          img(src="img/loader.gif") 

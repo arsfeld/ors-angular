@@ -12,21 +12,16 @@
             <thead></thead>
             <tr>
               <th>Name</th>
-              <th>Tagline</th>
-              <th>Slug</th>
               <th></th>
             </tr>
             <tbody>
-              <tr ng-repeat="product in products | orderBy: 'name' ">
-                <td>{{product.name}}</td>
-                <td>{{product.tagline}}</td>
-                <td>{{product.slug}}</td>
-                <td><a href="/admin/products/edit/{{product._id.$oid}}" class="btn"> <i class="icon-edit"></i><span>Edit</span></a><a ng-click="deleteProduct(product._id.$oid)" class="btn btn-danger">Delete</a></td>
+              <tr ng-repeat="registration in registrations | orderBy: 'name' ">
+                <td>{{registration.name}}</td>
+                <td></td>
               </tr>
             </tbody>
           </table>
         </div>
-        <div ng-show="loading"><img src="img/loader.gif"/></div>
       </div>
     </div>
   </div>
