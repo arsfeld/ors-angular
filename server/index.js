@@ -57,7 +57,7 @@ app.configure('development', function () {
   app.use(express.errorHandler());
   
   var spawn = require('child_process').spawn;
-  spawn('node_modules/brunch/bin/brunch watch', function callback(error, stdout, stderr) {
+  spawn('node_modules/brunch/bin/brunch', ['watch'], function callback(error, stdout, stderr) {
     if (error) {
       console.log('An error occurred while attempting to start brunch.\n' +
                   'Make sure that it is not running in another window.\n');
