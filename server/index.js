@@ -63,7 +63,7 @@ app.configure('development', function () {
   });
 
   brunch.stdout.on('data', function (data) {
-    console.log('Brunch: ' + data);
+    console.log('brunch: ' + data);
   });
 
 });
