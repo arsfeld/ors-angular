@@ -173,6 +173,6 @@ angular.module('app.controllers', ['app.models', 'ui'])
       product.slug == $routeParams.productId)
     $scope.product = product[0]
 
-  $scope.register = ->
+  $scope.register = () ->
     console.log registration
 ])
