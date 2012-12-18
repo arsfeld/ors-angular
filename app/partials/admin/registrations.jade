@@ -18,3 +18,4 @@ div
               tr(ng-repeat="registration in registrations | orderBy: 'name' ")
                 td {{registration.name}}
                 td {{registration.product}}
+          img(ng-hide="registrations", src="/img/loader.gif")
