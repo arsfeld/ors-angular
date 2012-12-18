@@ -56,6 +56,9 @@ app.configure "development", ->
   brunch.stdout.on "data", (data) ->
     console.log "brunch: " + data
 
+  brunch.stderr.on "data", (data) ->
+    console.log "brunch error: " + data
+
 app.configure "test", ->
   opts = server:
     auto_reconnect: false
