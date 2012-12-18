@@ -172,4 +172,7 @@ angular.module('app.controllers', ['app.models', 'ui'])
     product = (product for product in $rootScope.allProducts when \
       product.slug == $routeParams.productId)
     $scope.product = product[0]
+
+  $scope.register = ->
+    console.log registration
 ])
