@@ -175,4 +175,5 @@ angular.module('app.controllers', ['app.models', 'ui'])
 
   $scope.register = () ->
     console.log $scope.registration
+    console.log "Help!"
 ])
