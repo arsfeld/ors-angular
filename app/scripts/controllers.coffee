@@ -174,5 +174,5 @@ angular.module('app.controllers', ['app.models', 'ui'])
     $scope.product = product[0]
 
   $scope.register = () ->
-    console.log registration
+    console.log $scope.registration
 ])
