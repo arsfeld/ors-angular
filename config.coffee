@@ -5,11 +5,10 @@ exports.config =
     wrapper: false
   paths:
     public: '_public'
-    app: 'client'
   files:
     javascripts:
       joinTo:
-        'js/app.js': /^client/
+        'js/app.js': /^app/
         'js/vendor.js': /^vendor/
         'test/scenarios.js': /^test(\/|\\)e2e/
       order:
@@ -25,7 +24,7 @@ exports.config =
 
     stylesheets:
       joinTo:
-        'css/app.css': /^(client|vendor)/
+        'css/app.css': /^(app|vendor)/
     templates:
       joinTo: 'js/templates.js'
 
