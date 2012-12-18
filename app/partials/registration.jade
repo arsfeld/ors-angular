@@ -47,4 +47,6 @@ div(ng-controller='RegistrationController')
         .controls
           input(type="text", name="yearIngress", ng-model="registration.yearIngress", 
           	placeholder="")
-      button.btn.btn-primary(ng-click="register()", ng-disabled="registrationForm.$invalid") Enviar
+      .control-group
+        .controls
+          button.btn.btn-primary(ng-click="register()", ng-disabled="registrationForm.$invalid") Enviar
