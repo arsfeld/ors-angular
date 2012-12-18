@@ -6,7 +6,7 @@ div
       div(ng-include="'/partials/admin/nav.html'")
     .span6
       div(ng-controller='RegistrationsController')
-        .row-fluid
+        .row
           h2 Registrations
           span
           table.table.table-striped.table
@@ -18,4 +18,5 @@ div
               tr(ng-repeat="registration in registrations | orderBy: 'name' ")
                 td {{registration.name}}
                 td {{registration.product}}
+          div
           img(ng-hide="registrations", src="/img/loader.gif")
