@@ -57,8 +57,8 @@ app.configure('development', function () {
   app.use(express.errorHandler());
   
   var spawn = require('child_process').spawn;
-  brunch = spawn('node_modules/brunch/bin/brunch', ['watch']);
-  brunch..on('exit', function (code) {
+  var brunch = spawn('node_modules/brunch/bin/brunch', ['watch']);
+  brunch.on('exit', function (code) {
     console.log('Brunch process exited with code ' + code);
   });
 
