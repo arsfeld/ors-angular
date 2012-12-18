@@ -7,7 +7,7 @@ angular.module('mongolabResource', ['ngResource'])
     ($resource, API_KEY, DB_NAME) ->
       (collectionName) ->
         Collection = $resource "https://api.mongolab.com/api/1/databases/" +
-                                "#{DB_NAME}/collections/#{collectionName}/:id",
+                               "#{DB_NAME}/collections/#{collectionName}/:id",
           apiKey:API_KEY
           id:'@_id.$oid',
             update:
