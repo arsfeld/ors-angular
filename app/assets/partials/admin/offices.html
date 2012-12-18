@@ -37,7 +37,7 @@
               <tr ng-repeat="office in offices | filter: search | orderBy: 'name' ">
                 <td>
                   <div ng-hide="editing"> <span>{{office.name}}</span><br/><small>@{{office.nick}}</small></div>
-                  <form id="office-form" name="officeForm" ng-show="editing" class="form-inline">
+                  <form name="officeForm" ng-show="editing" class="form-inline">
                     <input type="text" name="name" ng-model="office.name" required="required" class="input-medium"/>
                     <div class="input-prepend"><span class="add-on">@</span>
                       <input type="text" name="nick" ng-model="office.nick" ng-pattern="/^[A-Z]{2}$/" required="required" tooltip="Two letter name of the office" rel="tooltip" class="input-mini"/>
@@ -45,8 +45,7 @@
                   </form>
                 </td>
                 <td>
-                  <!-- Edit and delete buttons-->
-                  <div id="office-buttons" ng-hide="editing"><a ng-disabled="saving" ng-click="edit()" class="btn"><i class="icon-edit"></i><span>Edit</span></a>
+                  <!-- Edit and delete buttons--><span ng-hide="editing"><a ng-disabled="saving" ng-click="edit()" class="btn"><i class="icon-edit"></i><span>Edit</span></a>
                     <button ng-disabled="saving" ng-click="deleteDialog = true" class="btn btn-danger"><i class="icon-trash icon-white"></i><span>Delete</span></button>
                     <!-- Delete confirmation dialog-->
                     <div ui-modal="ui-modal" ng-model="deleteDialog" class="modal fade">
@@ -57,8 +56,7 @@
                         <p>Are you sure you want to delete {{office.name}}?</p>
                       </div>
                       <div class="modal-footer"><a ng-click="deleteDialog = false" class="btn">Cancel</a><a ng-click="delete()" class="btn btn-danger">Delete</a></div>
-                    </div>
-                  </div>
+                    </div></span>
                   <!-- Editing controls--><span ng-show="editing">
                     <button ng-click="save()" ng-disabled="officeForm.$invalid" class="btn btn-primary"><span>Save</span></button>
                     <button ng-click="cancelEdit()" class="btn"><span>Cancel</span></button></span>
