@@ -96,7 +96,7 @@ app.post(API_BASE_URL + '/users', user.create);
 app.get(API_BASE_URL + '/users/me', user.current);
 app.get(API_BASE_URL + '/users/:userId', user.read);
 app.put(API_BASE_URL + '/users/:userId', user.update);
-app.delete(API_BASE_URL + '/users/:userId', user.delete);
+//app.delete(API_BASE_URL + '/users/:userId', user.delete);
 
 // Catch all route -- If a request makes it this far, it will be passed to angular.
 // This allows for html5mode to be set to true. E.g.
