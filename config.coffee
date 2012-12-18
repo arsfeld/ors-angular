@@ -8,7 +8,7 @@ exports.config =
   files:
     javascripts:
       joinTo:
-        'js/app.js': /^app/
+        'js/app.js': /^client/
         'js/vendor.js': /^vendor/
         'test/scenarios.js': /^test(\/|\\)e2e/
       order:
