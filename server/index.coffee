@@ -56,7 +56,6 @@ app.configure "development", ->
   brunch.stdout.on "data", (data) ->
     console.log "brunch: " + data
 
-
 app.configure "test", ->
   opts = server:
     auto_reconnect: false
@@ -67,7 +66,6 @@ app.configure "test", ->
 # Routes //
 app.get "/", (req, res) ->
   res.render "index.html"
-
 
 # auth
 app.get AUTH_URL + "/logout", auth.logout
