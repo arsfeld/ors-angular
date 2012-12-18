@@ -7,7 +7,7 @@
       <div class="control-group">
         <div class="controls">
           <select ui-select2="{width: 'resolve'}" ng-model="registration.office">
-            <option ng-repeat="office in allOffices | sort: 'name'" value="{{office.nick}}">{{office.name}}</option>
+            <option ng-repeat="office in allOffices | orderBy: 'name'" value="{{office.nick}}">{{office.name}}</option>
           </select>
         </div>
       </div>
