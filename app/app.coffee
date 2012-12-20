@@ -13,7 +13,7 @@ App = angular.module('app', [
 .factory('$templateCache', [
   '$cacheFactory'
   '$http'
-  '$compile'
+  '$injector'
 
   ($cacheFactory, $http, $injector) ->
     cache = $cacheFactory 'templates'
@@ -25,7 +25,7 @@ App = angular.module('app', [
       if cached
         return cached
       promise = $http.get(url).then (response) ->
-        $compile response.data
+        $injector.get('$compile') response.data
       promise.then (response) ->
         status: response.status
         data: cache.get url
