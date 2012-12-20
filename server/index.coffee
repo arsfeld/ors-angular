@@ -34,6 +34,7 @@ app.configure ->
   app.use passport.initialize()
   app.use passport.session()
   app.use app.router
+  app.use i18n.init
   app.use express.compress()
   app.use express.static(path.join(__dirname, "../_public"))
   
