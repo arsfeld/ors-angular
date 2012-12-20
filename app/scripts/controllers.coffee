@@ -35,6 +35,7 @@ angular.module('app.controllers', ['app.models', 'ui'])
       [path..., ext] = parts
       #parts.push(parts.pop())
       current.templateUrl = path + ext
+      console.log current.templateUrl
 
   # getClass compares the current url with the id.
   # If the current url starts with the id it returns 'active'
