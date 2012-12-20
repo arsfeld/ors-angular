@@ -29,7 +29,7 @@ App = angular.module('app', [
       promise = $http.get(url).then (response) ->
         console.log response
         #$injector.get('$compile') response.data
-        cache.put original_url response
+        cache.put original_url response.data
       promise.then (response) ->
         status: response.status
         data: cache.get original_url
