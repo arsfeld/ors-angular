@@ -61,7 +61,7 @@ angular.module("session", ["config", "log", "ds", "flash"])
   currentSession = new Session()
   
   ###
-  Code modified from 
+  Code modified from
   https://groups.google.com/forum/?fromgroups=#!starred/angular/POXLTi_JUgg
   By Adam Wynne
   ###
