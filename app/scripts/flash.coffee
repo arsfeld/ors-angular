@@ -5,7 +5,7 @@
 angular.module("flash", ["config"])
 
 .factory "flash", [
-  "$rootScope", 
+  "$rootScope",
 
 ($rootScope) ->
   flashes = []
