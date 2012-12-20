@@ -13,15 +13,22 @@ App = angular.module('app', [
 .factory('$templateCache', [
   '$cacheFactory'
   '$http'
-  '$injector'
+  '$compile'
 
   ($cacheFactory, $http, $injector) ->
     cache = $cacheFactory 'templates'
     get: (url) ->
       console.log url
+      [path..., ext] = url.split "."
+      url = "#{path}.#{$locale.id}.#{ext}"
       cached = cache.get url
-      console.log cached
-      return true
+      if cached
+        return cached
+      promise = $http.get(url).then (response) ->
+        $compile response.data
+      promise.then (response) ->
+        status: response.status
+        data: cache.get url
 
     put: (key, value) ->
       cache.put key, value
