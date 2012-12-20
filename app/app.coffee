@@ -13,8 +13,9 @@ App = angular.module('app', [
 App.config([
   '$routeProvider'
   '$locationProvider'
+  '$locale'
   
-  ($routeProvider, $locationProvider, config) ->
+  ($routeProvider, $locationProvider, $locale, config) ->
 
     $routeProvider
 
@@ -26,7 +27,7 @@ App.config([
       # Authentication
       .when('/auth', {redirectTo : '/auth/login'})
       .when '/auth/login',
-        templateUrl : '/partials/auth/login.#{locale}.html'
+        templateUrl : '/partials/auth/login.@{$locale.id}.html'
       .when('/signup', {templateUrl : '/partials/account/signup.html'})
       .when('/login', {templateUrl : '/partials/account/login.html'})
 
