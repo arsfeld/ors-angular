@@ -26,7 +26,7 @@ div
                 tooltip="Two letter name of the office", rel="tooltip", required)
             button.btn.btn-primary(ng-click="save()", ng-disabled="officeForm.$invalid") 
               i.icon-plus
-              |  Add office
+              |  #{__("Add office")}
           div(ng-include="'officeEdit'")
           
           span
