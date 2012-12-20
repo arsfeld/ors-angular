@@ -23,9 +23,9 @@ App = angular.module('app', [
       console.log url
       [path..., mid, ext] = url.split "."
       unless mid?
-        url = "#{path}.#{$locale.id}.#{ext}"
+        url = "#{mid}.#{$locale.id}.#{ext}"
       else
-        url = "#{mid}.#{ext}"
+        url = "#{path}.#{ext}"
       console.log url
       cached = cache.get original_url
       if cached?
