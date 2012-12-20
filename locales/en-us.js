@@ -4,5 +4,6 @@
 	"National Products": "National Products",
 	"Registrations": "Registrations",
 	"Home": "Home",
-	"Admin": "Admin"
+	"Admin": "Admin",
+	"Add office": "Add office"
 }
