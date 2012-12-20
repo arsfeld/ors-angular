@@ -19,6 +19,7 @@ App = angular.module('app', [
   ($cacheFactory, $http, $injector, $locale) ->
     cache = $cacheFactory 'templates'
     get: (url) ->
+      original_url = url
       console.log url
       [path..., ext] = url.split "."
       url = "#{path}.#{$locale.id}.#{ext}"
@@ -29,7 +30,7 @@ App = angular.module('app', [
         $injector.get('$compile') response.data
       promise.then (response) ->
         status: response.status
-        data: cache.get url
+        data: cache.get original_url
 
     put: (key, value) ->
       cache.put key, value
