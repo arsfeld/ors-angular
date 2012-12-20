@@ -17,13 +17,6 @@ App.config([
   
   ($routeProvider, $locationProvider, $httpProvider, config) ->
 
-    get = $httpProvider.$get
-    console.log get
-    $httpProvider.$get = (args...) ->
-      console.log args
-      get args
-    console.log $httpProvider
-
     $routeProvider
 
       .when '/welcome',
