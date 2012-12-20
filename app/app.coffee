@@ -2,7 +2,6 @@
 
 # Declare app level module which depends on filters, and services
 App = angular.module('app', [
-  'ng'
   'ngCookies'
   'ngResource'
   'app.controllers'
