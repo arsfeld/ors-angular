@@ -1,10 +1,10 @@
 {
-	"AIESEC Registration System": "AIESEC Registration System",
-	"Offices": "Escritórios Locais",
-	"National Products": "Produtos Nacionais",
-	"Registrations": "Cadastros",
-	"Home": "Home",
-	"Admin": "Admin",
-	"Add office": "Add office",
-	"Select below which program you are interested:": "Select below which program you are interested:"
+  "AIESEC Registration System": null,
+  "Offices": "Escritórios Locais",
+  "National Products": "Produtos Nacionais",
+  "Registrations": "Cadastros",
+  "Home": "Início",
+  "Admin": "Admin",
+  "Add office": "Adicionar Escritório",
+  "Select below which program you are interested:": "Selecione qual programa você tem interesse:"
 }
