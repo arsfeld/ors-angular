@@ -4,8 +4,6 @@
 
 angular.module('app.controllers', ['app.models', 'ui'])
 
-.config(['$httpProvider'], ($httpProvider) -> )
-
 .controller('AppCtrl', [
   '$scope'
   '$location'
