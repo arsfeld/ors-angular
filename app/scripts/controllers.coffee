@@ -34,7 +34,7 @@ angular.module('app.controllers', ['app.models', 'ui'])
       parts = url.split "."
       [path..., ext] = parts
       #parts.push(parts.pop())
-      current.templateUrl = path + ext
+      current.templateUrl = path + $locale.id + ext
       console.log current.templateUrl
 
   # getClass compares the current url with the id.
