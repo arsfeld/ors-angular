@@ -26,7 +26,7 @@ App = angular.module('app', [
       if mid?
         url = "#{path}.#{ext}"
       else
-        url = "#{path}.#{ext}"
+        url = "#{path}.#{$locale.id}.#{ext}"
       console.log url
       cached = cache.get original_url
       if cached?
