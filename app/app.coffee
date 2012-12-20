@@ -25,7 +25,8 @@ App.config([
 
       # Authentication
       .when('/auth', {redirectTo : '/auth/login'})
-      .when('/auth/login', {templateUrl : '/partials/auth/login.#{locale}.html'})
+      .when '/auth/login', 
+        templateUrl : '/partials/auth/login.#{locale}.html'
       .when('/signup', {templateUrl : '/partials/account/signup.html'})
       .when('/login', {templateUrl : '/partials/account/login.html'})
 
