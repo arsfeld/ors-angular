@@ -23,6 +23,7 @@ App = angular.module('app', [
       console.log url
       [path..., ext] = url.split "."
       url = "#{path}.#{$locale.id}.#{ext}"
+      console.log url
       cached = cache.get original_url
       if cached?
         return cached
