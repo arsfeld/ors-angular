@@ -8,4 +8,4 @@ This project has a couple of objectives:
 * Being able to completely replace the current system
 * Remove unneeded features from the old system while integrating new ones
 * Being stable (should always work!)
-* Being open source, easy to hack and _easy to deploy_!
+* Being open source, easy to hack and *easy to deploy*!
