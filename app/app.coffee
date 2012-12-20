@@ -14,8 +14,9 @@ App = angular.module('app', [
   '$cacheFactory'
   '$http'
   '$injector'
+  '$locale'
 
-  ($cacheFactory, $http, $injector) ->
+  ($cacheFactory, $http, $injector, $locale) ->
     cache = $cacheFactory 'templates'
     get: (url) ->
       console.log url
