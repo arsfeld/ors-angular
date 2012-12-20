@@ -109,7 +109,7 @@ angular.module("session", ["config", "log", "ds", "flash"])
         #$location.url(loginUrl);
         
         # if admin is *NOT* required but user *IS* an admin
-        flash.add "You are already logged in", "info"  if
+        flash.add "You are already logged in", "info" if \
           not admin and currentSession.isAdmin
 
   
