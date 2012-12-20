@@ -14,9 +14,8 @@ div
       //ng-include(src="'/partials/admin/nav.{{locale}}.html'")
       div(ng-include="'/partials/admin/nav.html'")
     .span9
-      
         .row-fluid
-          h2 Offices
+          h2 #{__("Offices")}
           form#office-add-form.form-inline(name="officeForm", novalidate)
             input.input(type="text", name="name", ng-model="office.name",
               required, placeholder="São Carlos")
