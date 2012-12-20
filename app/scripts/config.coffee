@@ -1,7 +1,7 @@
 "use strict"
 
 # Global application configuration
-# This module shows how to simply create some constant values used throughout 
+# This module shows how to simply create some constant values used throughout
 # the application
 # without polluting **at all** the global namespace. Pretty cool, indeed.
 angular.module("config", [])
