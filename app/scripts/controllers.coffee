@@ -31,7 +31,7 @@ angular.module('app.controllers', ['app.models', 'ui'])
   $rootScope.locale = $locale.id
 
   get = $http.$get
-  $http.$get = ($httpBackend, $browser, $cacheFactory, $rootScope, $q, \
+  $http.$get = ($httpBackend, $browser, $cacheFactory, $rootScope, $q,
     $injector) ->
     get($httpBackend, $browser, $cacheFactory, $rootScope, $q, $injector)
 
