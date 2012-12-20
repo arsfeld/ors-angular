@@ -6,7 +6,7 @@ div(ng-controller='WelcomeController')
 
       h3(translate) Select below which program you are interested:
       .row-fluid
-        a(href="'/partials/admin/nav.{{locale}}.html'")
+        a(href="/partials/admin/nav.{{locale}}.html") Locale
         ul.nav.nav-pills
           li.span3(ng-repeat="product in allProducts | orderBy: 'name' ")
             //a(href="/#/register/{{product._id.$oid}}")
