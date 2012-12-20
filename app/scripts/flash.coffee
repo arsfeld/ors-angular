@@ -1,7 +1,12 @@
 "use strict"
 
 # Service to broadcast messages to all scopes, since the $broadcast call is made from the $rootScope
-angular.module("flash.services", ["config.services"]).factory "flash", ["$rootScope", ($rootScope) ->
+angular.module("flash.services", ["config.services"])
+
+.factory "flash", [
+  "$rootScope", 
+
+($rootScope) ->
   flashes = []
   
   ###
