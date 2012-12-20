@@ -22,6 +22,7 @@ App = angular.module('app', [
       original_url = url
       console.log url
       [path, mid..., ext] = url.split "."
+      console.log "mid: ", mid
       unless mid?
         url = "#{mid}.#{$locale.id}.#{ext}"
       else
