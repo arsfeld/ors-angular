@@ -27,11 +27,7 @@ App = angular.module('app', [
       cached = cache.get original_url
       if cached?
         return cached
-      promise = $http.get(url).then (response) ->
-        console.log response
-        #$injector.get('$compile') response.data
-        cache.put original_url response.data
-        response
+      return $http.get(url)
       promise.then (response) ->
         status: response.status
         data: cache.get original_url
