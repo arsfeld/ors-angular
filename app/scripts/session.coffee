@@ -61,7 +61,8 @@ angular.module("session", ["config", "log", "ds", "flash"])
   currentSession = new Session()
   
   ###
-  Code modified from https://groups.google.com/forum/?fromgroups=#!starred/angular/POXLTi_JUgg
+  Code modified from 
+  https://groups.google.com/forum/?fromgroups=#!starred/angular/POXLTi_JUgg
   By Adam Wynne
   ###
   $rootScope.$on "$routeChangeSuccess", (current) ->
@@ -88,7 +89,8 @@ angular.module("session", ["config", "log", "ds", "flash"])
         #$location.url(loginUrl);
         
         # if authentication is *NOT* required but user *IS* authenticated
-        flash.add "You are already logged in", "info"  if not auth and currentSession.isAuthenticated
+        flash.add "You are already logged in", "info"  if 
+          not auth and currentSession.isAuthenticated
       
       # TODO redirect to previous
       #$location.url('/');
@@ -107,7 +109,8 @@ angular.module("session", ["config", "log", "ds", "flash"])
         #$location.url(loginUrl);
         
         # if admin is *NOT* required but user *IS* an admin
-        flash.add "You are already logged in", "info"  if not admin and currentSession.isAdmin
+        flash.add "You are already logged in", "info"  if 
+          not admin and currentSession.isAdmin
 
   
   # TODO redirect to previous
