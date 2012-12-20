@@ -1,7 +1,7 @@
 "use strict"
 
 # Service to broadcast messages to all scopes, since the $broadcast call is made from the $rootScope
-angular.module("flash.services", ["config.services"])
+angular.module("flash", ["config"])
 
 .factory "flash", [
   "$rootScope", 
@@ -32,7 +32,6 @@ angular.module("flash.services", ["config.services"])
     
     # tell child scope that this flash has been added
     $rootScope.$broadcast "flash.add", flash
-
   
   ###
   all returns all flashes, but does **not** clear them
@@ -41,7 +40,6 @@ angular.module("flash.services", ["config.services"])
   all: ->
     flashes
 
-  
   ###
   clear removes all flashes
   ###
@@ -49,7 +47,6 @@ angular.module("flash.services", ["config.services"])
     $rootScope.$broadcast "flash.clear", true
     flashes = []
 
-  
   ###
   getAll returns all flashes and clears them
   
