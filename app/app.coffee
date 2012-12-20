@@ -21,6 +21,7 @@ App = angular.module('app', [
       console.log url
       cached = cache.get url
       console.log cached
+      return ""
 
     put: (key, value) ->
       cache.put key, value
