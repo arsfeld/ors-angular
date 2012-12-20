@@ -2,14 +2,7 @@
 
 ### Controllers ###
 
-angular.module('app.controllers', ['app.models', 'ui'],
-  ($provide, $httpProvider) ->
-    console.log "help!"
-    $provide.factory "myhttpinterceptor", ($q) ->
-      console.log "help! + http"
-      console.log $q
-      (promise) ->
-)
+angular.module('app.controllers', ['app.models', 'ui'])
 
 .controller('AppCtrl', [
   '$scope'
