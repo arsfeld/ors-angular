@@ -23,7 +23,7 @@ App = angular.module('app', [
       console.log url
       [path, mid..., ext] = url.split "."
       console.log "path: ", path, "mid: ", mid
-      if mid.isEmpty
+      if mid.isEmpty()
         url = "#{path}.#{ext}"
       else
         url = "#{path}.#{$locale.id}.#{ext}"
