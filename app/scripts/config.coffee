@@ -6,9 +6,7 @@
 # without polluting **at all** the global namespace. Pretty cool, indeed.
 angular.module("config", [])
 
-.factory("config", [
-
-() ->
+.factory("config", [() ->
   defaultConfig =
     API_BASE_URL: "/-/api/v1"
     AUTH_URL: "/-/auth"
