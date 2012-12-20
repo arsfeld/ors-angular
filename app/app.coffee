@@ -14,9 +14,8 @@ App = angular.module('app', [
 App.config([
   '$routeProvider'
   '$locationProvider'
-  '$locale'
   
-  ($routeProvider, $locationProvider, $locale, config) ->
+  ($routeProvider, $locationProvider, config) ->
 
     $routeProvider
 
