@@ -9,10 +9,11 @@ angular.module('app.controllers', ['app.models', 'ui'])
   '$location'
   '$resource'
   '$rootScope'
+  '$locale'
   'Product'
   'Office'
 
-($scope, $location, $resource, $rootScope, Product, Office) ->
+($scope, $location, $resource, $rootScope, $locale, Product, Office) ->
 
   products = Product.query () ->
     $rootScope.allProducts = products
