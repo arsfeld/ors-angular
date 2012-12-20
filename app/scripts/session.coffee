@@ -77,7 +77,7 @@ angular.module("session", ["config", "log", "ds", "flash"])
       
       # if auth is set
       # E.g. `auth: true` or `auth: false`
-      if auth isnt `undefined`
+      if auth?
         
         # if authentication *IS* required but user is *NOT* authenticated
         if auth and not currentSession.isAuthenticated
