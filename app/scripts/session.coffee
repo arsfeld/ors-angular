@@ -97,7 +97,7 @@ angular.module("session", ["config", "log", "ds", "flash"])
       
       # if admin is set:
       # E.g. `admin: true` or `admin: false`
-      if admin isnt `undefined`
+      if admin?
         
         # if admin *IS* required but user is *NOT* admin
         if admin and not currentSession.isAdmin
