@@ -13,6 +13,7 @@ App = angular.module('app', [
 App.config([
   '$routeProvider'
   '$locationProvider'
+  '$httpProvider'
   
   ($routeProvider, $locationProvider, config) ->
 
