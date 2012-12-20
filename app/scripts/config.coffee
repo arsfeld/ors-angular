@@ -8,7 +8,7 @@ angular.module("config", [])
 
 .factory("config", [
 
-->
+() ->
   defaultConfig =
     API_BASE_URL: "/-/api/v1"
     AUTH_URL: "/-/auth"
