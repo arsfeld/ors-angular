@@ -43,12 +43,14 @@ angular.module('app.controllers', ['app.models', 'ui'],
     console.log $q
     get($httpBackend, $browser, $cacheFactory, $rootScope, $q, $injector)
 
+  ###
   $scope.$on '$routeChangeStart', (evt, next, current) ->
     url = next.templateUrl
     if url?
       parts = url.split "."
       [path..., ext] = parts
       next.templateUrl = "#{path}.#{$locale.id}.#{ext}"
+  ###
 
   # getClass compares the current url with the id.
   # If the current url starts with the id it returns 'active'
