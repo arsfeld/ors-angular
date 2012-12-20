@@ -6,7 +6,7 @@
 # without polluting **at all** the global namespace. Pretty cool, indeed.
 angular.module("config", [])
 
-.factory "config", [
+.factory("config", [
 
 ->
   defaultConfig =
@@ -24,4 +24,4 @@ angular.module("config", [])
     IMAGE_UPLOAD_URL: "/-/images"
 
   defaultConfig
-]
+])
