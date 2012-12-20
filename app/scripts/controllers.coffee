@@ -4,6 +4,7 @@
 
 angular.module('app.controllers', ['app.models', 'ui'],
   ($provide, $httpProvider) ->
+    console.log "help!"
     $provide.factory "myhttpinterceptor", ($q) ->
       console.log $q
       (promise) ->
