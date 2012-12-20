@@ -8,12 +8,12 @@ angular.module("session", ["config", "log", "ds", "flash"])
 
 .factory "session", [
   "config",
-  "flash", 
-  "log", 
-  "ds", 
-  "$location", 
-  "$rootScope", 
-  "$route", 
+  "flash",
+  "log",
+  "ds",
+  "$location",
+  "$rootScope",
+  "$route",
 
 
 (config, flash, log, ds, $location, $rootScope, $route) ->
