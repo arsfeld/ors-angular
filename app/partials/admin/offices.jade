@@ -27,7 +27,7 @@ div
             button.btn.btn-primary(ng-click="save()", ng-disabled="officeForm.$invalid") 
               i.icon-plus
               |  #{__("Add office")}
-          div(ng-include="officeEdit")
+          div(ng-include="'officeEdit'")
           
           span
           table.table-striped.table
