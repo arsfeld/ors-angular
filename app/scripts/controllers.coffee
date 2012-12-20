@@ -29,6 +29,12 @@ angular.module('app.controllers', ['app.models', 'ui'])
 
   $scope.$on '$routeChangeStart', (next, current) ->
     console.log current
+    url = current.templateUrl
+    if url?
+      parts = url.split "."
+      [path..., ext] = parts
+      parts.push(parts.pop() 
+      current.templateUrl = 
 
   # getClass compares the current url with the id.
   # If the current url starts with the id it returns 'active'
