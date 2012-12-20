@@ -32,7 +32,7 @@ exports.config =
     jade:
       pretty: yes # Adds pretty-indentation whitespaces to output (false by default)
     i18n:
-      locales: ['en', 'pt-BR']
+      locales: ['en', 'pt-br']
 
   # Enable or disable minifying of result js / css files.
   # minify: true
