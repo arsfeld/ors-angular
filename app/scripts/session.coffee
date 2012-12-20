@@ -7,7 +7,7 @@ angular.module("session", ["config", "log", "ds", "flash"])
 
 
 .factory "session", [
-  "config", 
+  "config",
   "flash", 
   "log", 
   "ds", 
