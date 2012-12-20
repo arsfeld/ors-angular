@@ -25,14 +25,13 @@
         <div class="navbar-inner">
           <div class="container">
             <button data-toggle="collapse" data-target=".nav-collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="brand">AIESEC Registration System</a>
-            <div class="nav-collapse"> {{locale}}
-              <div ng-include="'/partials/nav.en.html'"></div>
-              <div ng-include="'/partials/account/menu.en.html'"></div>
-            </div>
+            <!--.nav-collapse-->
+            <div ng-include="'/partials/nav.en.html'"></div>
+            <div ng-include="'/partials/account/menu.en.html'"></div>
           </div>
         </div>
       </div>
-      <div class="container main-content">
+      <div class="container main-content"> {{locale}}
         <div ng-view></div>
         <!--div Angular Brunch seed app: v<span app-version></span>-->
       </div>

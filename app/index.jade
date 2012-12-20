@@ -30,11 +30,11 @@ html(lang='en')
               span.icon-bar
               span.icon-bar
             a(href='/').brand #{__("AIESEC Registration System")}
-            .nav-collapse
-              |  {{locale}}
-              div(ng-include="'/partials/nav.en.html'")
-              div(ng-include="'/partials/account/menu.en.html'")
+            //.nav-collapse
+            div(ng-include="'/partials/nav.en.html'")
+            div(ng-include="'/partials/account/menu.en.html'")
       .container.main-content
+        |  {{locale}}
         div(ng-view)
         //div Angular Brunch seed app: v<span app-version></span>
       .push
