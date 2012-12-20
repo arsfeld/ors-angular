@@ -27,6 +27,9 @@ angular.module('app.controllers', ['app.models', 'ui'])
     $scope.activeNavId = path || '/'
   )
 
+  $scope.$on '$routeChangeStart', (next, current) ->
+    console.log current
+
   # getClass compares the current url with the id.
   # If the current url starts with the id it returns 'active'
   # otherwise it will return '' an empty string. E.g.
