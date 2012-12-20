@@ -17,7 +17,10 @@ App.config([
   
   ($routeProvider, $locationProvider, $httpProvider, config) ->
 
-    $httpProvider.$get = (args...) -> console.log args
+    get = $httpProvider.$get
+    $httpProvider.$get = (args...) -> 
+      console.log args
+      get args
     console.log $httpProvider
 
     $routeProvider
