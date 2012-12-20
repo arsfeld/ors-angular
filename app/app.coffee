@@ -19,7 +19,8 @@ App = angular.module('app', [
     cache = $cacheFactory 'template'
     get: (url) ->
       console.log url
-      cache.get url
+      cached = cache.get url
+      console.log cached
 
     put: (key, value) ->
       cache.put key, value
