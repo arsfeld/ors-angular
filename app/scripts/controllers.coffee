@@ -32,7 +32,7 @@ angular.module('app.controllers', ['app.models', 'ui'])
   get = $http.$get
   $http.$get = ($httpBackend, $browser, $cacheFactory, $rootScope, $q, \
     $injector) ->
-    get($httpBackend, $browser, $cacheFactory, $rootScope, $q, $injector) 
+    get($httpBackend, $browser, $cacheFactory, $rootScope, $q, $injector)
 
   $scope.$on '$routeChangeStart', (evt, next, current) ->
     url = next.templateUrl
