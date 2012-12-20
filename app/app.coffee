@@ -10,7 +10,9 @@ App = angular.module('app', [
   'app.filters'
 ])
 
-App.config([
+
+
+.config([
   '$routeProvider'
   '$locationProvider'
   '$httpProvider'
