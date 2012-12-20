@@ -9,12 +9,12 @@ div
           ng-pattern="/^[A-Z]{2}$/",
           tooltip="Two letter name of the office", rel="tooltip")
 
-  .row-fluid
+  div.row-fluid(ng-controller='OfficesController')
     .span3
       ng-include(src="/partials/admin/nav.{{locale}}.html")
       //div(ng-include="'/partials/admin/nav.en-us.html'")
     .span9
-      div(ng-controller='OfficesController')
+      
         .row-fluid
           h2 Offices
           form#office-add-form.form-inline(name="officeForm", novalidate)
