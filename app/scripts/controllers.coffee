@@ -9,8 +9,6 @@ angular.module('app.controllers', ['app.models', 'ui'],
       (promise) ->
 )
 
-
-
 .controller('AppCtrl', [
   '$scope'
   '$location'
@@ -48,8 +46,7 @@ angular.module('app.controllers', ['app.models', 'ui'],
   $scope.$on '$routeChangeStart', (evt, next, current) ->
     url = next.templateUrl
     if url?
-      parts = url.split "."
-      [path..., ext] = parts
+      [path..., ext] = url.split "."
       next.templateUrl = "#{path}.#{$locale.id}.#{ext}"
 
   # getClass compares the current url with the id.
