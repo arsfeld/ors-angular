@@ -1,7 +1,7 @@
 
 <div ng-controller="WelcomeController"><img src="img/loader.gif" ng-hide="allProducts"/>
   <div ng-show="allProducts">
-    <h3>Select below which program you are interested:</h3>
+    <h3>Selecione qual programa você tem interesse:</h3>
     <div class="row-fluid">
       <ul class="nav nav-pills">
         <li ng-repeat="product in allProducts | orderBy: 'name' " class="span3">
