@@ -27,6 +27,8 @@ angular.module('app.controllers', ['app.models', 'ui'])
     $scope.activeNavId = path || '/'
   )
 
+  $rootScope.locale = $locale.id
+
   $scope.$on '$routeChangeStart', (evt, next, current) ->
     console.log next
     url = next.templateUrl
