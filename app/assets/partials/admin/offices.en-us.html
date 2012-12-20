@@ -9,7 +9,8 @@
     </form>
   </script>
   <div class="row-fluid">
-    <div class="span3"><a href="/partials/admin/nav.{{locale}}.html">locale</a>
+    <div class="span3">
+      <div ng-include="/partials/admin/nav.{{locale}}.html"></div>
       <div ng-include="'/partials/admin/nav.en-us.html'"></div>
     </div>
     <div class="span9">
