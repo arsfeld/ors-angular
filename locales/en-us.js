@@ -2,7 +2,7 @@
 	"AIESEC Registration System": "AIESEC Registration System",
 	"Offices": "Offices",
 	"National Products": "National Products",
-	"Registrations": "Cadastros",
+	"Registrations": "Registrations",
 	"Home": "Home",
 	"Admin": "Admin"
 }
