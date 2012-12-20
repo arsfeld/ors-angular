@@ -27,7 +27,7 @@ angular.module('app.controllers', ['app.models', 'ui'])
     $scope.activeNavId = path || '/'
   )
 
-  $scope.$on '$routeChangeStart', (next, current) ->
+  $scope.$on '$routeChangeStart', (evt, next, current) ->
     console.log next
     url = next.templateUrl
     if url?
