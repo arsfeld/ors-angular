@@ -6,6 +6,7 @@ angular.module('app.controllers', ['app.models', 'ui'])
 
 .config(['$httpProvider'], ($httpProvider) ->
   console.log $httpProvider
+  return
 )
 
 .controller('AppCtrl', [
