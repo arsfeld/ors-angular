@@ -21,7 +21,7 @@ App = angular.module('app', [
     get: (url) ->
       original_url = url
       console.log url
-      [path..., ext] = url.split "."
+      [path..., mid, ext] = url.split "."
       url = "#{path}.#{$locale.id}.#{ext}"
       console.log url
       cached = cache.get original_url
