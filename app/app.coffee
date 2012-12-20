@@ -24,7 +24,7 @@ App = angular.module('app', [
       [path..., ext] = url.split "."
       url = "#{path}.#{$locale.id}.#{ext}"
       cached = cache.get original_url
-      if cached
+      if cached?
         return cached
       promise = $http.get(url).then (response) ->
         $injector.get('$compile') response.data
