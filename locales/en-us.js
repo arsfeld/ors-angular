@@ -5,5 +5,6 @@
 	"Registrations": "Registrations",
 	"Home": "Home",
 	"Admin": "Admin",
-	"Add office": "Add office"
+	"Add office": "Add office",
+	"Select below which program you are interested:": "Select below which program you are interested:"
 }
