@@ -10,7 +10,20 @@ App = angular.module('app', [
   'app.filters'
 ])
 
+.factory('$templateCache', [
+  '$cacheFactory'
+  '$http'
+  '$injector'
 
+  ($cacheFactory, $http, $injector) ->
+    cache = $cacheFactory 'template'
+    get: (url) ->
+      console.log 
+
+    put: (key, value) ->
+      cache.put key, value
+
+])
 
 .config([
   '$routeProvider'
