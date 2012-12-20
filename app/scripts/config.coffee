@@ -18,7 +18,8 @@ angular.module("config", [])
     AUTH_SIGNUP_REDIRECT_URL: "/signup"
     AUTH_SUCCESS_REDIRECT_URL: "/"
     
-    # possible values: 'disable' || 'assert' || 'error' || 'warn' || 'info' || 'debug'
+    # possible values: 'disable' || 'assert' || 'error' || 'warn' || 'info' || 
+    # 'debug'
     LOG_LEVEL: "debug"
     IMAGE_UPLOAD_URL: "/-/images"
 
