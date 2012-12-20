@@ -27,10 +27,7 @@ App = angular.module('app', [
       cached = cache.get original_url
       if cached?
         return cached
-      return $http.get(url)
-      promise.then (response) ->
-        status: response.status
-        data: cache.get original_url
+      return $http.get url, cache: cache
 
     put: (key, value) ->
       cache.put key, value
