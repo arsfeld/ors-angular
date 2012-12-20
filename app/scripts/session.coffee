@@ -89,7 +89,7 @@ angular.module("session", ["config", "log", "ds", "flash"])
         #$location.url(loginUrl);
         
         # if authentication is *NOT* required but user *IS* authenticated
-        flash.add "You are already logged in", "info"  if
+        flash.add "You are already logged in", "info" if \
           not auth and currentSession.isAuthenticated
       
       # TODO redirect to previous
@@ -121,4 +121,4 @@ angular.module("session", ["config", "log", "ds", "flash"])
   update: update
   current: current
   destroy: destroy
-]
+])
