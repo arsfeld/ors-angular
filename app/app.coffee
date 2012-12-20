@@ -27,6 +27,7 @@ App = angular.module('app', [
       if cached?
         return cached
       promise = $http.get(url).then (response) ->
+        console.log response
         $injector.get('$compile') response.data
       promise.then (response) ->
         status: response.status
