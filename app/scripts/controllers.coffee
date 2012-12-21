@@ -16,6 +16,8 @@ angular.module('app.controllers', ['app.models', 'ui'])
 
 ($scope, $location, $resource, $rootScope, $locale, $http, Product, Office) ->
 
+  $locale.id = "pt-br"
+
   products = Product.query () ->
     $rootScope.allProducts = products
   offices = Office.query () ->

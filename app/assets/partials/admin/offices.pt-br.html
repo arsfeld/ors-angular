@@ -30,7 +30,7 @@
               <th>
                 <input type="text" ng-model="search" placeholder="Search" class="search-query offices-query"/>
               </th>
-              <th class="centered">Admin</th>
+              <th class="centered">Administrador</th>
               <th></th>
             </tr>
           </thead>
@@ -49,16 +49,16 @@
 ')}}" ui-jq="tooltip">
                   <ng-pluralize count="office.admin.length" when="{'0': 'No responsible!', 'one': '{{office.admin[0]}}',                           'other': '{} admins'}" ng-model="admin_count"></ng-pluralize></a>
                 <div ng-hide="office.admin">
-                  <p class="text-warning"> <i class="icon-warning-sign"></i> No admin!</p>
+                  <p class="text-warning"> <i class="icon-warning-sign"></i> Sem admin!</p>
                 </div>
               </td>
               <td class="edit-buttons">
-                <!-- Edit and delete buttons--><span ng-hide="editing"><a ng-disabled="saving" ng-click="edit()" class="btn"><i class="icon-edit"></i> Edit</a>
-                  <button ng-disabled="saving" ng-click="deleteDialog = true" class="btn btn-danger"><i class="icon-trash icon-white"></i> Delete</button>
+                <!-- Edit and delete buttons--><span ng-hide="editing"><a ng-disabled="saving" ng-click="edit()" class="btn"><i class="icon-edit"></i> Editar</a>
+                  <button ng-disabled="saving" ng-click="deleteDialog = true" class="btn btn-danger"><i class="icon-trash icon-white"></i> Excluir</button>
                   <!-- Delete confirmation dialog-->
                   <div ui-modal="ui-modal" ng-model="deleteDialog" class="modal fade">
                     <div class="modal-header">
-                      <h3>Confirmation</h3>
+                      <h3>Confirmação</h3>
                     </div>
                     <div class="modal-body">
                       <p>Are you sure you want to delete {{office.name}}?</p>

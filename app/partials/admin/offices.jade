@@ -23,7 +23,7 @@ div
               span.add-on @
               input.input-mini(type="text", name="nick", ng-model="office.nick",
                 ng-pattern="/^[A-Z]{2}$/", placeholder="SC", 
-                tooltip="Two letter name of the office", rel="tooltip", required)
+                tooltip="#{__("Two letter name of the office")}", rel="tooltip", required)
             button.btn.btn-primary(ng-click="save()", ng-disabled="officeForm.$invalid") 
               i.icon-plus
               |  #{__("Add office")}
@@ -36,7 +36,7 @@ div
                 th
                   input.search-query(type="text", ng-model="search", 
                     class="offices-query", placeholder="Search")
-                th.centered Admin
+                th.centered #{__("Administrator")}
                 th
             tbody
               tr(ng-repeat="office in offices | filter: search | orderBy: 'name' ")
@@ -51,7 +51,7 @@ div
                       span.add-on @
                       input.input-mini(type="text", name="nick", ng-model="office.nick",
                         ng-pattern="/^[A-Z]{2}$/", required,
-                        tooltip="Two letter name of the office", rel="tooltip")
+                        tooltip="#{__("Two letter name of the office")}", rel="tooltip")
                 td.centered
                   a(data-original-title="{{office.admin.join('\\n')}}", ui-jq="tooltip")
                     ng-pluralize(count="office.admin.length",
@@ -60,22 +60,22 @@ div
                   div(ng-hide="office.admin")
                     p.text-warning 
                       i.icon-warning-sign
-                      |  No admin!
+                      |  #{__("No admin!")}
                 td.edit-buttons
                   // Edit and delete buttons
                   span(ng-hide="editing")
                     a.btn(ng-disabled="saving", ng-click="edit()")
                       i.icon-edit
-                      |  Edit
+                      |  #{__("Edit")}
                     button.btn.btn-danger(ng-disabled="saving", 
                       ng-click="deleteDialog = true")
                       i.icon-trash.icon-white
-                      |  Delete
+                      |  #{__("Delete")}
 
                     // Delete confirmation dialog
                     div.modal.fade(ui-modal, ng-model="deleteDialog")
                       .modal-header
-                        h3 Confirmation
+                        h3 #{__("Confirmation")}
                       .modal-body
                         p Are you sure you want to delete {{office.name}}?
                       .modal-footer
