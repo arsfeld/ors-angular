@@ -2,7 +2,11 @@
 
 ### Controllers ###
 
-angular.module('app.controllers', ['app.models', 'ui'])
+angular.module('app.controllers', [
+  'app.models'
+  'account'
+  'ui'
+])
 
 .controller('AppCtrl', [
   '$scope'

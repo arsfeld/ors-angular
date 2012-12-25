@@ -72,7 +72,7 @@ app.get "/", (req, res) ->
 
 # auth
 app.get AUTH_URL + "/logout", auth.logout
-app.post AUTH_URL + "/password", passwordRoutes.list
+app.post AUTH_URL + "/password", passwordRoutes.start
 
 #app.get(API_BASE_URL + '/auth/facebook/callback', facebook.callback);
 #app.get(API_BASE_URL + '/auth/google', facebook.start);

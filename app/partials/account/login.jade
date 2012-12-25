@@ -1,38 +1,55 @@
 section(ng-controller='AccountLoginCtrl')
-    header
-        h2 Login
-      .aeauth-form.row
-        .alert.alert-error(ng-show='FormErrors')
-          ul
-            li(ng-repeat='msg in ErrMsgs', ng-bind-html-unsafe='msg')
-        .span5
-          header
-            h4 To get started, login with one of your existing accounts.
-          ul
-            li.provider-btn(ng-repeat='p in Providers')
-              button.btn(ng-click='Authenticate(p)')
-                img(ng-src='/img/auth/{{p.name}}.png')
-        .span4
-          header
-            h4 Or create a new one.
-          .password-form.form-horizontal
-            form.form(nonvalidate='nonvalidate', name='form')
-              fieldset.control-group
-                label.control-label(for='email')
-                  strong Email
-                .controls
-                  input#email(required='required', ng-model='User.email', type='email', name='email')
-                  span.help-inline(ng-hide='form.email.$invalid')
-                    i.icon-ok
-              fieldset.control-group
-                label.control-label(for='password')
-                  strong Password
-                .controls
-                  input#password(required='required', pattern='.{4,31}', ng-model='Password', type='password', name='password')
-              fieldset.form-actions
-                input.btn.btn-success(type='submit', ng-click='Login(User, Password)', ng-disabled='form.$invalid || WaitText', value='{{WaitText || \'Login\'}}')
-              fieldset.control-group
-                .controls
-                  p
-                    small
-                      a(href='/account/recovery') Can't access your account?
+  form.well.form.form-signin(nonvalidate='nonvalidate', name='form')
+    .alert.alert-error(ng-show='FormErrors')
+      ul
+        li(ng-repeat='msg in ErrMsgs', ng-bind-html-unsafe='msg')
+    h2.form-signin-heading#email(ng-hide="registration") Please log in
+    h2.form-signin-heading.ng-cloak(ng-show="registration", ng-cloak) One more step...
+    input.input-block-level.input(type="text", placeholder="Email address", name="email", ng-model="user.email")
+    p
+      small Only @aiesec.net emails!
+    input.input-block-level.input(type="password", placeholder="Password", ng-model="user.password", pattern='.{4,31}')
+    input.input-block-level(ng-show="registration", type="password", placeholder="Retype your password", ng-model="user.retypepassword", pattern='.{4,31}')
+    div(ng-hide="registration")
+      label.checkbox
+        input(type="checkbox", value="remember-me") 
+        | Remember me
+      button.btn.btn-large.btn-primary(type='submit', ng-click='login()', ng-disabled='form.$invalid') Login
+      span   -- Or -- 
+      button.btn.btn-large.btn-success(type='submit', ng-click='registration = true') Register
+      fieldset.control-group
+        .controls
+        p
+          small
+            |   
+            a(href='/account/recovery') Can't access your account?
+    div(ng-show="registration")
+      button.btn.btn-large.btn-success(type='submit', ng-click='registration = true') Go
+      //button.btn.btn-large(type='submit', ng-click='registration = false') Cancel
+
+  ul
+    li.provider-btn(ng-repeat='p in Providers')
+      button.btn(ng-click='Authenticate(p)')
+        img(ng-src='/img/auth/{{p.name}}.png')
+  //
+    .password-form.form-horizontal
+      form.form(nonvalidate='nonvalidate', name='form')
+        fieldset.control-group
+          label.control-label(for='email')
+            strong Email
+          .controls
+            input#email(required='required', ng-model='User.email', type='email', name='email')
+            span.help-inline(ng-hide='form.email.$invalid')
+              i.icon-ok
+        fieldset.control-group
+          label.control-label(for='password')
+            strong Password
+          .controls
+            input#password(required='required', pattern='.{4,31}', ng-model='Password', type='password', name='password')
+        fieldset.form-actions
+          input.btn.btn-success(type='submit', ng-click='Login(User, Password)', ng-disabled='form.$invalid || WaitText', value='{{WaitText || \'Login\'}}')
+        fieldset.control-group
+          .controls
+            p
+              small
+                a(href='/account/recovery') Can't access your account?
