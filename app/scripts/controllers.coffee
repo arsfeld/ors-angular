@@ -116,14 +116,14 @@ angular.module('app.controllers', [
     #  console.log office
 
   $scope.edit = () ->
-    @original = angular.copy(@office)
+    @original = angular.copy(@user)
     @editing = true
   $scope.cancelEdit = () ->
-    angular.copy(this.original, @office)
+    angular.copy(this.original, @user)
     @editing = false
   $scope.delete = () ->
     @deleting = true
-    @office.remove () =>
+    @user.remove () =>
       @deleting = false
       @deleteDialog = false
       refresh()
