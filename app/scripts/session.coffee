@@ -15,8 +15,7 @@ angular.module("session", ["config", "log", "flash", "apiResource"])
   "$rootScope"
   "$route"
 
-
-(config, flash, log, $location, $rootScope, $route) ->
+(config, flash, log, $apiResource, $location, $rootScope, $route) ->
   
   ###
   defaultSession
