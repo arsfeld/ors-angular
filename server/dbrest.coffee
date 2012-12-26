@@ -42,7 +42,7 @@ module.exports.query = (req, res) ->
 module.exports.create = (req, res) ->
   if req.body
     data = if Array.isArray(req.body) then req.body[0] else req.body
-    console.log "Body: #{JSON.stringify(data)}"
+    #console.log "Body: #{JSON.stringify(data)}"
     collection = mongoose.connection.collection req.params.collection
     collection.insert data, (err, docs) ->
       res.header "Location", "/#{req.params.collection}/#{docs[0]._id}"
