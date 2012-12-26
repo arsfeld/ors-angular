@@ -15,11 +15,6 @@ div
             .modal-body
               .row-fluid
                 form.form-horizontal.form-inline(id="user-form", name="userForm")
-                  .control-group(ng-class="{error: userForm.office.$invalid}")
-                    label.control-label(for="name") Office
-                    .controls
-                      select(ui-select2="{width: 'resolve'}", ng-model="user.office", required)
-                        option(ng-repeat="office in offices | orderBy: 'name'", value="{{office.nick}}") {{office.name}}
                   .control-group(ng-class="{error: userForm.name.$invalid}")
                     label.control-label(for="name") Full name
                     .controls
@@ -32,6 +27,11 @@ div
                       input(type="email", name="email", ng-model="user.email", 
                         required, placeholder="usuario@aiesec.net")
                       span.help-inline(ng-show="userForm.email.$error.required") Obrigatório
+                  .control-group(ng-class="{error: userForm.office.$invalid}")
+                    label.control-label(for="name") Office
+                    .controls
+                      select(ui-select2="{width: 'resolve'}", ng-model="user.office", required)
+                        option(ng-repeat="office in offices | orderBy: 'name'", value="{{office.nick}}") {{office.name}}
                   .control-group(ng-class="{error: userForm.position.$invalid}")
                     label.control-label(for="position") Position
                     .controls

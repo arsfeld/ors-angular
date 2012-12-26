@@ -16,14 +16,6 @@
           <div class="modal-body">
             <div class="row-fluid">
               <form id="user-form" name="userForm" class="form-horizontal form-inline">
-                <div ng-class="{error: userForm.office.$invalid}" class="control-group">
-                  <label for="name" class="control-label">Office</label>
-                  <div class="controls">
-                    <select ui-select2="{width: 'resolve'}" ng-model="user.office" required="required">
-                      <option ng-repeat="office in offices | orderBy: 'name'" value="{{office.nick}}">{{office.name}}</option>
-                    </select>
-                  </div>
-                </div>
                 <div ng-class="{error: userForm.name.$invalid}" class="control-group">
                   <label for="name" class="control-label">Full name</label>
                   <div class="controls">
@@ -34,6 +26,14 @@
                   <label for="email" class="control-label">Email</label>
                   <div class="controls">
                     <input type="email" name="email" ng-model="user.email" required="required" placeholder="usuario@aiesec.net"/><span ng-show="userForm.email.$error.required" class="help-inline">Obrigatório</span>
+                  </div>
+                </div>
+                <div ng-class="{error: userForm.office.$invalid}" class="control-group">
+                  <label for="name" class="control-label">Office</label>
+                  <div class="controls">
+                    <select ui-select2="{width: 'resolve'}" ng-model="user.office" required="required">
+                      <option ng-repeat="office in offices | orderBy: 'name'" value="{{office.nick}}">{{office.name}}</option>
+                    </select>
                   </div>
                 </div>
                 <div ng-class="{error: userForm.position.$invalid}" class="control-group">
