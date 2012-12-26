@@ -15,5 +15,7 @@
 	"Confirmation": "Confirmação",
 	"Users": "Users",
 	"Office": "Office",
-	"Position": "Position"
+	"Position": "Position",
+	"Edit user": "Edit user",
+	"Create user": "Create user"
 }
