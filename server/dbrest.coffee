@@ -76,14 +76,13 @@ Update
 module.exports.update = (req, res) ->
   #data = if Array.isArray(req.body) then req.body[0] else req.body
   #console.log "Body: #{JSON.stringify(data)}"
-  spec = _id: new BSON.ObjectID(req.params.id)
+  spec = _id: new ObjectId req.params.id
   collection = mongoose.connection.collection req.params.collection
-  collection.insert data, (err, docs) ->
-    res.header "Location", "/#{req.params.collection}/#{docs[0]._id}"
+  collection.update spec, req.body, (err, docs) ->
     res.header "Content-Type", "application/json"
     res.send '{"ok": 1}', 201
 
-  
+  ###
   db = new mongo.Db(req.params.db, new mongo.Server(config.db.host, config.db.port,
     auto_reconnect: true
   ))
@@ -94,6 +93,7 @@ module.exports.update = (req, res) ->
           res.header "Content-Type", "application/json"
           res.send "{\"ok\":1}"
           db.close()
+  ###
 
 ###
 Delete
