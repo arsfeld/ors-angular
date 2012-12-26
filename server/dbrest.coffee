@@ -39,7 +39,7 @@ module.exports.create = (req, res) ->
       res.header "Location", "/#{req.params.collection}/#{docs[0]._id}"
       res.send 201, ok: true
   else
-    res.send 200, ok: true
+    res.send 200, ok: false
 
 # Update
 #app.put "/:db/:collection/:id", (req, res) ->
