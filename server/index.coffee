@@ -11,6 +11,7 @@ mongoose = require("mongoose")
 SessionMongoose = require("session-mongoose")
 passport = require("passport")
 auth = require("./auth/routes")
+restdb = require "restdb"
 
 # Strategies
 passwordRoutes = require("./auth/password/routes")
@@ -87,6 +88,10 @@ app.get API_BASE_URL + "/users/me", user.current
 app.get API_BASE_URL + "/users/:userId", user.read
 app.put API_BASE_URL + "/users/:userId", user.update
 app.delete API_BASE_URL + '/users/:userId', user.delete
+
+app.get "/:db/:collection/:id?", rest.query
+app.post "/:db/:collection", rest.create
+app.put "/:db/:collection/:id", rest.update
 
 # Catch all route -- If a request makes it this far, it will be passed to angular.
 # This allows for html5mode to be set to true. E.g.
