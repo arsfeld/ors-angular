@@ -108,7 +108,7 @@ angular.module('app.controllers', [
 ($scope, User) ->
 
   update = User.query () ->
-    $scope.users = update || []
+    $scope.users = update || true
 
   #$scope.$watch 'offices', () ->
     #return unless @offices
