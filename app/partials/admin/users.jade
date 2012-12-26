@@ -52,7 +52,10 @@ div
                   |  {{user.name}}
                   p
                     small {{user.email}}
-                td {{user.office}}
+                td 
+                  |  {{user.office}}
+                  p
+                    small {{user.position}}
                 td.edit-buttons
                   // Edit and delete buttons
                   span(ng-hide="editing")
