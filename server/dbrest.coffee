@@ -72,6 +72,7 @@ Insert
 #app.post "/:db/:collection", (req, res) ->
 module.exports.create = (req, res) ->
   if req.body
+    res.send JSON.stringify ok: 0, 200
     ###
     db = new mongo.Db(req.params.db, new mongo.Server(config.db.host, config.db.port,
       auto_reconnect: true
