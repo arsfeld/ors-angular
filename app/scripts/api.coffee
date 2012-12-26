@@ -5,7 +5,8 @@ angular.module('apiResource', ['config', 'ngResource'])
 
     ($resource, config) ->
       (collectionName) ->
-        Collection = $resource config.API_BASE_URL = "/db/#{collectionName}/:id",
+        Collection = $resource
+          "#{config.API_BASE_URL}/db/#{collectionName}/:id",
           id:'@_id',
             update:
               method:'PUT'
