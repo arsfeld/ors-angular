@@ -3,8 +3,10 @@
 #    rest.js
 #    mongodb-rest
 #
-#    Created by Tom de Grunt on 2010-10-03.
-#    Copyright (c) 2010 Tom de Grunt.
+#    Base on code written by Tom de Grunt on 2010-10-03.
+#    Portions by Tom de Grunt Copyright (c) 2010 Tom de Grunt.
+#    Portions by Alexandre Rosenfeld Copyright (c) 2012 Alexandre Rosenfeld
+#
 #    	This file is part of mongodb-rest.
 #
 mongo = require("mongodb")
@@ -20,7 +22,7 @@ Server = mongo.Server
 Query
 ###
 #app.get "/:db/:collection/:id?", (req, res) ->
-exports.query = (req, res) ->
+module.exports.query = (req, res) ->
   query = (if req.query.query then JSON.parse(req.query.query) else {})
   
   # Providing an id overwrites giving a query in the URL
@@ -57,7 +59,7 @@ exports.query = (req, res) ->
 Insert
 ###
 #app.post "/:db/:collection", (req, res) ->
-exports.create = (req, res) ->
+module.exports.create = (req, res) ->
   if req.body
     db = new mongo.Db(req.params.db, new mongo.Server(config.db.host, config.db.port,
       auto_reconnect: true
@@ -80,7 +82,7 @@ exports.create = (req, res) ->
 Update
 ###
 #app.put "/:db/:collection/:id", (req, res) ->
-exports.update = (req, res) ->
+module.exports.update = (req, res) ->
   spec = _id: new BSON.ObjectID(req.params.id)
   db = new mongo.Db(req.params.db, new mongo.Server(config.db.host, config.db.port,
     auto_reconnect: true
@@ -97,7 +99,7 @@ exports.update = (req, res) ->
 Delete
 ###
 #app.del "/:db/:collection/:id", (req, res) ->
-exports.delete = (req, res) ->
+module.exports.delete = (req, res) ->
   spec = _id: new BSON.ObjectID(req.params.id)
   db = new mongo.Db(req.params.db, new mongo.Server(config.db.host, config.db.port,
     auto_reconnect: true
