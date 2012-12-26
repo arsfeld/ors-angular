@@ -13,7 +13,7 @@ mongo = require("mongodb")
 #app = module.parent.exports.app
 #config = module.parent.exports.config
 config = require "./config"
-util = require("./util")
+#util = require("./util")
 BSON = mongo.BSONPure
 
 MongoClient = mongo.MongoClient
@@ -43,14 +43,14 @@ module.exports.query = (req, res) ->
             result = []
             if req.params.id
               if docs.length > 0
-                result = util.flavorize(docs[0], "out")
+                result = docs[0] #util.flavorize(docs[0], "out")
                 res.header "Content-Type", "application/json"
                 res.send result
               else
                 res.send 404
             else
               docs.forEach (doc) ->
-                result.push util.flavorize(doc, "out")
+                result.push doc #util.flavorize(doc, "out")
 
               res.header "Content-Type", "application/json"
               res.send result
