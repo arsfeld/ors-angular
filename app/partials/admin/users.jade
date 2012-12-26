@@ -33,11 +33,10 @@ div
                         required, placeholder="usuario@aiesec.net")
                       span.help-inline(ng-show="userForm.email.$error.required") Obrigatório
                   .control-group(ng-class="{error: userForm.position.$invalid}")
-                    label.control-label(for="name") Position
+                    label.control-label(for="position") Position
                     .controls
                       input(type="text", name="name", ng-model="user.position", 
-                        required, placeholder="VP GIP OGX")
-                      span.help-inline(ng-show="userForm.name.$error.required") Obrigatório
+                        placeholder="VP GIP OGX")
             .modal-footer
               a.btn(ng-click='editDialog = false; cancel()') Cancel
               a.btn.btn-primary(ng-click="editDialog = false; save()") Save
