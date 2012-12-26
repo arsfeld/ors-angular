@@ -10,8 +10,8 @@ div
           // Edit dialog
           div.modal.fade(ui-modal, ng-model="editDialog")
             .modal-header
-              h3(ng-hide="addUser") #{__("Edit user")}
-              h3(ng-show="addUser") #{__("Create user")}
+              h3(ng-hide="user") #{__("Edit user")}
+              h3(ng-show="user") #{__("Create user")}
             .modal-body
               .row-fluid
                 form.form-horizontal.form-inline(id="user-form", name="userForm")
