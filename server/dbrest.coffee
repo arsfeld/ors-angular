@@ -40,10 +40,10 @@ module.exports.create = (req, res) ->
     collection.insert data, (err, docs) ->
       res.header "Location", "/#{req.params.collection}/#{docs[0]._id}"
       res.header "Content-Type", "application/json"
-      res.send '{"ok": 1}', 201
+      res.send 201, ok: true
   else
     res.header "Content-Type", "application/json"
-    res.send '{"ok":0}', 200
+    res.send 200, ok: true
 
 # Update
 #app.put "/:db/:collection/:id", (req, res) ->
