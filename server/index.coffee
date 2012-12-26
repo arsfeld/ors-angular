@@ -89,10 +89,10 @@ app.get API_BASE_URL + "/users/:userId", user.read
 app.put API_BASE_URL + "/users/:userId", user.update
 app.delete API_BASE_URL + '/users/:userId', user.delete
 
-app.get API_BASE_URL + "/:db/:collection/:id?", dbrest.query
-app.post API_BASE_URL + "/:db/:collection", dbrest.create
-app.put API_BASE_URL + "/:db/:collection/:id", dbrest.update
-app.del API_BASE_URL + "/:db/:collection/:id", dbrest.delete
+app.get API_BASE_URL + "/db/:collection/:id?", dbrest.query
+app.post API_BASE_URL + "/db/:collection", dbrest.create
+app.put API_BASE_URL + "/db/:collection/:id", dbrest.update
+app.del API_BASE_URL + "/db/:collection/:id", dbrest.delete
 
 # Catch all route -- If a request makes it this far, it will be passed to angular.
 # This allows for html5mode to be set to true. E.g.
