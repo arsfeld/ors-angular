@@ -1,5 +1,5 @@
-angular.module('mongolabResource', ['config', 'ngResource'])
-  .factory '$mongolabResource', [
+angular.module('apiResource', ['config', 'ngResource'])
+  .factory '$apiResource', [
     '$resource'
     'config'
 
