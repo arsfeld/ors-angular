@@ -63,14 +63,13 @@ div
                     small {{user.position}}
                 td.edit-buttons
                   // Edit and delete buttons
-                  span(ng-hide="editing")
-                    a.btn(ng-disabled="saving", ng-click="edit()")
-                      i.icon-edit
-                      |  #{__("Edit")}
-                    button.btn.btn-danger(ng-disabled="saving", 
-                      ng-click="deleteDialog = true")
-                      i.icon-trash.icon-white
-                      |  #{__("Delete")}
+                  a.btn(ng-click="editDialog = true")
+                    i.icon-edit
+                    |  #{__("Edit")}
+                  button.btn.btn-danger(ng-disabled="saving", 
+                    ng-click="deleteDialog = true")
+                    i.icon-trash.icon-white
+                    |  #{__("Delete")}
 
                   // Editing controls
                   span(ng-show="editing")
