@@ -7,7 +7,6 @@ div
         .row-fluid
           h2 #{__("Users")}
           
-          span
           table.table-striped.table
             thead
               tr
@@ -17,7 +16,7 @@ div
                 th.centered #{__("Administrator")}
                 th
             tbody
-              tr(ng-repeat="office in offices | filter: search | orderBy: 'name' ")
+              tr(ng-repeat="user in users | filter: search | orderBy: 'name' ")
                 td
                   div(ng-hide="editing") 
                     span {{office.name}}
