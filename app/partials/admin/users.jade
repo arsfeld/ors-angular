@@ -16,11 +16,12 @@ div
               .row-fluid
                 form.form-horizontal.form-inline(id="user-form", name="userForm")
                   .control-group
+                    label.control-label(for="name") Office
                     .controls
                       select(ui-select2="{width: 'resolve'}", ng-model="user.office")
                         option(ng-repeat="office in offices | orderBy: 'name'", value="{{office.nick}}") {{office.name}}
                   .control-group(ng-class="{error: userForm.name.$invalid}")
-                    label.control-label(for="name") Nome completo
+                    label.control-label(for="name") Full name
                     .controls
                       input(type="text", name="name", ng-model="user.name", 
                         required, placeholder="Full name")
