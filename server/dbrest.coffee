@@ -65,22 +65,7 @@ module.exports.update = (req, res) ->
     res.header "Content-Type", "application/json"
     res.send '{"ok": 1}', 201
 
-  ###
-  db = new mongo.Db(req.params.db, new mongo.Server(config.db.host, config.db.port,
-    auto_reconnect: true
-  ))
-  db.open (err, db) ->
-    db.authenticate config.db.username, config.db.password, ->
-      db.collection req.params.collection, (err, collection) ->
-        collection.update spec, req.body, true, (err, docs) ->
-          res.header "Content-Type", "application/json"
-          res.send "{\"ok\":1}"
-          db.close()
-  ###
-
-###
-Delete
-###
+# Delete
 #app.del "/:db/:collection/:id", (req, res) ->
 module.exports.delete = (req, res) ->
   spec = _id: new BSON.ObjectID(req.params.id)
