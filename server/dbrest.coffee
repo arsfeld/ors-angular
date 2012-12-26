@@ -49,12 +49,6 @@ exports.query = (req, res) ->
               res.send result
             db.close()
 
-
-
-
-
-
-
 ###
 Insert
 ###
