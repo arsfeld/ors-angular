@@ -4,10 +4,7 @@ module.exports =
     SUCCESS_REDIRECT_URL: "/"
     FAILURE_REDIRECT_URL: "/login"
 
-  db:
-    production: "mongodb://user:pass@example.com:1234/sapling-prod"
-    development: "mongodb://localhost/sapling-dev"
-    test: "mongodb://localhost/sapling-test"
+  db: process.env.MONGOLAB_URI || "mongodb://localhost/ors-dev"
 
   mailer:
     auth:
