@@ -3,13 +3,14 @@
 ###
 session.services provides services for interacting with sessions.
 ###
-angular.module("session", ["config", "log", "flash"])
+angular.module("session", ["config", "log", "flash", "apiResource"])
 
 
 .factory("session", [
   "config"
   "flash"
   "log"
+  "$apiResource"
   "$location"
   "$rootScope"
   "$route"
