@@ -130,7 +130,7 @@ angular.module('app.controllers', [
   $scope.save = () ->
     this.editing = false
     this.saving = true
-    new User(@office).save () =>
+    new User(@user).save () =>
       this.saving = false
       @user = {}
       refresh()
