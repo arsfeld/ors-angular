@@ -48,7 +48,6 @@ div
                   input.search-query(type="text", ng-model="search", 
                     class="offices-query", placeholder="Search")
                 th.centered #{__("Office")}
-                th.centered #{__("Position")}
                 th 
                   a.btn.btn-primary(ng-click="user = {}; editDialog = true") Add user
             tbody
@@ -66,15 +65,7 @@ div
                   a.btn(ng-click="$parent.user = user; $parent.editDialog = true")
                     i.icon-edit
                     |  #{__("Edit")}
-                  button.btn.btn-danger(ng-disabled="saving", 
-                    ng-click="deleteDialog = true")
+                  button.btn.btn-danger(ng-click="deleteDialog = true")
                     i.icon-trash.icon-white
                     |  #{__("Delete")}
-
-                  // Editing controls
-                  span(ng-show="editing")
-                    button.btn.btn-primary(ng-click="save()", ng-disabled="officeForm.$invalid")
-                      span Save
-                    button.btn(ng-click="cancelEdit()")
-                      span Cancel
-          img(src="/img/loader.gif", ng-hide="offices")
+          img(src="/img/loader.gif", ng-hide="users")

@@ -54,7 +54,6 @@
                 <input type="text" ng-model="search" placeholder="Search" class="search-query offices-query"/>
               </th>
               <th class="centered">Office</th>
-              <th class="centered">Position</th>
               <th> <a ng-click="user = {}; editDialog = true" class="btn btn-primary">Add user</a></th>
             </tr>
           </thead>
@@ -70,14 +69,11 @@
               </td>
               <td class="edit-buttons">
                 <!-- Edit and delete buttons--><a ng-click="$parent.user = user; $parent.editDialog = true" class="btn"><i class="icon-edit"></i> Edit</a>
-                <button ng-disabled="saving" ng-click="deleteDialog = true" class="btn btn-danger"><i class="icon-trash icon-white"></i> Delete</button>
-                <!-- Editing controls--><span ng-show="editing">
-                  <button ng-click="save()" ng-disabled="officeForm.$invalid" class="btn btn-primary"><span>Save</span></button>
-                  <button ng-click="cancelEdit()" class="btn"><span>Cancel</span></button></span>
+                <button ng-click="deleteDialog = true" class="btn btn-danger"><i class="icon-trash icon-white"></i> Delete</button>
               </td>
             </tr>
           </tbody>
-        </table><img src="/img/loader.gif" ng-hide="offices"/>
+        </table><img src="/img/loader.gif" ng-hide="users"/>
       </div>
     </div>
   </div>
