@@ -89,9 +89,10 @@ app.get API_BASE_URL + "/users/:userId", user.read
 app.put API_BASE_URL + "/users/:userId", user.update
 app.delete API_BASE_URL + '/users/:userId', user.delete
 
-app.get "/:db/:collection/:id?", rest.query
-app.post "/:db/:collection", rest.create
-app.put "/:db/:collection/:id", rest.update
+app.get API_BASE_URL + "/:db/:collection/:id?", rest.query
+app.post API_BASE_URL + "/:db/:collection", rest.create
+app.put API_BASE_URL + "/:db/:collection/:id", rest.update
+app.del API_BASE_URL + "/:db/:collection/:id", rest.delete
 
 # Catch all route -- If a request makes it this far, it will be passed to angular.
 # This allows for html5mode to be set to true. E.g.
