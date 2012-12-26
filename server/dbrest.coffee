@@ -27,6 +27,13 @@ Query
 #app.get "/:db/:collection/:id?", (req, res) ->
 module.exports.query = (req, res) ->
   query = (if req.query.query then JSON.parse(req.query.query) else {})
+
+  # Providing an id overwrites giving a query in the URL
+  query = _id: new BSON.ObjectID(req.params.id)  if req.params.id
+  options = req.params.options or {}
+  test = ["limit", "sort", "fields", "skip", "hint", "explain", "snapshot", "timeout"]
+  for o of req.query
+    options[o] = req.query[o]  if test.indexOf(o) >= 0
   
   console.log "Querying #{req.params.collection}"
 
@@ -35,6 +42,7 @@ module.exports.query = (req, res) ->
     #console.log docs
     docs.toArray (err, data) ->
       console.log data
+      if req.params.id
 
 
   ###
