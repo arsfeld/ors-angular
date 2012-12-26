@@ -71,7 +71,7 @@ Insert
 ###
 #app.post "/:db/:collection", (req, res) ->
 module.exports.create = (req, res) ->
-  console.log "Body: #{req.body}"
+  console.log "Body: #{req.body[0]}"
   if req.body
     collection = mongoose.connection.collection req.params.collection
     collection.insert(
