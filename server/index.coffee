@@ -95,6 +95,9 @@ app.post API_BASE_URL + "/db/:collection", dbrest.create
 app.put API_BASE_URL + "/db/:collection/:id", dbrest.update
 app.del API_BASE_URL + "/db/:collection/:id", dbrest.delete
 
+app.all '/-/*', (req, res) ->
+  res.send 404
+
 # Catch all route -- If a request makes it this far, it will be passed to angular.
 # This allows for html5mode to be set to true. E.g.
 # 1. Request '/signup'
