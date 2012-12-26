@@ -18,7 +18,7 @@ div
                   .control-group(ng-class="{error: userForm.office.$invalid}")
                     label.control-label(for="name") Office
                     .controls
-                      select(ui-select2="{width: 'resolve'}", ng-model="user.office")
+                      select(ui-select2="{width: 'resolve'}", ng-model="user.office", required)
                         option(ng-repeat="office in offices | orderBy: 'name'", value="{{office.nick}}") {{office.name}}
                   .control-group(ng-class="{error: userForm.name.$invalid}")
                     label.control-label(for="name") Full name
