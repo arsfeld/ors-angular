@@ -15,11 +15,6 @@ div
             .modal-body
               form.form-inline(id="user-form", name="userForm")
                 input.input-medium(type="text", name="name", ng-model="office.name", required)
-                .input-prepend
-                  span.add-on @
-                  input.input-mini(type="text", name="nick", ng-model="office.nick",
-                    ng-pattern="/^[A-Z]{2}$/", required,
-                    tooltip="#{__("Two letter name of the office")}", rel="tooltip")
             .modal-footer
               a.btn(ng-click='editDialog = false') Cancel
               a.btn.btn-danger(ng-click="delete()") Delete
