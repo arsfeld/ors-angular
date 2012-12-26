@@ -32,7 +32,7 @@ div
                 th.centered #{__("Office")}
                 th.centered #{__("Position")}
                 th 
-                  a.btn.btn-primary(ng-click="editDialog = true") Add user
+                  a.btn.btn-primary(ng-click="editDialog = true; addUser = true") Add user
             tbody
               tr(ng-repeat="user in users | filter: search | orderBy: 'name' ")
                 td
