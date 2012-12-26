@@ -14,7 +14,7 @@ div
               h3(ng-show="addUser") #{__("Create user")}
             .modal-body
               .row-fluid
-                form.form-inline(id="user-form", name="userForm")
+                form.form-horizontal.form-inline(id="user-form", name="userForm")
                   .control-group
                     .controls
                       select(ui-select2="{width: 'resolve'}", ng-model="registration.office")
