@@ -62,6 +62,8 @@ App = angular.module('app', [
         redirectTo: '/admin/offices'
       .when '/admin/registrations',
         templateUrl: '/partials/admin/registrations.html'
+      .when '/admin/users',
+        templateUrl: '/partials/admin/users.html'
       .when '/admin/offices',
         templateUrl: '/partials/admin/offices.html'
       .when '/admin/products',
