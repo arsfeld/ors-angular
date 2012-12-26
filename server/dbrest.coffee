@@ -33,6 +33,9 @@ module.exports.query = (req, res) ->
   collection = mongoose.connection.collection req.params.collection
   collection.find query, (err, docs) ->
     console.log docs
+    docs.toArray (err, data) ->
+      console.log data
+
 
   ###
   # Providing an id overwrites giving a query in the URL
