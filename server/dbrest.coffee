@@ -73,7 +73,6 @@ Insert
 module.exports.create = (req, res) ->
   console.log "Body: #{req.body}"
   if req.body
-    res.send JSON.stringify ok: 0, 200
     collection = mongoose.connection.collection req.params.collection
     collection.insert(
       (if Array.isArray(req.body) then req.body[0] else req.body), 
