@@ -28,8 +28,8 @@ div
                   .control-group(ng-class="{error: userForm.email.$invalid}")
                     label.control-label(for="name") Email
                     .controls
-                      input(type="email", name="name", ng-model="user.name", 
-                        required, placeholder="Nome Sobrenome")
+                      input(type="email", name="email", ng-model="user.email", 
+                        required, placeholder="usuario@aiesec.net")
                       span.help-inline(ng-show="userForm.name.$error.required") Obrigatório
                   
             .modal-footer
