@@ -56,6 +56,7 @@ angular.module("session", ["config", "log", "flash"])
   By Adam Wynne
   ###
   $rootScope.$on "$routeChangeSuccess", (current) ->
+    console.log currentSession
     currentUrl = $location.url()
     loginUrl = config.AUTH_LOGIN_REDIRECT_URL
     if currentUrl isnt loginUrl and nextUrl isnt loginUrl
