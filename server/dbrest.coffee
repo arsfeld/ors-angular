@@ -35,14 +35,21 @@ module.exports.query = (req, res) ->
   for o of req.query
     options[o] = req.query[o] if test.indexOf(o) >= 0
   
-  console.log "Querying #{req.params.collection}"
+  console.log "Querying #{req.params.collection} with #{query}"
 
   collection = mongoose.connection.collection req.params.collection
-  collection.find query, (err, docs) ->
-    #console.log docs
-    docs.toArray (err, data) ->
+  collection.find query, (err, cursor) ->
+    cursor.toArray (err, data) ->
       console.log data
       if req.params.id
+        if data.length > 0
+          res.header "Content-Type", "application/json"
+          res.send data[0]
+        else
+          res.send 404
+      else
+        res.header "Content-Type", "application/json"
+        res.send data
 
 
   ###
