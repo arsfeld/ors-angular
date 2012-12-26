@@ -12,5 +12,6 @@
 	"No admin!": "Sem admin!",
 	"Edit": "Editar",
 	"Delete": "Excluir",
-	"Confirmation": "Confirmação"
+	"Confirmation": "Confirmação",
+	"Users": "Users"
 }

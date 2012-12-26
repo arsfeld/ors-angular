@@ -8,14 +8,13 @@
       </div>
     </form>
   </script>
-  <div ng-controller="OfficesController" class="row-fluid">
+  <div ng-controller="UsersController" class="row-fluid">
     <div class="span3">
-      <!--ng-include(src="'/partials/admin/nav.{{locale}}.html'")-->
       <div ng-include="'/partials/admin/nav.html'"></div>
     </div>
     <div class="span9">
       <div class="row-fluid">
-        <h2>Offices</h2>
+        <h2>Users</h2>
         <form id="office-add-form" name="officeForm" novalidate="novalidate" class="form-inline">
           <input type="text" name="name" ng-model="office.name" required="required" placeholder="São Carlos" class="input"/>
           <div class="input-prepend"><span class="add-on">@</span>
