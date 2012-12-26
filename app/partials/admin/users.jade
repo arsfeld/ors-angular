@@ -17,7 +17,7 @@ div
                 form.form-horizontal.form-inline(id="user-form", name="userForm")
                   .control-group
                     .controls
-                      select(ui-select2="{width: 'resolve'}", ng-model="registration.office")
+                      select(ui-select2="{width: 'resolve'}", ng-model="user.office")
                         option(ng-repeat="office in offices | orderBy: 'name'", value="{{office.nick}}") {{office.name}}
                   .control-group(ng-class="{error: userForm.name.$invalid}")
                     label.control-label(for="name") Nome completo

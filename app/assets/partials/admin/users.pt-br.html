@@ -18,7 +18,7 @@
               <form id="user-form" name="userForm" class="form-horizontal form-inline">
                 <div class="control-group">
                   <div class="controls">
-                    <select ui-select2="{width: 'resolve'}" ng-model="registration.office">
+                    <select ui-select2="{width: 'resolve'}" ng-model="user.office">
                       <option ng-repeat="office in offices | orderBy: 'name'" value="{{office.nick}}">{{office.name}}</option>
                     </select>
                   </div>
