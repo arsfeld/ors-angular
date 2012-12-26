@@ -57,8 +57,6 @@ module.exports.create = (req, res) ->
 # Update
 #app.put "/:db/:collection/:id", (req, res) ->
 module.exports.update = (req, res) ->
-  #data = if Array.isArray(req.body) then req.body[0] else req.body
-  #console.log "Body: #{JSON.stringify(data)}"
   spec = _id: new ObjectId req.params.id
   collection = mongoose.connection.collection req.params.collection
   collection.update spec, req.body, (err, docs) ->
@@ -68,9 +66,8 @@ module.exports.update = (req, res) ->
 # Delete
 #app.del "/:db/:collection/:id", (req, res) ->
 module.exports.delete = (req, res) ->
-  spec = _id: new ObjectId(req.params.id)
+  spec = _id: new ObjectId req.params.id
   collection = mongoose.connection.collection req.params.collection
   collection.remove spec, (err, docs) ->
-    console.log err, docs
     res.header "Content-Type", "application/json"
     res.send '{"ok": 1}', 201
