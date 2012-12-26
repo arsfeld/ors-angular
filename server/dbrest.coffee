@@ -28,6 +28,8 @@ Query
 module.exports.query = (req, res) ->
   query = (if req.query.query then JSON.parse(req.query.query) else {})
   
+  console.log "Querying #{req.params.collection}"
+
   collection = mongoose.connection.collection req.params.collection
   collection.find query, (data) ->
     console.log data
