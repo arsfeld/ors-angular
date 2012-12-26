@@ -23,7 +23,7 @@ div
                     label.control-label(for="name") Nome completo
                     .controls
                       input(type="text", name="name", ng-model="user.name", 
-                        required, placeholder="Nome Sobrenome")
+                        required, placeholder="Full name")
                       span.help-inline(ng-show="userForm.name.$error.required") Obrigatório
                   .control-group(ng-class="{error: userForm.email.$invalid}")
                     label.control-label(for="email") Email
