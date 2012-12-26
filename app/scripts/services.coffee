@@ -2,7 +2,7 @@
 
 ### Sevices ###
 
-angular.module('app.models', ['ngResource', 'mongolabResource'])
+angular.module('app.models', ['ngResource', 'apiResource'])
 
 .constant('DB_NAME', "ors")
 .constant('API_KEY', "50bf8346e4b0640a8ae1578c")
