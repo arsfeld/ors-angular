@@ -39,10 +39,8 @@ module.exports.create = (req, res) ->
     collection = mongoose.connection.collection req.params.collection
     collection.insert data, (err, docs) ->
       res.header "Location", "/#{req.params.collection}/#{docs[0]._id}"
-      #res.header "Content-Type", "application/json"
       res.send 201, ok: true
   else
-    #res.header "Content-Type", "application/json"
     res.send 200, ok: true
 
 # Update
