@@ -71,8 +71,9 @@ Insert
 ###
 #app.post "/:db/:collection", (req, res) ->
 module.exports.create = (req, res) ->
-  console.log "Body: #{req.body[0]}"
   if req.body
+    data = if Array.isArray(req.body) then req.body[0] else req.body
+    console.log "Body: data"
     collection = mongoose.connection.collection req.params.collection
     collection.insert(
       (if Array.isArray(req.body) then req.body[0] else req.body), 
