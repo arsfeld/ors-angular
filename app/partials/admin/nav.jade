@@ -1,4 +1,8 @@
 ul.nav.nav-pills.nav-stacked
+  li(ng-class="getClass('/admin/registrations')")
+    a(ng-href="/admin/registrations") 
+        i.icon-inbox
+        |  #{__("Registrations")}
   li(ng-class="getClass('/admin/offices')")
     a(ng-href="/admin/offices") 
         i.icon-globe
@@ -7,7 +11,7 @@ ul.nav.nav-pills.nav-stacked
     a(ng-href="/admin/products") 
         i.icon-barcode
         |  #{__("National Products")}
-  li(ng-class="getClass('/admin/registrations')")
-    a(ng-href="/admin/registrations") 
+  li(ng-class="getClass('/admin/users')")
+    a(ng-href="/admin/users") 
         i.icon-user
-        |  #{__("Registrations")}
+        |  #{__("Users")}
