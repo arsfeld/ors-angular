@@ -7,6 +7,16 @@ div
         .row-fluid
           h2 #{__("Users")}
           
+          // Edit dialog
+          div.modal.fade(ui-modal, ng-model="editDialog")
+            .modal-header
+              h3 #{__("Edit")}
+            .modal-body
+              p Are you sure you want to delete {{office.name}}?
+            .modal-footer
+              a.btn(ng-click='deleteDialog = false') Cancel
+              a.btn.btn-danger(ng-click="delete()") Delete
+
           table.table-striped.table
             thead
               tr
@@ -49,16 +59,6 @@ div
                       ng-click="deleteDialog = true")
                       i.icon-trash.icon-white
                       |  #{__("Delete")}
-
-                    // Delete confirmation dialog
-                    div.modal.fade(ui-modal, ng-model="deleteDialog")
-                      .modal-header
-                        h3 #{__("Confirmation")}
-                      .modal-body
-                        p Are you sure you want to delete {{office.name}}?
-                      .modal-footer
-                        a.btn(ng-click='deleteDialog = false') Cancel
-                        a.btn.btn-danger(ng-click="delete()") Delete
 
                   // Editing controls
                   span(ng-show="editing")
