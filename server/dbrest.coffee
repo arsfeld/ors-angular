@@ -72,7 +72,6 @@ exports.create = (req, res) ->
     res.header "Content-Type", "application/json"
     res.send "{\"ok\":0}", 200
 
-
 ###
 Update
 ###
@@ -106,7 +105,3 @@ exports.delete = (req, res) ->
           res.header "Content-Type", "application/json"
           res.send "{\"ok\":1}"
           db.close()
-
-
-
-
