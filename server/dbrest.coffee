@@ -12,7 +12,7 @@
 mongo = require("mongodb")
 #app = module.parent.exports.app
 #config = module.parent.exports.config
-config = require "config"
+config = require "./config"
 util = require("./util")
 BSON = mongo.BSONPure
 
