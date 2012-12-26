@@ -30,6 +30,7 @@
     "jade-brunch": ">= 1.4.1 < 1.5",
     "static-i18n-jade-brunch": "*",
 
+    "mongodb": "> 1.2",
     "express": "*",
     "email-templates": "0.0.5",
     "ejs": "*",
