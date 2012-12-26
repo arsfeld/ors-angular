@@ -3,20 +3,19 @@
 ###
 session.services provides services for interacting with sessions.
 ###
-angular.module("session", ["config", "log", "ds", "flash"])
+angular.module("session", ["config", "log", "flash"])
 
 
 .factory("session", [
   "config"
   "flash"
   "log"
-  "ds"
   "$location"
   "$rootScope"
   "$route"
 
 
-(config, flash, log, ds, $location, $rootScope, $route) ->
+(config, flash, log, $location, $rootScope, $route) ->
   
   ###
   defaultSession
@@ -33,21 +32,26 @@ angular.module("session", ["config", "log", "ds", "flash"])
   @return a new Session object
   ###
   
-  # TODO can the value param be removed?
+  SessionResource = $apiResource 'sessions'
+
+  class Session extends SessionResource
+    constructor: ->
+      super()
+      @id = ""
+      @userId = ""
+      @userName = ""
+      @roles = []
+      @nextUrl = ""
+      @isAuthenticated = ""
+      @isAdmin = ""
+    @current = @$get()
+
+
+  Session.current = ->
+    "Session", "me", currentSession
+    currentSession
   Session = (value) ->
     angular.copy value or defaultSession, this
-  read = (sessionId, session) ->
-    ds.get "Session", sessionId, session
-  create = (session) ->
-    ds.create "Session", session
-  update = (session) ->
-    log.assert session.id, "user: id is required to preform an update"
-    ds.update "Session", session.id, session
-  destroy = (sessionId) ->
-    ds.destroy "Session", sessionId
-  current = ->
-    ds.get "Session", "me", currentSession
-    currentSession
   nextUrl = ""
   defaultSession =
     id: ""
@@ -58,7 +62,7 @@ angular.module("session", ["config", "log", "ds", "flash"])
     isAuthenticated: ""
     isAdmin: ""
 
-  currentSession = new Session()
+  currentSession = defaultSession
   
   ###
   Code modified from
