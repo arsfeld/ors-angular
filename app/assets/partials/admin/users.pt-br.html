@@ -16,7 +16,7 @@
           <div class="modal-body">
             <div class="row-fluid">
               <form id="user-form" name="userForm" class="form-horizontal form-inline">
-                <div class="control-group">
+                <div ng-class="{error: userForm.office.$invalid}" class="control-group">
                   <label for="name" class="control-label">Office</label>
                   <div class="controls">
                     <select ui-select2="{width: 'resolve'}" ng-model="user.office">
