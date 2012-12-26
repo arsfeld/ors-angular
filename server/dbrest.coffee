@@ -12,7 +12,6 @@
 mongoose = require "mongoose"
 
 # Query
-#app.get "/:db/:collection/:id?", (req, res) ->
 module.exports.query = (req, res) ->
   query = (if req.query.query then JSON.parse(req.query.query) else {})
 
@@ -41,7 +40,6 @@ module.exports.query = (req, res) ->
         res.send data
 
 # Insert
-#app.post "/:db/:collection", (req, res) ->
 module.exports.create = (req, res) ->
   if req.body
     data = if Array.isArray(req.body) then req.body[0] else req.body
