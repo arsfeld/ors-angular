@@ -12,9 +12,15 @@ div
             .modal-header
               h3 #{__("Edit")}
             .modal-body
-              p Are you sure you want to delete {{office.name}}?
+              form.form-inline(id="user-form", name="userForm")
+                input.input-medium(type="text", name="name", ng-model="office.name", required)
+                .input-prepend
+                  span.add-on @
+                  input.input-mini(type="text", name="nick", ng-model="office.nick",
+                    ng-pattern="/^[A-Z]{2}$/", required,
+                    tooltip="#{__("Two letter name of the office")}", rel="tooltip")
             .modal-footer
-              a.btn(ng-click='deleteDialog = false') Cancel
+              a.btn(ng-click='editDialog = false') Cancel
               a.btn.btn-danger(ng-click="delete()") Delete
 
           table.table-striped.table
@@ -25,7 +31,8 @@ div
                     class="offices-query", placeholder="Search")
                 th.centered #{__("Office")}
                 th.centered #{__("Position")}
-                th
+                th 
+                  a.btn.btn-primary(ng-click="editDialog = true") Add user
             tbody
               tr(ng-repeat="user in users | filter: search | orderBy: 'name' ")
                 td

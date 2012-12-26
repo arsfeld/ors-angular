@@ -13,9 +13,14 @@
             <h3>Editar</h3>
           </div>
           <div class="modal-body">
-            <p>Are you sure you want to delete {{office.name}}?</p>
+            <form id="user-form" name="userForm" class="form-inline">
+              <input type="text" name="name" ng-model="office.name" required="required" class="input-medium"/>
+              <div class="input-prepend"><span class="add-on">@</span>
+                <input type="text" name="nick" ng-model="office.nick" ng-pattern="/^[A-Z]{2}$/" required="required" tooltip="Two letter name of the office" rel="tooltip" class="input-mini"/>
+              </div>
+            </form>
           </div>
-          <div class="modal-footer"><a ng-click="deleteDialog = false" class="btn">Cancel</a><a ng-click="delete()" class="btn btn-danger">Delete</a></div>
+          <div class="modal-footer"><a ng-click="editDialog = false" class="btn">Cancel</a><a ng-click="delete()" class="btn btn-danger">Delete</a></div>
         </div>
         <table class="table-striped table">
           <thead>
@@ -25,7 +30,7 @@
               </th>
               <th class="centered">Office</th>
               <th class="centered">Position</th>
-              <th></th>
+              <th> <a ng-click="editDialog = true" class="btn btn-primary">Add user</a></th>
             </tr>
           </thead>
           <tbody>
