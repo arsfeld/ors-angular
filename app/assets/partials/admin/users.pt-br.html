@@ -55,21 +55,11 @@
           <tbody>
             <tr ng-repeat="user in users | filter: search | orderBy: 'name' ">
               <td>
-                <div ng-hide="editing"> <span>{{office.name}}</span><br/><small>@{{office.nick}}</small></div>
-                <form id="office-form" name="officeForm" ng-show="editing" class="form-inline">
-                  <input type="text" name="name" ng-model="office.name" required="required" class="input-medium"/>
-                  <div class="input-prepend"><span class="add-on">@</span>
-                    <input type="text" name="nick" ng-model="office.nick" ng-pattern="/^[A-Z]{2}$/" required="required" tooltip="Two letter name of the office" rel="tooltip" class="input-mini"/>
-                  </div>
-                </form>
+                 
+                 {{user.name}}
+                <p><small>{{user.email}}</small></p>
               </td>
-              <td class="centered"><a data-original-title="{{office.admin.join('
-')}}" ui-jq="tooltip">
-                  <ng-pluralize count="office.admin.length" when="{'0': 'No responsible!', 'one': '{{office.admin[0]}}',                           'other': '{} admins'}" ng-model="admin_count"></ng-pluralize></a>
-                <div ng-hide="office.admin">
-                  <p class="text-warning"> <i class="icon-warning-sign"></i> Sem admin!</p>
-                </div>
-              </td>
+              <td class="centered">{{user.office}}</td>
               <td class="edit-buttons">
                 <!-- Edit and delete buttons--><span ng-hide="editing"><a ng-disabled="saving" ng-click="edit()" class="btn"><i class="icon-edit"></i> Editar</a>
                   <button ng-disabled="saving" ng-click="deleteDialog = true" class="btn btn-danger"><i class="icon-trash icon-white"></i> Excluir</button></span>

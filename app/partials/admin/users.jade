@@ -48,27 +48,11 @@ div
                   a.btn.btn-primary(ng-click="editDialog = true; addUser = true") Add user
             tbody
               tr(ng-repeat="user in users | filter: search | orderBy: 'name' ")
-                td
-                  div(ng-hide="editing") 
-                    span {{office.name}}
-                    br
-                    small @{{office.nick}}
-                  form.form-inline(id="office-form", name="officeForm", ng-show="editing")
-                    input.input-medium(type="text", name="name", ng-model="office.name", required)
-                    .input-prepend
-                      span.add-on @
-                      input.input-mini(type="text", name="nick", ng-model="office.nick",
-                        ng-pattern="/^[A-Z]{2}$/", required,
-                        tooltip="#{__("Two letter name of the office")}", rel="tooltip")
-                td.centered
-                  a(data-original-title="{{office.admin.join('\\n')}}", ui-jq="tooltip")
-                    ng-pluralize(count="office.admin.length",
-                      when="{'0': 'No responsible!', 'one': '{{office.admin[0]}}', \
-                          'other': '{} admins'}", ng-model="admin_count")
-                  div(ng-hide="office.admin")
-                    p.text-warning 
-                      i.icon-warning-sign
-                      |  #{__("No admin!")}
+                td 
+                  |  {{user.name}}
+                  p
+                    small {{user.email}}
+                td.centered {{user.office}}
                 td.edit-buttons
                   // Edit and delete buttons
                   span(ng-hide="editing")
