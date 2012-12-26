@@ -36,6 +36,12 @@
                     <input type="email" name="email" ng-model="user.email" required="required" placeholder="usuario@aiesec.net"/><span ng-show="userForm.email.$error.required" class="help-inline">Obrigatório</span>
                   </div>
                 </div>
+                <div ng-class="{error: userForm.position.$invalid}" class="control-group">
+                  <label for="name" class="control-label">Position</label>
+                  <div class="controls">
+                    <input type="text" name="name" ng-model="user.position" required="required" placeholder="VP GIP OGX"/><span ng-show="userForm.name.$error.required" class="help-inline">Obrigatório</span>
+                  </div>
+                </div>
               </form>
             </div>
           </div>
