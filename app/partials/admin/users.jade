@@ -10,7 +10,8 @@ div
           // Edit dialog
           div.modal.fade(ui-modal, ng-model="editDialog")
             .modal-header
-              h3 #{__("Edit")}
+              h3(ng-hide="addUser") #{__("Edit")}
+              h3(ng-show="addUser") #{__("Edit")}
             .modal-body
               form.form-inline(id="user-form", name="userForm")
                 input.input-medium(type="text", name="name", ng-model="office.name", required)
