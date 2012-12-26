@@ -1,16 +1,8 @@
 'use strict';
-# 
-#    rest.js
-#    mongodb-rest
-#
-#    Base on code written by Tom de Grunt on 2010-10-03.
-#    Portions by Tom de Grunt Copyright (c) 2010 Tom de Grunt.
-#    Portions by Alexandre Rosenfeld Copyright (c) 2012 Alexandre Rosenfeld
-#
-#    	This file is part of mongodb-rest.
-#
-mongoose = require "mongoose"
 
+# Copyright (c) 2012 Alexandre Rosenfeld
+
+mongoose = require "mongoose"
 ObjectId = mongoose.Types.ObjectId
 
 # Query
