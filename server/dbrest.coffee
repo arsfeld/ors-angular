@@ -71,6 +71,6 @@ module.exports.delete = (req, res) ->
   spec = _id: new ObjectId(req.params.id)
   collection = mongoose.connection.collection req.params.collection
   collection.remove spec, (err, docs) ->
-    console.log err
+    console.log err, docs
     res.header "Content-Type", "application/json"
     res.send '{"ok": 1}', 201
