@@ -31,7 +31,7 @@ module.exports.query = (req, res) ->
   console.log "Querying #{req.params.collection}"
 
   collection = mongoose.connection.collection req.params.collection
-  collection.find query, (data) ->
+  collection.find query, (err, docs) ->
     console.log data
 
   ###
