@@ -32,7 +32,7 @@ module.exports.query = (req, res) ->
 
   collection = mongoose.connection.collection req.params.collection
   collection.find query, (err, docs) ->
-    console.log docs
+    #console.log docs
     docs.toArray (err, data) ->
       console.log data
 
