@@ -29,7 +29,7 @@ module.exports.query = (req, res) ->
   query = (if req.query.query then JSON.parse(req.query.query) else {})
 
   # Providing an id overwrites giving a query in the URL
-  query = _id: new BSON.ObjectID(req.params.id)  if req.params.id
+  query = _id: req.params.id if req.params.id
   options = req.params.options or {}
   test = ["limit", "sort", "fields", "skip", "hint", "explain", "snapshot", "timeout"]
   for o of req.query
