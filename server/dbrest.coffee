@@ -76,9 +76,9 @@ module.exports.create = (req, res) ->
     console.log "Body: data"
     collection = mongoose.connection.collection req.params.collection
     collection.insert data, (err, docs) ->
-        res.header "Location", "/#{req.params.collection}/"
-        res.header "Content-Type", "application/json"
-        res.send JSON.stringify ok: 1, 201
+      res.header "Location", "/#{req.params.collection}/"
+      res.header "Content-Type", "application/json"
+      res.send JSON.stringify ok: 1, 201
     ###
     db = new mongo.Db(req.params.db, new mongo.Server(config.db.host, config.db.port,
       auto_reconnect: true
