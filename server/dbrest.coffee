@@ -9,16 +9,6 @@
 #
 #    	This file is part of mongodb-rest.
 #
-#mongo = require("mongodb")
-#app = module.parent.exports.app
-#config = module.parent.exports.config
-#config = require "./config"
-#util = require("./util")
-#BSON = mongo.BSONPure
-
-#MongoClient = mongo.MongoClient
-#Server = mongo.Server
-
 mongoose = require "mongoose"
 
 ###
