@@ -103,12 +103,12 @@ angular.module('app.controllers', [
 
 .controller('UsersController', [
  '$scope'
- 'Users'
+ 'User'
 
-($scope, Users) ->
+($scope, User) ->
 
   update = User.query () ->
-    $scope.users = update
+    $scope.users = update || []
 
   #$scope.$watch 'offices', () ->
     #return unless @offices
