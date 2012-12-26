@@ -95,6 +95,7 @@ app.post API_BASE_URL + "/db/:collection", dbrest.create
 app.put API_BASE_URL + "/db/:collection/:id", dbrest.update
 app.del API_BASE_URL + "/db/:collection/:id", dbrest.delete
 
+# Blocks any attempts to load mal-formed URLs
 app.all '/-/*', (req, res) ->
   res.send 404
 
