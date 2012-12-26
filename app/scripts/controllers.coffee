@@ -110,7 +110,7 @@ angular.module('app.controllers', [
 
   update = User.query () ->
     $scope.users = update || true
-  offices = Office.query()
+  $scope.offices = Office.query()
 
   #$scope.$watch 'offices', () ->
     #return unless @offices
