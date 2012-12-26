@@ -65,7 +65,7 @@ module.exports.create = (req, res) ->
     ###
   else
     res.header "Content-Type", "application/json"
-    res.send "{\"ok\":0}", 200
+    res.send '{"ok":0}', 200
 
 ###
 Update
