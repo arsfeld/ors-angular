@@ -31,10 +31,9 @@ div
                       input(type="email", name="email", ng-model="user.email", 
                         required, placeholder="usuario@aiesec.net")
                       span.help-inline(ng-show="userForm.email.$error.required") Obrigatório
-                  
             .modal-footer
               a.btn(ng-click='editDialog = false; cancel()') Cancel
-              a.btn.btn-danger(ng-click="editDialog = false; save()") Save
+              a.btn.btn-primary(ng-click="editDialog = false; save()") Save
 
           table.table-striped.table
             thead
