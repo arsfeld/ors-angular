@@ -12,6 +12,9 @@ config = module.parent.exports.config
 util = require("./util")
 BSON = mongo.BSONPure
 
+MongoClient = mongo.MongoClient
+Server = mongo.Server
+
 ###
 Query
 ###
