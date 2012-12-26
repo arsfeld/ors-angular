@@ -6,18 +6,6 @@ div
     .span9
         .row-fluid
           h2 #{__("Users")}
-          form#office-add-form.form-inline(name="officeForm", novalidate)
-            input.input(type="text", name="name", ng-model="office.name",
-              required, placeholder="São Carlos")
-            .input-prepend
-              span.add-on @
-              input.input-mini(type="text", name="nick", ng-model="office.nick",
-                ng-pattern="/^[A-Z]{2}$/", placeholder="SC", 
-                tooltip="#{__("Two letter name of the office")}", rel="tooltip", required)
-            button.btn.btn-primary(ng-click="save()", ng-disabled="officeForm.$invalid") 
-              i.icon-plus
-              |  #{__("Add office")}
-          div(ng-include="'officeEdit'")
           
           span
           table.table-striped.table

@@ -6,15 +6,7 @@
     </div>
     <div class="span9">
       <div class="row-fluid">
-        <h2>Users</h2>
-        <form id="office-add-form" name="officeForm" novalidate="novalidate" class="form-inline">
-          <input type="text" name="name" ng-model="office.name" required="required" placeholder="São Carlos" class="input"/>
-          <div class="input-prepend"><span class="add-on">@</span>
-            <input type="text" name="nick" ng-model="office.nick" ng-pattern="/^[A-Z]{2}$/" placeholder="SC" tooltip="Two letter name of the office" rel="tooltip" required="required" class="input-mini"/>
-          </div>
-          <button ng-click="save()" ng-disabled="officeForm.$invalid" class="btn btn-primary"> <i class="icon-plus"></i> Add office</button>
-        </form>
-        <div ng-include="'officeEdit'"></div><span></span>
+        <h2>Users</h2><span></span>
         <table class="table-striped table">
           <thead>
             <tr>
