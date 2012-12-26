@@ -77,7 +77,7 @@ module.exports.create = (req, res) ->
     collection.insert(
       (if Array.isArray(req.body) then req.body[0] else req.body), 
       (err, docs) ->
-        res.header "Location", "/#{req.params.collection}"
+        res.header "Location", "/#{req.params.collection}/"
         res.header "Content-Type", "application/json"
         res.send JSON.stringify ok: 1, 201
     )
