@@ -35,7 +35,7 @@ module.exports.query = (req, res) ->
   for o of req.query
     options[o] = req.query[o] if test.indexOf(o) >= 0
   
-  console.log "Querying #{req.params.collection} with #{query}"
+  console.log "Querying #{req.params.collection} with #{JSON.stringify(query)}"
 
   collection = mongoose.connection.collection req.params.collection
   collection.find query, (err, cursor) ->
