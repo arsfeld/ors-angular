@@ -43,10 +43,10 @@ app.configure ->
 
 app.configure "production", ->
   app.use express.session(store: new SessionMongoose(url: app.get("dbUrl")))
-  mongoose.connect app.get("dbUrl")
+  #mongoose.connect app.get("dbUrl")
 
 app.configure "development", ->
-  mongoose.connect app.get("dbUrl")
+  #mongoose.connect app.get("dbUrl")
   app.use express.errorHandler()
   console.log "Starting Brunch..."
   spawn = require("child_process").spawn
