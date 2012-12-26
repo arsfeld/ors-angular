@@ -11,12 +11,14 @@
 #
 mongoose = require "mongoose"
 
+ObjectId = mongoose.Types.ObjectId
+
 # Query
 module.exports.query = (req, res) ->
   query = (if req.query.query then JSON.parse(req.query.query) else {})
 
   # Providing an id overwrites giving a query in the URL
-  query = _id: new mongoose.Types.ObjectId(req.params.id) if req.params.id
+  query = _id: new ObjectId(req.params.id) if req.params.id
   options = req.params.options or {}
   test = ["limit", "sort", "fields", "skip", "hint", "explain", "snapshot", 
           "timeout"]
@@ -72,7 +74,16 @@ Update
 ###
 #app.put "/:db/:collection/:id", (req, res) ->
 module.exports.update = (req, res) ->
+  #data = if Array.isArray(req.body) then req.body[0] else req.body
+  #console.log "Body: #{JSON.stringify(data)}"
   spec = _id: new BSON.ObjectID(req.params.id)
+  collection = mongoose.connection.collection req.params.collection
+  collection.insert data, (err, docs) ->
+    res.header "Location", "/#{req.params.collection}/#{docs[0]._id}"
+    res.header "Content-Type", "application/json"
+    res.send '{"ok": 1}', 201
+
+  
   db = new mongo.Db(req.params.db, new mongo.Server(config.db.host, config.db.port,
     auto_reconnect: true
   ))
