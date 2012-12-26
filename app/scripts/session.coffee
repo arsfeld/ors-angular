@@ -48,7 +48,7 @@ angular.module("session", ["config", "log", "flash", "apiResource"])
 
   nextUrl = ""
 
-  currentSession = Session.current()
+  currentSession = {} #Session.current()
   
   ###
   Code modified from
