@@ -11,7 +11,7 @@ mongoose = require("mongoose")
 SessionMongoose = require("session-mongoose")
 passport = require("passport")
 auth = require("./auth/routes")
-dbrest = require "dbrest"
+dbrest = require "./dbrest"
 
 # Strategies
 passwordRoutes = require("./auth/password/routes")
