@@ -33,7 +33,7 @@ module.exports.query = (req, res) ->
   options = req.params.options or {}
   test = ["limit", "sort", "fields", "skip", "hint", "explain", "snapshot", "timeout"]
   for o of req.query
-    options[o] = req.query[o]  if test.indexOf(o) >= 0
+    options[o] = req.query[o] if test.indexOf(o) >= 0
   
   console.log "Querying #{req.params.collection}"
 
