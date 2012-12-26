@@ -132,6 +132,7 @@ angular.module('app.controllers', [
   $scope.save = () ->
     new User(@user).save () =>
       @user = {}
+      $scope.users = User.query()
 ])
 
 .controller('ProductsController', [
