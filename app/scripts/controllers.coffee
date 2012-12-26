@@ -101,6 +101,43 @@ angular.module('app.controllers', [
       refresh()
 ])
 
+.controller('UsersController', [
+ '$scope'
+ 'Users'
+
+($scope, Users) ->
+
+  refresh = () ->
+    update = Office.query () ->
+      $scope.offices = update
+  refresh()
+
+  $scope.$watch 'offices', () ->
+    #return unless @offices
+    #_.each @offices, (office) ->
+    #  console.log office
+
+  $scope.edit = () ->
+    @original = angular.copy(@office)
+    @editing = true
+  $scope.cancelEdit = () ->
+    angular.copy(this.original, @office)
+    @editing = false
+  $scope.delete = () ->
+    @deleting = true
+    @office.remove () =>
+      @deleting = false
+      @deleteDialog = false
+      refresh()
+  $scope.save = () ->
+    this.editing = false
+    this.saving = true
+    new Office(@office).save () =>
+      this.saving = false
+      @office = {}
+      refresh()
+])
+
 .controller('ProductsController', [
  '$scope'
  'Product'
