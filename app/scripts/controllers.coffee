@@ -108,8 +108,10 @@ angular.module('app.controllers', [
 
 ($scope, User, Office) ->
 
-  update = User.query () ->
-    $scope.users = update || true
+  refresh = () ->
+    update = User.query () ->
+      $scope.users = update || true
+  refresh()
   $scope.offices = Office.query()
 
   #$scope.$watch 'offices', () ->
@@ -132,7 +134,7 @@ angular.module('app.controllers', [
   $scope.save = () ->
     new User(@user).save () =>
       @user = {}
-      $scope.users = User.query()
+      refresh()
 ])
 
 .controller('ProductsController', [
