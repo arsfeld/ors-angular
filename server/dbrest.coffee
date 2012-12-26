@@ -47,8 +47,7 @@ module.exports.update = (req, res) ->
   spec = _id: new ObjectId req.params.id
   collection = mongoose.connection.collection req.params.collection
   collection.update spec, req.body, (err, docs) ->
-    res.header "Content-Type", "application/json"
-    res.send '{"ok": 1}', 200
+    res.send 200, ok: true
 
 # Delete
 #app.del "/:db/:collection/:id", (req, res) ->
@@ -56,5 +55,4 @@ module.exports.delete = (req, res) ->
   spec = _id: new ObjectId req.params.id
   collection = mongoose.connection.collection req.params.collection
   collection.remove spec, (err, docs) ->
-    res.header "Content-Type", "application/json"
-    res.send '{"ok": 1}', 200
+    res.send 200, ok: true
