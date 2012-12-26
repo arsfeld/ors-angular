@@ -11,9 +11,7 @@
 #
 mongoose = require "mongoose"
 
-###
-Query
-###
+# Query
 #app.get "/:db/:collection/:id?", (req, res) ->
 module.exports.query = (req, res) ->
   query = (if req.query.query then JSON.parse(req.query.query) else {})
@@ -42,42 +40,7 @@ module.exports.query = (req, res) ->
         res.header "Content-Type", "application/json"
         res.send data
 
-
-  ###
-  # Providing an id overwrites giving a query in the URL
-  query = _id: new BSON.ObjectID(req.params.id)  if req.params.id
-  options = req.params.options or {}
-  test = ["limit", "sort", "fields", "skip", "hint", "explain", "snapshot", "timeout"]
-  for o of req.query
-    options[o] = req.query[o]  if test.indexOf(o) >= 0
-  db = new mongo.Db(req.params.db, new mongo.Server(config.db.host, config.db.port,
-    auto_reconnect: true
-  ))
-  db.open (err, db) ->
-    db.authenticate config.db.username, config.db.password, ->
-      db.collection req.params.collection, (err, collection) ->
-        collection.find query, options, (err, cursor) ->
-          cursor.toArray (err, docs) ->
-            result = []
-            if req.params.id
-              if docs.length > 0
-                result = docs[0] #util.flavorize(docs[0], "out")
-                res.header "Content-Type", "application/json"
-                res.send result
-              else
-                res.send 404
-            else
-              docs.forEach (doc) ->
-                result.push doc #util.flavorize(doc, "out")
-
-              res.header "Content-Type", "application/json"
-              res.send result
-            db.close()
-  ###
-
-###
-Insert
-###
+# Insert
 #app.post "/:db/:collection", (req, res) ->
 module.exports.create = (req, res) ->
   if req.body
