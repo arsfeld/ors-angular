@@ -16,3 +16,6 @@ angular.module('app.models', ['ngResource', 'apiResource'])
   Registration = $apiResource 'registration'
 )
 
+.factory('Users', ($apiResource) ->
+  Users = $apiResource 'users'
+)
