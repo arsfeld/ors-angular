@@ -28,7 +28,6 @@ module.exports.query = (req, res) ->
   collection = mongoose.connection.collection req.params.collection
   collection.find query, (err, cursor) ->
     cursor.toArray (err, data) ->
-      console.log data
       if req.params.id
         if data.length > 0
           res.header "Content-Type", "application/json"
