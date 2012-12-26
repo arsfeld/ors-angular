@@ -48,7 +48,7 @@ div
                   input.search-query(type="text", ng-model="search", 
                     class="offices-query", placeholder="Search")
                 th.centered #{__("Office")}
-                th 
+                th.centered
                   a.btn.btn-primary(ng-click="user = {}; editDialog = true") Add user
             tbody
               tr(ng-repeat="user in users | filter: search | orderBy: 'name' ")
@@ -60,7 +60,7 @@ div
                   |  {{user.office}}
                   p
                     small {{user.position}}
-                td.edit-buttons
+                td.edit-buttons.centered
                   // Edit and delete buttons
                   a.btn(ng-click="$parent.user = user; $parent.editDialog = true")
                     i.icon-edit
