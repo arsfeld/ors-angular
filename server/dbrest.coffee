@@ -1,3 +1,4 @@
+'use strict';
 # 
 #    rest.js
 #    mongodb-rest
