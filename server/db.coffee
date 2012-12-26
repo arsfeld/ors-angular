@@ -15,7 +15,8 @@ BSON = mongo.BSONPure
 ###
 Query
 ###
-app.get "/:db/:collection/:id?", (req, res) ->
+#app.get "/:db/:collection/:id?", (req, res) ->
+exports.query = (req, res) ->
   query = (if req.query.query then JSON.parse(req.query.query) else {})
   
   # Providing an id overwrites giving a query in the URL
@@ -57,7 +58,8 @@ app.get "/:db/:collection/:id?", (req, res) ->
 ###
 Insert
 ###
-app.post "/:db/:collection", (req, res) ->
+#app.post "/:db/:collection", (req, res) ->
+exports.create = (req, res) ->
   if req.body
     db = new mongo.Db(req.params.db, new mongo.Server(config.db.host, config.db.port,
       auto_reconnect: true
@@ -72,10 +74,6 @@ app.post "/:db/:collection", (req, res) ->
             res.header "Content-Type", "application/json"
             res.send "{\"ok\":1}", 201
             db.close()
-
-
-
-
   else
     res.header "Content-Type", "application/json"
     res.send "{\"ok\":0}", 200
@@ -84,7 +82,8 @@ app.post "/:db/:collection", (req, res) ->
 ###
 Update
 ###
-app.put "/:db/:collection/:id", (req, res) ->
+#app.put "/:db/:collection/:id", (req, res) ->
+exports.update = (req, res) ->
   spec = _id: new BSON.ObjectID(req.params.id)
   db = new mongo.Db(req.params.db, new mongo.Server(config.db.host, config.db.port,
     auto_reconnect: true
@@ -97,15 +96,11 @@ app.put "/:db/:collection/:id", (req, res) ->
           res.send "{\"ok\":1}"
           db.close()
 
-
-
-
-
-
 ###
 Delete
 ###
-app.del "/:db/:collection/:id", (req, res) ->
+#app.del "/:db/:collection/:id", (req, res) ->
+exports.delete = (req, res) ->
   spec = _id: new BSON.ObjectID(req.params.id)
   db = new mongo.Db(req.params.db, new mongo.Server(config.db.host, config.db.port,
     auto_reconnect: true
