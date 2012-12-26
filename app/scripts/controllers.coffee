@@ -130,12 +130,8 @@ angular.module('app.controllers', [
       @deleteDialog = false
       refresh()
   $scope.save = () ->
-    this.editing = false
-    this.saving = true
     new User(@user).save () =>
-      this.saving = false
       @user = {}
-      refresh()
 ])
 
 .controller('ProductsController', [
