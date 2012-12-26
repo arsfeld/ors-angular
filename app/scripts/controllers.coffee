@@ -107,12 +107,10 @@ angular.module('app.controllers', [
 
 ($scope, Users) ->
 
-  refresh = () ->
-    update = Office.query () ->
-      $scope.offices = update
-  refresh()
+  update = Users.query () ->
+    $scope.users = update
 
-  $scope.$watch 'offices', () ->
+  #$scope.$watch 'offices', () ->
     #return unless @offices
     #_.each @offices, (office) ->
     #  console.log office
