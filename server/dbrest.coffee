@@ -72,6 +72,7 @@ Insert
 #app.post "/:db/:collection", (req, res) ->
 module.exports.create = (req, res) ->
   if req.body
+    ###
     db = new mongo.Db(req.params.db, new mongo.Server(config.db.host, config.db.port,
       auto_reconnect: true
     ))
@@ -85,6 +86,7 @@ module.exports.create = (req, res) ->
             res.header "Content-Type", "application/json"
             res.send "{\"ok\":1}", 201
             db.close()
+    ###
   else
     res.header "Content-Type", "application/json"
     res.send "{\"ok\":0}", 200
