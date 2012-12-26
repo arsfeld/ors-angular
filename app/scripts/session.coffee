@@ -46,23 +46,9 @@ angular.module("session", ["config", "log", "flash"])
       @isAdmin = ""
     @current = @$get()
 
-
-  Session.current = ->
-    "Session", "me", currentSession
-    currentSession
-  Session = (value) ->
-    angular.copy value or defaultSession, this
   nextUrl = ""
-  defaultSession =
-    id: ""
-    userId: ""
-    userName: ""
-    roles: []
-    nextUrl: ""
-    isAuthenticated: ""
-    isAdmin: ""
 
-  currentSession = defaultSession
+  currentSession = Session.current()
   
   ###
   Code modified from
