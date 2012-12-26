@@ -15,6 +15,16 @@ div
             .modal-body
               form.form-inline(id="user-form", name="userForm")
                 input.input-medium(type="text", name="name", ng-model="office.name", required)
+                .control-group
+                  .controls
+                    select(ui-select2="{width: 'resolve'}", ng-model="registration.office")
+                      option(ng-repeat="office in allOffices | orderBy: 'name'", value="{{office.nick}}") {{office.name}}
+                .control-group(ng-class="{error: registrationForm.name.$invalid}")
+                  label.control-label(for="name") Nome completo
+                  .controls
+                    input(type="text", name="name", ng-model="registration.name", 
+                      required, placeholder="Nome Sobrenome")
+                    span.help-inline(ng-show="registrationForm.name.$error.required") Obrigatório
             .modal-footer
               a.btn(ng-click='editDialog = false') Cancel
               a.btn.btn-danger(ng-click="delete()") Delete
