@@ -1,15 +1,12 @@
 angular.module('mongolabResource', ['config', 'ngResource'])
   .factory '$mongolabResource', [
     '$resource'
-    'API_KEY'
-    'DB_NAME',
+    'config'
 
-    ($resource, DB_NAME) ->
+    ($resource, config) ->
       (collectionName) ->
-        Collection = $resource "https://api.mongolab.com/api/1/databases/" +
-                               "#{DB_NAME}/collections/#{collectionName}/:id",
-          apiKey:API_KEY
-          id:'@_id.$oid',
+        Collection = $resource config.API_BASE_URL = "db/#{collectionName}/:id",
+          id:'@_id',
             update:
               method:'PUT'
 
@@ -17,7 +14,7 @@ angular.module('mongolabResource', ['config', 'ngResource'])
           Collection.get id:id, cb, errorcb
 
         Collection::update = (cb, errorcb) ->
-          Collection.update id:this._id.$oid,
+          Collection.update id:this._id,
             angular.extend {}, this, _id:undefined,
             cb, errorcb
 
