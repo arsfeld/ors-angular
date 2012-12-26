@@ -28,6 +28,8 @@ Query
 module.exports.query = (req, res) ->
   query = (if req.query.query then JSON.parse(req.query.query) else {})
   
+  mongoose.connection.collection req.params.collection
+
   ###
   # Providing an id overwrites giving a query in the URL
   query = _id: new BSON.ObjectID(req.params.id)  if req.params.id
