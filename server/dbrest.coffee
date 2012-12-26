@@ -21,11 +21,12 @@ module.exports.query = (req, res) ->
   # Providing an id overwrites giving a query in the URL
   query = _id: new mongoose.Types.ObjectId(req.params.id) if req.params.id
   options = req.params.options or {}
-  test = ["limit", "sort", "fields", "skip", "hint", "explain", "snapshot", "timeout"]
+  test = ["limit", "sort", "fields", "skip", "hint", "explain", "snapshot", 
+          "timeout"]
   for o of req.query
     options[o] = req.query[o] if test.indexOf(o) >= 0
   
-  console.log "Querying #{req.params.collection} with #{JSON.stringify(query)}"
+  #console.log "Querying #{req.params.collection} with #{JSON.stringify(query)}"
 
   collection = mongoose.connection.collection req.params.collection
   collection.find query, (err, cursor) ->
