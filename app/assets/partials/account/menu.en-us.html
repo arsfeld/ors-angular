@@ -1,5 +1,5 @@
 
 <ul class="nav pull-right">
-  <li ng-hide="user.isAuthenticated()"><a ng-class="getClass('/login')" href="/login">Login</a></li>
+  <li ng-hide="user.isAuthenticated()" ng-class="getClass('/login')"><a href="/login">Login</a></li>
   <li ng-show="user.isAuthenticated()"><a ng-class="getClass('/account')" href="/account/">Account</a>|<a href="/account/"><span ng-bind="user.displayName()"></span></a>|<a href="" ng-click="logout()">logout</a></li>
 </ul>

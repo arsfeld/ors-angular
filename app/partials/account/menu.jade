@@ -1,6 +1,6 @@
 ul.nav.pull-right
-    li(ng-hide='user.isAuthenticated()')
-      a(ng-class="getClass('/login')", href='/login') Login
+    li(ng-hide='user.isAuthenticated()', ng-class="getClass('/login')")
+      a(href='/login') Login
     li(ng-show='user.isAuthenticated()')
       a(ng-class='getClass(\'/account\')', href='/account/') Account
       | |
