@@ -19,14 +19,14 @@
                 <div class="control-group">
                   <div class="controls">
                     <select ui-select2="{width: 'resolve'}" ng-model="registration.office">
-                      <option ng-repeat="office in allOffices | orderBy: 'name'" value="{{office.nick}}">{{office.name}}</option>
+                      <option ng-repeat="office in offices | orderBy: 'name'" value="{{office.nick}}">{{office.name}}</option>
                     </select>
                   </div>
                 </div>
-                <div ng-class="{error: registrationForm.name.$invalid}" class="control-group">
+                <div ng-class="{error: userForm.name.$invalid}" class="control-group">
                   <label for="name" class="control-label">Nome completo</label>
                   <div class="controls">
-                    <input type="text" name="name" ng-model="registration.name" required="required" placeholder="Nome Sobrenome"/><span ng-show="registrationForm.name.$error.required" class="help-inline">Obrigatório</span>
+                    <input type="text" name="name" ng-model="user.name" required="required" placeholder="Nome Sobrenome"/><span ng-show="userForm.name.$error.required" class="help-inline">Obrigatório</span>
                   </div>
                 </div>
               </form>
