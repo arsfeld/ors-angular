@@ -1,10 +1,10 @@
-angular.module('mongolabResource', ['ngResource'])
+angular.module('mongolabResource', ['config', 'ngResource'])
   .factory '$mongolabResource', [
     '$resource'
     'API_KEY'
     'DB_NAME',
 
-    ($resource, API_KEY, DB_NAME) ->
+    ($resource, DB_NAME) ->
       (collectionName) ->
         Collection = $resource "https://api.mongolab.com/api/1/databases/" +
                                "#{DB_NAME}/collections/#{collectionName}/:id",
