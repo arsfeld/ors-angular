@@ -50,21 +50,6 @@ module.exports.create = (req, res) ->
       res.header "Location", "/#{req.params.collection}/#{docs[0]._id}"
       res.header "Content-Type", "application/json"
       res.send '{"ok": 1}', 201
-    ###
-    db = new mongo.Db(req.params.db, new mongo.Server(config.db.host, config.db.port,
-      auto_reconnect: true
-    ))
-    db.open (err, db) ->
-      db.authenticate config.db.username, config.db.password, ->
-        db.collection req.params.collection, (err, collection) ->
-          
-          # We only support inserting one document at a time
-          collection.insert (if Array.isArray(req.body) then req.body[0] else req.body), (err, docs) ->
-            res.header "Location", "/" + req.params.db + "/" + req.params.collection + "/" + docs[0]._id.toHexString()
-            res.header "Content-Type", "application/json"
-            res.send "{\"ok\":1}", 201
-            db.close()
-    ###
   else
     res.header "Content-Type", "application/json"
     res.send '{"ok":0}', 200
