@@ -26,7 +26,7 @@ angular.module('apiResource', ['config', 'ngResource'])
             @$save savecb, errorSavecb
 
         Collection::remove = (cb, errorcb) ->
-          Collection.remove id: @_id.$oid, cb, errorcb
+          Collection.remove id: @_id, cb, errorcb
 
         Collection
   ]
