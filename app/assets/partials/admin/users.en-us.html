@@ -69,7 +69,7 @@
                 <p><small>{{user.position}}</small></p>
               </td>
               <td class="edit-buttons">
-                <!-- Edit and delete buttons--><a ng-click="editDialog = true" class="btn"><i class="icon-edit"></i> Edit</a>
+                <!-- Edit and delete buttons--><a ng-click="$parent.editDialog = true" class="btn"><i class="icon-edit"></i> Edit</a>
                 <button ng-disabled="saving" ng-click="deleteDialog = true" class="btn btn-danger"><i class="icon-trash icon-white"></i> Delete</button>
                 <!-- Editing controls--><span ng-show="editing">
                   <button ng-click="save()" ng-disabled="officeForm.$invalid" class="btn btn-primary"><span>Save</span></button>
