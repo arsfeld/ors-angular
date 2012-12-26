@@ -80,6 +80,7 @@ module.exports.create = (req, res) ->
         res.header "Location", "/#{req.params.collection}"
         res.header "Content-Type", "application/json"
         res.send JSON.stringify ok: 1, 201
+    )
     ###
     db = new mongo.Db(req.params.db, new mongo.Server(config.db.host, config.db.port,
       auto_reconnect: true
