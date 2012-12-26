@@ -24,12 +24,10 @@ module.exports.query = (req, res) ->
     cursor.toArray (err, data) ->
       if req.params.id
         if data.length > 0
-          res.header "Content-Type", "application/json"
           res.send data[0]
         else
           res.send 404
       else
-        res.header "Content-Type", "application/json"
         res.send data
 
 # Insert
