@@ -30,7 +30,7 @@ div
                     .controls
                       input(type="email", name="email", ng-model="user.email", 
                         required, placeholder="usuario@aiesec.net")
-                      span.help-inline(ng-show="userForm.name.$error.required") Obrigatório
+                      span.help-inline(ng-show="userForm.email.$error.required") Obrigatório
                   
             .modal-footer
               a.btn(ng-click='editDialog = false') Cancel
