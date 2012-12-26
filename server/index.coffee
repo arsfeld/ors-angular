@@ -46,6 +46,7 @@ app.configure "production", ->
   mongoose.connect app.get("dbUrl")
 
 app.configure "development", ->
+  console.log "Connecting to db in #{app.get('dbUrl')}"
   mongoose.connect app.get("dbUrl")
   app.use express.errorHandler()
   console.log "Starting Brunch..."
