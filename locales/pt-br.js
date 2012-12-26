@@ -13,5 +13,7 @@
 	"Edit": "Editar",
 	"Delete": "Excluir",
 	"Confirmation": "Confirmação",
-	"Users": "Users"
+	"Users": "Users",
+	"Office": "Office",
+	"Position": "Position"
 }

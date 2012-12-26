@@ -13,7 +13,8 @@ div
                 th
                   input.search-query(type="text", ng-model="search", 
                     class="offices-query", placeholder="Search")
-                th.centered #{__("Administrator")}
+                th.centered #{__("Office")}
+                th.centered #{__("Position")}
                 th
             tbody
               tr(ng-repeat="user in users | filter: search | orderBy: 'name' ")
