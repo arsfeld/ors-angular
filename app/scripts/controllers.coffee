@@ -120,9 +120,9 @@ angular.module('app.controllers', [
   $scope.edit = () ->
     @original = angular.copy(@user)
     @editing = true
-  $scope.cancelEdit = () ->
+  $scope.cancel = () ->
     angular.copy(this.original, @user)
-    @editing = false
+    #@editing = false
   $scope.delete = () ->
     @deleting = true
     @user.remove () =>

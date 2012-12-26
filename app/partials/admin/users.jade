@@ -33,7 +33,7 @@ div
                       span.help-inline(ng-show="userForm.email.$error.required") Obrigatório
                   
             .modal-footer
-              a.btn(ng-click='editDialog = false') Cancel
+              a.btn(ng-click='editDialog = false; cancel()') Cancel
               a.btn.btn-danger(ng-click="editDialog = false; save()") Save
 
           table.table-striped.table
