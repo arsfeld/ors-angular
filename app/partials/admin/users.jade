@@ -25,6 +25,13 @@ div
                       input(type="text", name="name", ng-model="user.name", 
                         required, placeholder="Nome Sobrenome")
                       span.help-inline(ng-show="userForm.name.$error.required") Obrigatório
+                  .control-group(ng-class="{error: userForm.email.$invalid}")
+                    label.control-label(for="name") Email
+                    .controls
+                      input(type="email", name="name", ng-model="user.name", 
+                        required, placeholder="Nome Sobrenome")
+                      span.help-inline(ng-show="userForm.name.$error.required") Obrigatório
+                  
             .modal-footer
               a.btn(ng-click='editDialog = false') Cancel
               a.btn.btn-danger(ng-click="delete()") Delete
