@@ -10,11 +10,11 @@ div
           // Edit dialog
           div.modal.fade(ui-modal, ng-model="editDialog")
             .modal-header
-              h3(ng-hide="user") #{__("Edit user")}
-              h3(ng-show="user") #{__("Create user")}
+              h3(ng-show="user._id") #{__("Edit user")}
+              h3(ng-hide="user._id") #{__("Create user")}
             .modal-body
               .row-fluid
-                form.form-horizontal.form-inline(id="user-form", name="userForm")
+                form.form-horizontal.form-inline(id="user-form", name="userForm", ng-hide="deleting")
                   .control-group(ng-class="{error: userForm.name.$invalid}")
                     label.control-label(for="name") Full name
                     .controls
@@ -37,8 +37,17 @@ div
                     .controls
                       input(type="text", name="name", ng-model="user.position", 
                         placeholder="VP GIP OGX")
-            .modal-footer
-              a.btn(ng-click='editDialog = false; cancel()') Cancel
+                .alert.alert-error.fade.in(ng-show="deleting")
+                  p  <strong>Warning!</strong> Are you sure you want to delete
+                    |  {{user.email}}?
+                  //p  There is no going back!
+                  p
+                    a.btn.btn-danger(ng-click="delete(); editDialog = false") Delete this user
+                    |  
+                    a.btn(ng-click="deleting = false") Cancel
+            .modal-footer(ng-hide="deleting")
+              a.pull-left.btn.btn-danger(ng-click="deleting = true", ng-show="user._id") Delete
+              a.btn(ng-click='editDialog = false') Cancel
               a.btn.btn-primary(ng-click="editDialog = false; save()") Save
 
           table.table-striped.table
@@ -48,24 +57,26 @@ div
                   input.search-query(type="text", ng-model="search", 
                     class="offices-query", placeholder="Search")
                 th.centered #{__("Office")}
-                th.centered
-                  a.btn.btn-primary(ng-click="user = {}; editDialog = true") Add user
+                th.right-text.middle
+                  a.btn.btn-primary(ng-click="user = {}; deleting = false; editDialog = true") Add user
             tbody
               tr(ng-repeat="user in users | filter: search | orderBy: 'name' ")
-                td 
+                td.middle
+                  div.gravatar-img(gravatar="{{user.email}}")
                   |  {{user.name}}
-                  p
-                    small {{user.email}}
+                  br
+                  small {{user.email}}
                 td.centered
-                  |  {{user.office}}
-                  p
-                    small {{user.position}}
-                td.centered
+                  |  @{{user.office}}
+                  br
+                  small {{user.position}}
+                td.right-text.middle
                   // Edit and delete buttons
-                  a.btn(ng-click="$parent.user = user; $parent.editDialog = true")
+                  a.btn(ng-click="$copy(user, $parent.user); $parent.deleting = false; $parent.editDialog = true")
                     i.icon-edit
                     |  #{__("Edit")}
-                  button.btn.btn-danger(ng-click="deleteDialog = true")
-                    i.icon-trash.icon-white
-                    |  #{__("Delete")}
+                  //button.btn.btn-danger(ng-click="deleteDialog = true")
+                  //  i.icon-trash.icon-white
+                  //  |  #{__("Delete")}
+          
           img(src="/img/loader.gif", ng-hide="users")

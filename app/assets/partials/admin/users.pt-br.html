@@ -10,12 +10,12 @@
         <!-- Edit dialog-->
         <div ui-modal="ui-modal" ng-model="editDialog" class="modal fade">
           <div class="modal-header">
-            <h3 ng-hide="user">Edit user</h3>
-            <h3 ng-show="user">Create user</h3>
+            <h3 ng-show="user._id">Edit user</h3>
+            <h3 ng-hide="user._id">Create user</h3>
           </div>
           <div class="modal-body">
             <div class="row-fluid">
-              <form id="user-form" name="userForm" class="form-horizontal form-inline">
+              <form id="user-form" name="userForm" ng-hide="deleting" class="form-horizontal form-inline">
                 <div ng-class="{error: userForm.name.$invalid}" class="control-group">
                   <label for="name" class="control-label">Full name</label>
                   <div class="controls">
@@ -43,9 +43,17 @@
                   </div>
                 </div>
               </form>
+              <div ng-show="deleting" class="alert alert-error fade in">
+                <p>
+                   <strong>Warning!</strong> Are you sure you want to delete
+                   {{user.email}}?
+                </p>
+                <!--p  There is no going back!-->
+                <p><a ng-click="delete(); editDialog = false" class="btn btn-danger">Delete this user</a> <a ng-click="deleting = false" class="btn">Cancel</a></p>
+              </div>
             </div>
           </div>
-          <div class="modal-footer"><a ng-click="editDialog = false; cancel()" class="btn">Cancel</a><a ng-click="editDialog = false; save()" class="btn btn-primary">Save</a></div>
+          <div ng-hide="deleting" class="modal-footer"><a ng-click="deleting = true" ng-show="user._id" class="pull-left btn btn-danger">Delete</a><a ng-click="editDialog = false" class="btn">Cancel</a><a ng-click="editDialog = false; save()" class="btn btn-primary">Save</a></div>
         </div>
         <table class="table-striped table">
           <thead>
@@ -54,22 +62,20 @@
                 <input type="text" ng-model="search" placeholder="Search" class="search-query offices-query"/>
               </th>
               <th class="centered">Office</th>
-              <th class="centered"><a ng-click="user = {}; editDialog = true" class="btn btn-primary">Add user</a></th>
+              <th class="right-text middle"><a ng-click="user = {}; deleting = false; editDialog = true" class="btn btn-primary">Add user</a></th>
             </tr>
           </thead>
           <tbody>
             <tr ng-repeat="user in users | filter: search | orderBy: 'name' ">
-              <td>
-                 
-                 {{user.name}}
-                <p><small>{{user.email}}</small></p>
+              <td class="middle">
+                <div gravatar="{{user.email}}" class="gravatar-img"></div> {{user.name}}<br/><small>{{user.email}}</small>
               </td>
-              <td class="centered"> {{user.office}}
-                <p><small>{{user.position}}</small></p>
-              </td>
-              <td class="centered">
-                <!-- Edit and delete buttons--><a ng-click="$parent.user = user; $parent.editDialog = true" class="btn"><i class="icon-edit"></i> Editar</a>
-                <button ng-click="deleteDialog = true" class="btn btn-danger"><i class="icon-trash icon-white"></i> Excluir</button>
+              <td class="centered"> @{{user.office}}<br/><small>{{user.position}}</small></td>
+              <td class="right-text middle">
+                <!-- Edit and delete buttons--><a ng-click="$copy(user, $parent.user); $parent.deleting = false; $parent.editDialog = true" class="btn"><i class="icon-edit"></i> Editar</a>
+                <!--button.btn.btn-danger(ng-click="deleteDialog = true")-->
+                <!--  i.icon-trash.icon-white-->
+                <!--  |  #{__("Delete")}-->
               </td>
             </tr>
           </tbody>

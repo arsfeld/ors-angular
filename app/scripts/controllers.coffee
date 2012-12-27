@@ -22,10 +22,15 @@ angular.module('app.controllers', [
 
   $locale.id = "pt-br"
 
+
+  #Office.load()
+  # () ->
+  #  $scope.offices = Office.all()
   products = Product.query () ->
     $rootScope.allProducts = products
-  offices = Office.query () ->
-    $rootScope.allOffices = offices
+  #offices = Office.query () ->
+  #  $rootScope.allOffices = offices
+  $rootScope.$copy = angular.copy
 
   # Uses the url to determine if the selected
   # menu item should have the class active.
@@ -71,11 +76,20 @@ angular.module('app.controllers', [
 ($scope, Office) ->
 
   refresh = () ->
-    update = Office.query () ->
-      $scope.offices = update
-  refresh()
+    console.log "Refresh requested"
+    #$scope.offices = Office.all()
+    #update = Office.query () ->
+    #  $scope.offices = update
+    Office.load (data) ->
+      $scope.offices = Office.all()
 
-  $scope.$watch 'offices', () ->
+  $scope.offices = Office.all()
+  #Office.bind "load", (data) ->
+  #  $scope.offices = Office.all()
+  
+  $scope.office = {}
+
+  #$scope.$watch 'offices', () ->
     #return unless @offices
     #_.each @offices, (office) ->
     #  console.log office
@@ -98,7 +112,7 @@ angular.module('app.controllers', [
     new Office(@office).save () =>
       this.saving = false
       @office = {}
-      refresh()
+      #refresh()
 ])
 
 .controller('UsersController', [
@@ -109,15 +123,19 @@ angular.module('app.controllers', [
 ($scope, User, Office) ->
 
   refresh = () ->
-    update = User.query () ->
-      $scope.users = update || true
-  refresh()
-  $scope.offices = Office.query()
+    User.load()
+    #update = User.query () ->
+    #  $scope.users = update
+  #refresh()
+  $scope.users = User.all()
+  $scope.offices = Office.all()
 
   #$scope.$watch 'offices', () ->
     #return unless @offices
     #_.each @offices, (office) ->
     #  console.log office
+
+  $scope.user = {}
 
   $scope.edit = () ->
     @original = angular.copy(@user)
@@ -126,9 +144,7 @@ angular.module('app.controllers', [
     angular.copy(this.original, @user)
     #@editing = false
   $scope.delete = () ->
-    @deleting = true
     @user.remove () =>
-      @deleting = false
       @deleteDialog = false
       refresh()
   $scope.save = () ->

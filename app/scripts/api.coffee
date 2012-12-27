@@ -14,6 +14,15 @@ angular.module('apiResource', ['config', 'ngResource'])
         Collection.getById = (id, cb, errorcb) ->
           Collection.get id:id, cb, errorcb
 
+        Collection.load = (cb) ->
+          @items = @query(cb)
+
+        Collection.all = () ->
+          return this.items
+
+        #Collection.query = (id, cb, errorcb) ->
+
+
         ###
         Collection::update = (cb, errorcb) ->
           Collection.update id:this._id,
@@ -22,15 +31,13 @@ angular.module('apiResource', ['config', 'ngResource'])
         ###
 
         Collection::save = (savecb, updatecb, errorSavecb, errorUpdatecb) ->
-          if @_id?.$oid?
-            @update savecb, errorUpdatecb
+          if @_id?
+            @$update savecb, errorUpdatecb
           else
             @$save savecb, errorSavecb
 
-        ###
         Collection::remove = (cb, errorcb) ->
           Collection.remove id: @_id, cb, errorcb
-        ###
 
         Collection
   ]

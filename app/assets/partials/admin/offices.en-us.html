@@ -1,29 +1,64 @@
 
 <div>
-  <script type="text/ng-template" id="officeEdit">
-    <form name="officeForm" ng-show="editing" class="form-inline">
-      <input type="text" name="name" ng-model="office.name" class="input-medium"/>
-      <div class="input-prepend"><span class="add-on">@</span>
-        <input type="text" name="nick" ng-model="office.nick" ng-pattern="/^[A-Z]{2}$/" tooltip="Two letter name of the office" rel="tooltip" class="input-mini"/>
-      </div>
-    </form>
-  </script>
   <div ng-controller="OfficesController" class="row-fluid">
     <div class="span3">
-      <!--ng-include(src="'/partials/admin/nav.{{locale}}.html'")-->
       <div ng-include="'/partials/admin/nav.html'"></div>
     </div>
     <div class="span9">
       <div class="row-fluid">
         <h2>Offices</h2>
-        <form id="office-add-form" name="officeForm" novalidate="novalidate" class="form-inline">
-          <input type="text" name="name" ng-model="office.name" required="required" placeholder="São Carlos" class="input"/>
-          <div class="input-prepend"><span class="add-on">@</span>
-            <input type="text" name="nick" ng-model="office.nick" ng-pattern="/^[A-Z]{2}$/" placeholder="SC" tooltip="Two letter name of the office" rel="tooltip" required="required" class="input-mini"/>
+        <!-- Edit dialog-->
+        <div ui-modal="ui-modal" ng-model="editDialog" class="modal fade">
+          <div class="modal-header">
+            <h3 ng-show="office._id">Edit office</h3>
+            <h3 ng-hide="office._id">Create office</h3>
           </div>
-          <button ng-click="save()" ng-disabled="officeForm.$invalid" class="btn btn-primary"> <i class="icon-plus"></i> Add office</button>
-        </form>
-        <div ng-include="'officeEdit'"></div><span></span>
+          <div class="modal-body">
+            <div class="row-fluid">
+              <form id="office-form" name="officeForm" ng-hide="deleting" class="form-horizontal form-inline">
+                <div ng-class="{error: officeForm.name.$invalid}" class="control-group">
+                  <label for="name" class="control-label">Name</label>
+                  <div class="controls">
+                    <input type="text" name="name" ng-model="office.name" required="required" placeholder="São Carlos" class="input"/>
+                  </div>
+                </div>
+                <div ng-class="{error: officeForm.nick.$invalid}" class="control-group">
+                  <label for="name" class="control-label">Nick</label>
+                  <div class="controls">
+                    <div class="input-prepend"><span class="add-on">@</span>
+                      <input type="text" name="nick" placeholder="SC" ng-model="office.nick" ng-pattern="/^[A-Z]{2,4}$/" required="required" tooltip="Two to four letter name of the office" rel="tooltip" class="input-mini"/>
+                    </div>
+                  </div>
+                </div>
+                <table class="table-striped table">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="user in office.adminUsers() | orderBy: 'name' ">
+                      <td>{{user.name}}</td>
+                      <td>{{user.email}}</td>
+                      <td><a class="btn btn-danger">Remove</a></td>
+                    </tr>
+                  </tbody>
+                </table><a class="pull-right btn btn-warning">Add admin</a>
+              </form>
+              <!-- Delete confirmation-->
+              <div ng-show="deleting" class="alert alert-error fade in">
+                <p>
+                   <strong>Warning!</strong> Are you sure you want to delete
+                   {{office.name}}?
+                </p>
+                <p><a ng-click="delete(); editDialog = false" class="btn btn-danger">Delete this office</a> <a ng-click="deleting = false" class="btn">Cancel</a></p>
+              </div>
+            </div>
+          </div>
+          <div ng-hide="deleting" class="modal-footer"><a ng-click="deleting = true" ng-show="office._id" class="pull-left btn btn-danger">Delete</a><a ng-click="editDialog = false" class="btn">Cancel</a><a ng-click="editDialog = false; save()" ng-disabled="officeForm.$invalid" class="btn btn-primary">
+               
+              Save</a></div>
+        </div><span></span>
         <table class="table-striped table">
           <thead>
             <tr>
@@ -31,19 +66,16 @@
                 <input type="text" ng-model="search" placeholder="Search" class="search-query offices-query"/>
               </th>
               <th class="centered">Administrator</th>
-              <th></th>
+              <th class="right-text middle"><a ng-click="office = {}; deleting = false; editDialog = true" class="btn btn-primary">
+                   
+                  Add office</a></th>
             </tr>
           </thead>
           <tbody>
             <tr ng-repeat="office in offices | filter: search | orderBy: 'name' ">
               <td>
-                <div ng-hide="editing"> <span>{{office.name}}</span><br/><small>@{{office.nick}}</small></div>
-                <form id="office-form" name="officeForm" ng-show="editing" class="form-inline">
-                  <input type="text" name="name" ng-model="office.name" required="required" class="input-medium"/>
-                  <div class="input-prepend"><span class="add-on">@</span>
-                    <input type="text" name="nick" ng-model="office.nick" ng-pattern="/^[A-Z]{2}$/" required="required" tooltip="Two letter name of the office" rel="tooltip" class="input-mini"/>
-                  </div>
-                </form>
+                <!--flickr.flickr-img(flickr-image="{{office.name}}")-->
+                <p style="margin: 10px 10px 0 0;" colourize="{{office.name}}" class="pull-left"><font size="80"><i class="icon-globe"></i></font></p><span>{{office.name}}</span><br/><small>@{{office.nick}}</small>
               </td>
               <td class="centered"><a data-original-title="{{office.admin.join('
 ')}}" ui-jq="tooltip">
@@ -52,23 +84,7 @@
                   <p class="text-warning"> <i class="icon-warning-sign"></i> No admin!</p>
                 </div>
               </td>
-              <td class="edit-buttons">
-                <!-- Edit and delete buttons--><span ng-hide="editing"><a ng-disabled="saving" ng-click="edit()" class="btn"><i class="icon-edit"></i> Edit</a>
-                  <button ng-disabled="saving" ng-click="deleteDialog = true" class="btn btn-danger"><i class="icon-trash icon-white"></i> Delete</button>
-                  <!-- Delete confirmation dialog-->
-                  <div ui-modal="ui-modal" ng-model="deleteDialog" class="modal fade">
-                    <div class="modal-header">
-                      <h3>Confirmation</h3>
-                    </div>
-                    <div class="modal-body">
-                      <p>Are you sure you want to delete {{office.name}}?</p>
-                    </div>
-                    <div class="modal-footer"><a ng-click="deleteDialog = false" class="btn">Cancel</a><a ng-click="delete()" class="btn btn-danger">Delete</a></div>
-                  </div></span>
-                <!-- Editing controls--><span ng-show="editing">
-                  <button ng-click="save()" ng-disabled="officeForm.$invalid" class="btn btn-primary"><span>Save</span></button>
-                  <button ng-click="cancelEdit()" class="btn"><span>Cancel</span></button></span>
-              </td>
+              <td class="right-text middle"><a ng-click="$copy(office, $parent.office); $parent.deleting = false; $parent.editDialog = true" class="btn"><i class="icon-edit"></i> Edit</a></td>
             </tr>
           </tbody>
         </table><img src="/img/loader.gif" ng-hide="offices"/>

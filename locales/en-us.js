@@ -17,5 +17,9 @@
 	"Office": "Office",
 	"Position": "Position",
 	"Edit user": "Edit user",
-	"Create user": "Create user"
+	"Create user": "Create user",
+	"Edit office": "Edit office",
+	"Create office": "Create office",
+	"Two to four letter name of the office": "Two to four letter name of the office",
+	"Name": "Name"
 }

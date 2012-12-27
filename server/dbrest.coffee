@@ -21,14 +21,18 @@ module.exports.query = (req, res) ->
 
   collection = mongoose.connection.collection req.params.collection
   collection.find query, (err, cursor) ->
-    cursor.toArray (err, data) ->
-      if req.params.id
-        if data.length > 0
-          res.send data[0]
+    if err
+      console.log "Mongo error: ", err
+      res.send 500, err
+    else
+      cursor.toArray (err, data) ->
+        if req.params.id
+          if data.length > 0
+            res.send data[0]
+          else
+            res.send 404
         else
-          res.send 404
-      else
-        res.send data
+          res.send data
 
 # Insert
 module.exports.create = (req, res) ->
@@ -36,8 +40,12 @@ module.exports.create = (req, res) ->
     data = if Array.isArray(req.body) then req.body[0] else req.body
     collection = mongoose.connection.collection req.params.collection
     collection.insert data, (err, docs) ->
-      res.header "Location", "/#{req.params.collection}/#{docs[0]._id}"
-      res.send 201, ok: true
+      if err
+        console.log "Mongo error: ", err
+        res.send 500, err
+      else
+        res.header "Location", "/#{req.params.collection}/#{docs[0]._id}"
+        res.send 201, ok: true
   else
     res.send 200, ok: false
 
@@ -45,9 +53,17 @@ module.exports.create = (req, res) ->
 #app.put "/:db/:collection/:id", (req, res) ->
 module.exports.update = (req, res) ->
   spec = _id: new ObjectId req.params.id
+  data = req.body
+  if data["_id"]
+    delete data["_id"]
+  console.log "_id" in  data, data
   collection = mongoose.connection.collection req.params.collection
-  collection.update spec, req.body, (err, docs) ->
-    res.send 200, ok: true
+  collection.update spec, data, (err, docs) ->
+    if err
+      console.log "Mongo error: ", err
+      res.send 500, err
+    else
+      res.send 200, ok: true
 
 # Delete
 #app.del "/:db/:collection/:id", (req, res) ->
@@ -55,4 +71,8 @@ module.exports.delete = (req, res) ->
   spec = _id: new ObjectId req.params.id
   collection = mongoose.connection.collection req.params.collection
   collection.remove spec, (err, docs) ->
-    res.send 200, ok: true
+    if err
+      console.log "Mongo error: ", err
+      res.send 500, err
+    else
+      res.send 200, ok: true

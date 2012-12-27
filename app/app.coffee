@@ -20,12 +20,12 @@ App = angular.module('app', [
     cache = $cacheFactory 'templates'
     get: (url) ->
       original_url = url
-      console.log url
+      #console.log url
       [path, mid..., ext] = url.split "."
       url = "#{path}.#{$locale.id}.#{ext}"
       unless ext?
         return $(original_url)
-      console.log url
+      #console.log url
       cached = cache.get original_url
       if cached?
         return cached
