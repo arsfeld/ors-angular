@@ -21,5 +21,6 @@
 	"Edit office": "Edit office",
 	"Create office": "Create office",
 	"Two to four letter name of the office": "Two to four letter name of the office",
-	"Name": "Name"
+	"Name": "Name",
+	"Dashboard": "Dashboard"
 }

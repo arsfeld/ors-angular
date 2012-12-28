@@ -1,0 +1,17 @@
+
+<div>
+  <div ng-controller="OfficesController" class="row-fluid">
+    <div class="span3">
+      <div ng-include="'/partials/admin/nav.html'"></div>
+    </div>
+    <div class="span9">
+      <div class="row-fluid">
+        <h2>Dashboard</h2>
+        <select ui-select2="{width: 'resolve'}" ng-model="office">
+          <option ng-repeat="office in offices | orderBy: 'name'" value="{{office.nick}}">{{office.name}}</option>
+        </select>
+        <h3>Registrations</h3>
+      </div>
+    </div>
+  </div>
+</div>

@@ -36,7 +36,7 @@ div
                           tooltip="#{__("Two to four letter name of the office")}", 
                           rel="tooltip")
                   
-                  table.table-striped.table
+                  //table.table-striped.table
                     thead
                       tr
                         th #{__("Name")}
@@ -46,7 +46,7 @@ div
                         td {{user.email}}
                         td
                           a.btn.btn-danger Remove
-                  a.pull-right.btn.btn-warning Add admin
+                  //a.pull-right.btn.btn-warning Add admin
 
                 // Delete confirmation
                 .alert.alert-error.fade.in(ng-show="deleting")
@@ -98,8 +98,14 @@ div
                       i.icon-warning-sign
                       |  #{__("No admin!")}
                 td.right-text.middle
-                  a.btn(ng-click="$copy(office, $parent.office); $parent.deleting = false; $parent.editDialog = true")
+                  a.btn(href="#",
+                    ng-click="$copy(office, $parent.office); \
+                              $parent.deleting = false; \
+                              $parent.editDialog = true")
                     i.icon-edit
                     |  #{__("Edit")}
+                  a.btn.btn-warning(href="#")
+                    i.icon-dashboard
+                    |  #{__("Dashboard")}
 
           img(src="/img/loader.gif", ng-hide="offices")

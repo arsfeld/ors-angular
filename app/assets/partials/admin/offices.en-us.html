@@ -29,21 +29,20 @@
                       <input type="text" name="nick" placeholder="SC" ng-model="office.nick" ng-pattern="/^[A-Z]{2,4}$/" required="required" tooltip="Two to four letter name of the office" rel="tooltip" class="input-mini"/>
                     </div>
                   </div>
-                </div>
-                <table class="table-striped table">
-                  <thead>
-                    <tr>
-                      <th>Name</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr ng-repeat="user in office.adminUsers() | orderBy: 'name' ">
-                      <td>{{user.name}}</td>
-                      <td>{{user.email}}</td>
-                      <td><a class="btn btn-danger">Remove</a></td>
-                    </tr>
-                  </tbody>
-                </table><a class="pull-right btn btn-warning">Add admin</a>
+                </div><!--table.table-striped.table
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="user in office.adminUsers() | orderBy: 'name' ">
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                    <td><a class="btn btn-danger">Remove</a></td>
+                  </tr>
+                </tbody>-->
+                <!--a.pull-right.btn.btn-warning Add admin-->
               </form>
               <!-- Delete confirmation-->
               <div ng-show="deleting" class="alert alert-error fade in">
@@ -84,7 +83,7 @@
                   <p class="text-warning"> <i class="icon-warning-sign"></i> No admin!</p>
                 </div>
               </td>
-              <td class="right-text middle"><a ng-click="$copy(office, $parent.office); $parent.deleting = false; $parent.editDialog = true" class="btn"><i class="icon-edit"></i> Edit</a></td>
+              <td class="right-text middle"><a href="#" ng-click="$copy(office, $parent.office);                               $parent.deleting = false;                               $parent.editDialog = true" class="btn"><i class="icon-edit"></i> Edit</a><a href="#" class="btn btn-warning"><i class="icon-dashboard"></i> Dashboard</a></td>
             </tr>
           </tbody>
         </table><img src="/img/loader.gif" ng-hide="offices"/>

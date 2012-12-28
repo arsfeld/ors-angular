@@ -1,0 +1,14 @@
+
+div
+  div.row-fluid(ng-controller='OfficesController')
+    .span3
+      div(ng-include="'/partials/admin/nav.html'")
+    .span9
+        .row-fluid
+          h2 #{__("Dashboard")}
+
+          select(ui-select2="{width: 'resolve'}", ng-model="office")
+            option(ng-repeat="office in offices | orderBy: 'name'", value="{{office.nick}}") {{office.name}}
+
+
+          h3 Registrations

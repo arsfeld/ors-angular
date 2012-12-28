@@ -15,10 +15,30 @@ angular.module('apiResource', ['config', 'ngResource'])
           Collection.get id:id, cb, errorcb
 
         Collection.load = (cb) ->
-          @items = @query(cb)
+          #@items = @items || {}
+          #angular.copy(@items, @query(cb))
+          @items = @query =>
+            @$emit 'load', @items
+            if cb
+              cb(@items)
 
         Collection.all = () ->
           return this.items
+
+        Collection.$on = (event, callback) ->
+          @callbacks = @callbacks || {}
+          @callbacks[event] = @callbacks[event] || []
+          @callbacks[event].push callback
+
+        Collection.$emit = (event, data) ->
+          @callbacks = @callbacks || {}
+
+          callbacks = @callbacks[event]
+          if callbacks
+            for callback in callbacks
+              callback.apply @, data || []
+
+          return @
 
         #Collection.query = (id, cb, errorcb) ->
 

@@ -76,14 +76,16 @@ angular.module('app.controllers', [
 ($scope, Office) ->
 
   refresh = () ->
-    console.log "Refresh requested"
+    #console.log "Refresh requested"
     #$scope.offices = Office.all()
     #update = Office.query () ->
     #  $scope.offices = update
-    Office.load (data) ->
-      $scope.offices = Office.all()
+    Office.load()
 
   $scope.offices = Office.all()
+
+  Office.$on 'load', () ->
+    $scope.offices = Office.all()
   #Office.bind "load", (data) ->
   #  $scope.offices = Office.all()
   
@@ -112,7 +114,7 @@ angular.module('app.controllers', [
     new Office(@office).save () =>
       this.saving = false
       @office = {}
-      #refresh()
+      refresh()
 ])
 
 .controller('UsersController', [
@@ -127,6 +129,12 @@ angular.module('app.controllers', [
     #update = User.query () ->
     #  $scope.users = update
   #refresh()
+
+  User.$on 'load', () ->
+    $scope.users = User.all()
+  Office.$on 'load', () ->
+    $scope.offices = Office.all()
+
   $scope.users = User.all()
   $scope.offices = Office.all()
 

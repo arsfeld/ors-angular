@@ -58,8 +58,10 @@ App = angular.module('app', [
       .when('/login', {templateUrl : '/partials/account/login.html'})
 
       # Admin Section
-      .when '/admin'
-        redirectTo: '/admin/offices'
+      .when '/admin',
+        redirectTo: '/admin/dashboard'
+      .when '/admin/dashboard',
+        templateUrl: '/partials/admin/dashboard.html'
       .when '/admin/registrations',
         templateUrl: '/partials/admin/registrations.html'
       .when '/admin/users',
