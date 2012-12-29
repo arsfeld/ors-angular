@@ -27,6 +27,7 @@ app.configure ->
   app.set "views", __dirname + "/../_public"
   app.set "view engine", "ejs"
   app.set "dbUrl", config.db #config.db[app.settings.env]
+  
   app.use express.favicon()
   app.use express.logger("dev")
   app.use express.bodyParser()
