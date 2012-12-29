@@ -20,14 +20,16 @@ passwordApi = require("./auth/password/api")
 #var FacebookStrategy = require('passport-facebook').Strategy;
 API_BASE_URL = "/-/api/v1"
 AUTH_URL = "/-/auth"
-express.cookieParser "secret"
+
+#express.cookieParser "secret"
+
 app = exports.app = express()
 app.configure ->
   app.set "port", process.env.PORT or 3000
   app.set "views", __dirname + "/../_public"
   app.set "view engine", "ejs"
   app.set "dbUrl", config.db #config.db[app.settings.env]
-  
+
   app.use express.favicon()
   app.use express.logger("dev")
   app.use express.bodyParser()

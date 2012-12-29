@@ -18,14 +18,17 @@ angular.module('app.models', ['ngResource', 'apiResource', 'config'])
         if user.email == i
           return user
 
-  Office.load (data) ->
-    console.log data
+  Office.load()
 
   Office
 )
 
 .factory('Product', ($apiResource) ->
   Product = $apiResource 'products'
+
+  Product.load()
+
+  Product
 )
 
 .factory('Registration', ($apiResource) ->

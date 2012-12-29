@@ -1,0 +1,703 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ques",
+				"questionsDialog"
+			],
+			[
+				"relative",
+				"relativeFilePathParts"
+			],
+			[
+				"regis",
+				"registrations"
+			],
+			[
+				"admin",
+				"admin_count"
+			],
+			[
+				"te",
+				"templateUrl"
+			],
+			[
+				"Regis",
+				"Registration"
+			],
+			[
+				"opt",
+				"optgroup"
+			],
+			[
+				"op",
+				"optgroup"
+			],
+			[
+				"contro",
+				"control-label"
+			],
+			[
+				"control",
+				"control-group"
+			],
+			[
+				"require",
+				"requireLogin"
+			],
+			[
+				"produc",
+				"products"
+			],
+			[
+				"prod",
+				"products"
+			],
+			[
+				"all",
+				"allProducts"
+			],
+			[
+				"dele",
+				"delete"
+			],
+			[
+				"delet",
+				"deleteDialog"
+			],
+			[
+				"loa",
+				"loadingProducts"
+			],
+			[
+				"active",
+				"activeNavId"
+			],
+			[
+				"route",
+				"routeParams"
+			],
+			[
+				"rout",
+				"routeParams"
+			],
+			[
+				"He",
+				"HeaderView"
+			],
+			[
+				"Vi",
+				"Views"
+			],
+			[
+				"Office",
+				"OfficeSchema"
+			],
+			[
+				"remove",
+				"removeListener"
+			],
+			[
+				"first",
+				"first_time_setup"
+			],
+			[
+				"seria",
+				"Serialize"
+			],
+			[
+				"serialize_prop",
+				"serialize_property"
+			],
+			[
+				"look",
+				"lookup_by_name"
+			],
+			[
+				"child",
+				"children"
+			],
+			[
+				"dmap_conten",
+				"dmap_contentcodestype"
+			],
+			[
+				"dmap_conte",
+				"dmap_contentcodesname"
+			],
+			[
+				"conten",
+				"content_code"
+			],
+			[
+				"dmap_content",
+				"dmap_contentcodesnumber"
+			],
+			[
+				"Serial",
+				"SerializableObject"
+			],
+			[
+				"dmap_con",
+				"dmap_contentcodesnumber"
+			],
+			[
+				"Conen",
+				"ContentCode"
+			],
+			[
+				"Content",
+				"ContentCode"
+			],
+			[
+				"Conte",
+				"ContentCode"
+			],
+			[
+				"struc",
+				"structure"
+			],
+			[
+				"stru",
+				"structure"
+			],
+			[
+				"Test",
+				"TestObject"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/partials/admin/offices.jade",
+			"settings":
+			{
+				"buffer_size": 4773,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/scripts/controllers.coffee",
+			"settings":
+			{
+				"buffer_size": 7141,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/partials/admin/products.jade",
+			"settings":
+			{
+				"buffer_size": 4041,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/partials/admin/formBuilder.jade",
+			"settings":
+			{
+				"buffer_size": 4761,
+				"line_ending": "Unix",
+				"name": "#jv-formbuilder"
+			}
+		},
+		{
+			"file": "app/scripts/services.coffee",
+			"settings":
+			{
+				"buffer_size": 787,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 47.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"brack",
+				"Bracket Highlighter: Fold by Brackets"
+			]
+		],
+		"width": 494.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/styles/app.less",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/admin/products_edit.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/package.json",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/welcome.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/ors-angular.sublime-workspace",
+		"/Users/alexandrerosenfeld/Code/node/sapling/app/scripts/ds/stores/rest.js",
+		"/Users/alexandrerosenfeld/Code/node/sapling/app/scripts/account/controllers/overview.js",
+		"/Users/alexandrerosenfeld/Code/node/static-i18n-jade-brunch/package.json",
+		"/Users/alexandrerosenfeld/Code/node/static-i18n-jade-brunch/README.md",
+		"/Users/alexandrerosenfeld/Code/node/static-i18n-jade-brunch/CHANGELOG.md",
+		"/Users/alexandrerosenfeld/Code/node/static-i18n-jade-brunch/src/index.coffee",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/locales/en-us.js",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/locales/pt-br.js",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/vendor/scripts/angular/angular.js",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/node_modules/static-i18n-jade-brunch/src/index.coffee",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/server/index.coffee",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/_public/js/app.js",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/_public/partials/admin/nav.en-us.html",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/_public/index.html",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/node_modules/static-i18n-jade-brunch/package.json",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/nav.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/admin/nav.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/index.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/locales/pt-BR.js",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/_public/partials/admin/nav.pt-BR.html",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/scripts/config.coffee",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/assets/index.en.html",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/node_modules/static-jade-brunch/src/index.coffee",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/node_modules/static-jade-brunch/lib/index.js",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/node_modules/static-jade-brunch/setup.js",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/scripts/session.coffee",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/README.md",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/scripts/flash.coffee",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/registration.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/scripts/controllers.coffee",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/admin/registrations.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/app.coffee",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/admin/offices.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/admin/products.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/faculdades.json",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/scripts/directives.coffee",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/scripts/services.coffee",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/admin/offices_edit.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/config.coffee",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/server/index.js",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/client/partials/admin/offices.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/client/styles/app.less",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/server/templates/test/text.ejs",
+		"/Users/alexandrerosenfeld/Code/ors-mrt/ors-mrt.js",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/account/password.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/account/profile.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/account/recovery.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/account/signup.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/account/overview.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/account/login.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/account/email.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/account/nav.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/account/menu.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/account/connected.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/vendor/scripts/angular-ui-0.3.2.js",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/node_modules/jade-brunch/src/index.coffee",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/scripts/mongolab.coffee",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/scripts/filters.coffee",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/server.coffee",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/Procfile",
+		"/Users/alexandrerosenfeld/Code/nodecellar/Procfile",
+		"/Users/alexandrerosenfeld/Code/brunch/angular/app/scripts/services.coffee",
+		"/Users/alexandrerosenfeld/Code/brunch/angular/app/scripts/mongolab.coffee",
+		"/Users/alexandrerosenfeld/Code/brunch/angular/app/partials/welcome.jade",
+		"/Users/alexandrerosenfeld/Code/brunch/angular/app/partials/admin/products_edit.jade",
+		"/Users/alexandrerosenfeld/Code/brunch/angular/app/partials/admin/offices_edit.jade",
+		"/Users/alexandrerosenfeld/Code/brunch/angular/app/scripts/controllers.coffee",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/TODO.md",
+		"/Users/alexandrerosenfeld/Code/brunch/angular/app/partials/nav.jade",
+		"/Users/alexandrerosenfeld/Code/brunch/angular/app/partials/admin/offices.jade",
+		"/Users/alexandrerosenfeld/Code/brunch/angular/app/partials/admin/products.jade",
+		"/Users/alexandrerosenfeld/Code/brunch/angular/app/scripts/directives.coffee",
+		"/Users/alexandrerosenfeld/Code/brunch/angular/app/app.coffee",
+		"/Users/alexandrerosenfeld/Code/brunch/angular/app/index.jade",
+		"/Users/alexandrerosenfeld/Code/brunch/angular/app/partials/admin/nav.jade",
+		"/Users/alexandrerosenfeld/Code/brunch/angular/app/partials/admin.jade",
+		"/Users/alexandrerosenfeld/Code/brunch/angular/app/partials/todo.jade",
+		"/Users/alexandrerosenfeld/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/alexandrerosenfeld/Desktop/carta jão jão",
+		"/Users/alexandrerosenfeld/Code/brunch/ors/app/assets/index.html",
+		"/Users/alexandrerosenfeld/Code/brunch/ors/app/app_router.coffee",
+		"/Users/alexandrerosenfeld/Code/brunch/ors/app/models/home_model.coffee",
+		"/Users/alexandrerosenfeld/Code/brunch/ors/app/views/app_view.coffee",
+		"/Users/alexandrerosenfeld/Code/brunch/ors/app/views/styles/application.styl",
+		"/Users/alexandrerosenfeld/Code/brunch/ors/app/routers/app_router.coffee",
+		"/Users/alexandrerosenfeld/Code/brunch/ors/app/initialize.coffee",
+		"/Users/alexandrerosenfeld/Code/ClientManager/public/js/router.js",
+		"/Users/alexandrerosenfeld/Code/brunch/ors/app/views/templates/home.hbs",
+		"/Users/alexandrerosenfeld/Library/Application Support/Sublime Text 2/Packages/Terminal/Default (OSX).sublime-keymap",
+		"/Users/alexandrerosenfeld/Library/Application Support/Sublime Text 2/Packages/Terminal/Terminal.sublime-settings",
+		"/Users/alexandrerosenfeld/Code/brunch/brunch-with-hipsters/app/views/styles/_base.styl",
+		"/Users/alexandrerosenfeld/Code/brunch/ors/app/views/styles/_base.styl",
+		"/Users/alexandrerosenfeld/Code/brunch/ors/app/views/styles/_layout.styl",
+		"/Users/alexandrerosenfeld/Code/brunch/brunch-with-hipsters/app/views/styles/_layout.styl",
+		"/Users/alexandrerosenfeld/Code/brunch/brunch-with-hipsters/app/views/styles/_ui.styl",
+		"/Users/alexandrerosenfeld/Code/brunch/ors/app/views/styles/_ui.styl",
+		"/Users/alexandrerosenfeld/Code/brunch/brunch-with-hipsters/app/lib/view.coffee",
+		"/Users/alexandrerosenfeld/Code/brunch/brunch-with-hipsters/app/views/app_view.coffee",
+		"/Users/alexandrerosenfeld/Library/Application Support/Sublime Text 2/Packages/User/JSON.sublime-settings",
+		"/Users/alexandrerosenfeld/Code/nodecellar/server.js",
+		"/Users/alexandrerosenfeld/Dropbox/Projects/derby/ors/package.json",
+		"/Users/alexandrerosenfeld/Code/derby/app1/src/app/index.coffee",
+		"/Users/alexandrerosenfeld/Code/derby/app1/locales/pt-BR.js",
+		"/Users/alexandrerosenfeld/Code/derby/app1/package.json",
+		"/Users/alexandrerosenfeld/Code/derby/app1/views/app/home.html",
+		"/Users/alexandrerosenfeld/Code/derby/app1/locales/en/app.json",
+		"/Users/alexandrerosenfeld/Code/derby/derby-examples/directory/package.json",
+		"/Users/alexandrerosenfeld/Code/derby/app1/views/app/editOffice.html",
+		"/Users/alexandrerosenfeld/Code/meteor/ors/ors.coffee",
+		"/Users/alexandrerosenfeld/Code/derby/app1/styles/app/index.styl",
+		"/Users/alexandrerosenfeld/Code/derby/app1/styles/base.styl",
+		"/Users/alexandrerosenfeld/Code/derby/derby-examples/directory/views/app/index.html",
+		"/Users/alexandrerosenfeld/Code/derby/app1/src/server/index.coffee",
+		"/Users/alexandrerosenfeld/Code/meteor/ors/ors.js",
+		"/Users/alexandrerosenfeld/Downloads/template.tex",
+		"/Users/alexandrerosenfeld/Code/meteor/ors/ors.html",
+		"/Users/alexandrerosenfeld/Documents/discurso rock.txt",
+		"/Users/alexandrerosenfeld/Code/libmshare/src/dmap/dmap-structure.c",
+		"/Users/alexandrerosenfeld/Code/libmshare/src/dmap/dmap-share.c",
+		"/Users/alexandrerosenfeld/Code/libmshare/test/dmap_test.c",
+		"/Users/alexandrerosenfeld/Code/libmshare/src/Makefile.am",
+		"/Users/alexandrerosenfeld/Code/libmshare/configure.ac",
+		"/Users/alexandrerosenfeld/Code/libmshare/src/dmap/dmap-structure.vala"
+	],
+	"find":
+	{
+		"height": 33.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Users/alexandrerosenfeld/Code/node/sapling/app",
+			"/Users/alexandrerosenfeld/Code/node/sapling/app/scripts"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"scope",
+			"office",
+			"login(",
+			"Login",
+			"static-jade-",
+			"templatecache",
+			"teplatecache",
+			"cachefactory",
+			"templatecache",
+			"$httpprovider",
+			"$http",
+			"http",
+			"nginclude",
+			"include",
+			"filters",
+			";;Estadual",
+			";Públicas",
+			"^:;Particulares.*",
+			";Privadas",
+			"\\*",
+			"*",
+			"pluralize",
+			"\\n",
+			"==$",
+			"^==",
+			"(File|Imagem).*",
+			"\\[.*",
+			"<ref>.*",
+			"\\<ref>.*",
+			"\\<ref>",
+			"*",
+			"\\n",
+			"]]",
+			"[[",
+			"Office",
+			"spaces",
+			"tab",
+			"fs",
+			"newid",
+			"people",
+			"poeple",
+			"_dmap_share_message",
+			"dictionary",
+			"content_code_dup",
+			"content_codes_real_se",
+			"cc_names",
+			"list",
+			"}\n",
+			"get_serializeable_children",
+			"real_get_content_code",
+			"lookup_by_name",
+			"head",
+			"cairo.sur",
+			"direction",
+			"pixbuf",
+			"cairo.texture"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": true,
+		"regex": false,
+		"replace_history":
+		[
+			"$scope",
+			"product",
+			"",
+			"product",
+			"",
+			"\",\\n\"",
+			"\"\\n\"",
+			"\": [\\n",
+			"\": [\\",
+			"\\n],\\n\"",
+			"",
+			"\"\\n\"",
+			"",
+			"Product"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/partials/admin/offices.jade",
+					"settings":
+					{
+						"buffer_size": 4773,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								788,
+								779
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 273.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/scripts/controllers.coffee",
+					"settings":
+					{
+						"buffer_size": 7141,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6305,
+								6305
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CoffeeScript/CoffeeScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3674.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/partials/admin/products.jade",
+					"settings":
+					{
+						"buffer_size": 4041,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								207,
+								229
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 176.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/partials/admin/formBuilder.jade",
+					"settings":
+					{
+						"buffer_size": 4761,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1595,
+								1595
+							]
+						],
+						"settings":
+						{
+							"auto_name": "#jv-formbuilder",
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 329.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/scripts/services.coffee",
+					"settings":
+					{
+						"buffer_size": 787,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								470,
+								470
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CoffeeScript/CoffeeScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 52.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 277.0,
+	"status_bar_visible": true
+}

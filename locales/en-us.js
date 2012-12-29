@@ -22,5 +22,9 @@
 	"Create office": "Create office",
 	"Two to four letter name of the office": "Two to four letter name of the office",
 	"Name": "Name",
-	"Dashboard": "Dashboard"
+	"Dashboard": "Dashboard",
+	"Edit product": "Edit product",
+	"Create product": "Create product",
+	"Two to four letter name of the product": "Two to four letter name of the product",
+	"Edit questions": "Edit questions"
 }

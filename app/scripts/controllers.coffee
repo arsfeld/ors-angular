@@ -22,14 +22,9 @@ angular.module('app.controllers', [
 
   $locale.id = "pt-br"
 
+  $scope.products = Product.all()
+  $scope.offices = Office.all()
 
-  #Office.load()
-  # () ->
-  #  $scope.offices = Office.all()
-  products = Product.query () ->
-    $rootScope.allProducts = products
-  #offices = Office.query () ->
-  #  $rootScope.allOffices = offices
   $rootScope.$copy = angular.copy
 
   # Uses the url to determine if the selected
@@ -126,9 +121,6 @@ angular.module('app.controllers', [
 
   refresh = () ->
     User.load()
-    #update = User.query () ->
-    #  $scope.users = update
-  #refresh()
 
   User.$on 'load', () ->
     $scope.users = User.all()
@@ -164,18 +156,38 @@ angular.module('app.controllers', [
 .controller('ProductsController', [
  '$scope'
  'Product'
+ 'Office'
 
-($scope, Product) ->
-  loadProducts = () ->
-    $scope.loading = "Loading..."
-    products = Product.query () ->
-      $scope.loading = false
-      $scope.products = products
-  loadProducts()
+($scope, Product, Office) ->
 
-  $scope.deleteProduct = (id) ->
-    Product.remove id:id, () ->
-      loadProducts()
+  refresh = () ->
+    Product.load()
+
+  $scope.products = Product.all()
+  $scope.offices = Office.all()
+
+  $scope.product = {}
+
+  Product.$on 'load', () ->
+    $scope.products = Product.all()
+
+  $scope.name_changed = () ->
+    $scope.product.slug = $scope.product.name.toLowerCase()
+      .replace('ã', 'a')
+      .replace('õ', 'o')
+      .replace('é', 'e')
+      .replace('ê', 'e')
+      #.replace(/-+/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9-]/g, '')
+  $scope.delete = () ->
+    @product.remove () =>
+      @deleteDialog = false
+      refresh()
+  $scope.save = () ->
+    new Product(@product).save () =>
+      @product = {}
+      refresh()
 ])
 
 .controller('ProductsEditController', [
@@ -211,12 +223,58 @@ angular.module('app.controllers', [
       $location.path '/#/admin/products'
 ])
 
+.controller('FormBuilderCtrl', [
+  '$scope'
+
+($scope) ->
+  $scope = this
+  $scope.newField = {}
+  $scope.fields = [
+    type: "text"
+    name: "Name"
+    placeholder: "John Doe"
+    order: 10
+  ]
+  $scope.editing = false
+  $scope.tokenize = (slug1, slug2) ->
+    result = slug1
+    result = result.replace(/[^-a-zA-Z0-9,&\s]+/g, "")
+    result = result.replace(/-/g, "_")
+    result = result.replace(/\s/g, "-")
+    result += "-" + $scope.token(slug2)  if slug2
+    result
+
+  $scope.saveField = ->
+    $scope.newField.value = {}  if $scope.newField.type is "checkboxes"
+    if $scope.editing isnt false
+      $scope.fields[$scope.editing] = $scope.newField
+      $scope.editing = false
+    else
+      $scope.fields.push $scope.newField
+    $scope.newField = order: 0
+
+  $scope.editField = (field) ->
+    $scope.editing = $scope.fields.indexOf(field)
+    $scope.newField = field
+
+  $scope.splice = (field, fields) ->
+    fields.splice fields.indexOf(field), 1
+
+  $scope.addOption = ->
+    $scope.newField.options = []  if $scope.newField.options is 'undefined'
+    $scope.newField.options.push order: 0
+
+  $scope.typeSwitch = (type) ->
+    return type if type not in ["checkboxes", "select", "radio"]
+    return "multiple"
+])
+
 .controller('WelcomeController', [
   '$scope'
   'Product'
 
 ($scope, Product) ->
-
+  $scope.office = 0
 ])
 
 .controller('RegistrationController', [

@@ -1,15 +1,15 @@
 
-div(ng-controller='WelcomeController')
+div.container-narrow(ng-controller='WelcomeController')
 
-  img(src="img/loader.gif", ng-hide="allProducts")
-  div(ng-show="allProducts")
+  div.jumbotron(ng-show="offices")
+    p.lead 
+      | Aqui você pode se cadastrar para as oportunidades abertas na AIESEC.
+      | Ao se registrar, um representante local da AIESEC irá entrar em contato
+      | com você o mais breve possível.
 
-      h3 #{__("Select below which program you are interested:")}
-      .row-fluid
-        ul.nav.nav-pills
-          li.span3(ng-repeat="product in allProducts | orderBy: 'name' ")
-            //a(href="/#/register/{{product._id.$oid}}")
-            a(href="/register/{{product.slug}}")
-            
-              h2 {{product.name}}
-              h4 {{product.tagline}}
+    p.lead Para começar, selecione o escritório local mais próximo de você:
+    select(ui-select2="{width: 'resolve', placeholder: 'Selecione'}", data-placeholder="Selecione", ng-model="office")
+        option(ng-repeat="office in offices | orderBy: 'name'", 
+          value="{{office.nick}}") {{office.name}}
+    p
+    a.btn.btn-large.btn-success Próximo passo

@@ -8,27 +8,81 @@
       <div ng-controller="ProductsController">
         <div class="row-fluid">
           <h2>Products</h2>
-          <div class="btn-toolbar"><a href="/admin/products/new" class="btn btn-primary"><i class="icon-plus icon-white"></i> Add Product</a></div><span></span>
-          <table class="table table-striped table">
+          <select ui-select2="{width: 'resolve'}" ng-model="office">
+            <option> <i class="icon-globe"></i>National</option>
+            <option ng-repeat="office in offices | orderBy: 'name'" value="{{office.nick}}">{{office.name}}</option>
+          </select>
+          <div ui-modal="ui-modal" ng-model="questionsDialog" class="modal fade">
+            <div class="modal-header">
+              <h3>Form Builder</h3>
+            </div>
+            <div class="modal-body">
+              <div ng-include="'/partials/admin/formBuilder.html'"></div>
+            </div>
+          </div>
+          <!-- Edit dialog-->
+          <div ui-modal="ui-modal" ng-model="editDialog" class="modal fade">
+            <div class="modal-header">
+              <h3 ng-show="product._id">Edit product</h3>
+              <h3 ng-hide="product._id">Create product</h3>
+            </div>
+            <div class="modal-body">
+              <div class="row-fluid">
+                <form id="product-form" name="productForm" ng-hide="deleting" class="form-horizontal form-inline">
+                  <div ng-class="{error: productForm.name.$invalid}" class="control-group">
+                    <label class="control-label">Name</label>
+                    <div class="controls">
+                      <input type="text" name="name" ng-model="product.name" ng-change="name_changed()" required="required"/><span ng-show="productForm.name.$error.required" class="help-inline">Required</span>
+                      <p class="muted"><small>Link name: {{product.slug}}</small></p>
+                    </div>
+                  </div>
+                  <div ng-class="{error: productForm.image.$invalid}" class="control-group">
+                    <label class="control-label">Image URL</label>
+                    <div class="controls">
+                      <input type="text" name="name" ng-model="product.image" required="required"/><span ng-show="productForm.image.$error.required" class="help-inline">Required</span>
+                    </div>
+                  </div>
+                </form>
+                <!-- Delete confirmation-->
+                <div ng-show="deleting" class="alert alert-error fade in">
+                  <p>
+                     <strong>Warning!</strong> Are you sure you want to delete
+                     {{product.name}}?
+                  </p>
+                  <p><a ng-click="delete(); editDialog = false" class="btn btn-danger">Delete this product</a> <a ng-click="deleting = false" class="btn">Cancel</a></p>
+                </div>
+              </div>
+            </div>
+            <div ng-hide="deleting" class="modal-footer"><a ng-click="deleting = true" ng-show="product._id" class="pull-left btn btn-danger">
+                 
+                Delete</a><a ng-click="editDialog = false" class="btn">Cancel</a><a ng-click="editDialog = false; save()" ng-disabled="productForm.$invalid" class="btn btn-primary">
+                 
+                Save</a></div>
+          </div>
+          <table class="table-striped table">
             <thead>
               <tr>
-                <th>Name</th>
-                <th>Tagline</th>
-                <th>Slug</th>
-                <th></th>
+                <th>
+                  <input type="text" ng-model="search" placeholder="Search" class="search-query products-query"/>
+                </th>
+                <th>Office</th>
+                <th class="right-text middle"><a ng-click="product = {}; deleting = false; editDialog = true" class="btn btn-primary">
+                     
+                    Add product</a></th>
               </tr>
             </thead>
             <tbody>
-              <tr ng-repeat="product in products | orderBy: 'name' ">
-                <td>{{product.name}}</td>
-                <td>{{product.tagline}}</td>
-                <td>{{product.slug}}</td>
-                <td class="edit-buttons"><a href="/admin/products/edit/{{product._id.$oid}}" class="btn"> <i class="icon-edit"></i><span>Edit</span></a></td>
+              <tr ng-repeat="product in products | filter: search | orderBy: 'name' ">
+                <td>
+                  <div><img src="{{product.image}}" width="64"/></div><span>{{product.name}}</span>
+                  <p><small>{{product.slug}}</small></p>
+                </td>
+                <td>{{product.office}}</td>
+                <td class="right-text middle"><a href="#" ng-click="$copy(product, $parent.product);                               $parent.deleting = false;                               $parent.editDialog = true" class="btn"><i class="icon-edit"></i> Edit</a><a href="#" ng-click="$parent.questionsDialog = true" class="btn"><i class="icon-edit"></i> Edit questions</a></td>
               </tr>
             </tbody>
           </table>
         </div>
-        <div ng-hide="products"><img src="/img/loader.gif"/></div>
       </div>
     </div>
   </div>

@@ -1,0 +1,88 @@
+#jv-formbuilder
+  div(ng-controller='FormBuilderCtrl')
+      form.form-horizontal.form(ng:submit='saveField()')
+        .control-group
+          label.control-label(for='newField-name') Field Name
+          .controls
+            input#newField-name(type='text', ng:model='newField.name', required)
+        .control-group
+          label.control-label(for='newField-required') Required
+          .controls
+            input#newField-required(type='checkbox', ng:model='newField.required')
+        .control-group
+          label.control-label(for='newField-order') Order Weight
+          .controls
+            input#newField-order(type='number', ng:model='newField.order', value='0', required, placeholder='0')
+        .control-group
+          label.control-label(for='newField-type') Field Type:
+          .controls
+            select#newField-type(ng:model='newField.type', required, ui-select2="{width: 'resolve'}")
+              option(value='text', selected='selected') Text
+              option(value='radio') Radio Buttons
+              option(value='select') Drop Menu (Select)
+              option(value='multiple') Multi-Select
+              option(value='checkbox') Toggle (Checkbox)
+              option(value='checkboxes') Checkboxes
+              option(value='textarea') Paragraph(s)
+              option(value='number') Number
+              option(value='url') Url
+              option(value='phone') Phone
+              option(value='email') Email
+              option(value='header') Heading
+        .control-group
+          ng:switch(on='typeSwitch(newField.type)')
+            .controls(ng:switch-default='ng:switch-default')
+              label(for='newField-placeholder') Instructions:
+              input#newField-placeholder(type='text', ng:model='newField.placeholder')
+            fieldset(ng:switch-when='multiple')
+              legend
+                a(ng:click='addOption()') Add Option
+              .newOption(ng:repeat='option in newField.options.$orderBy(\'order\')')
+                strong Option:
+                button.delete(ng:click='splice(option, newField.options)') Remove
+                label
+                  | Name:
+                  input(type='text', ng:model='option.name', ng:required='ng:required')
+                label
+                  | Value:
+                  input(type='text', ng:model='option.value')
+                label
+                  | Order:
+                  input(type='number', ng:model='option.order')
+          span(ng:switch-when='checkbox')
+          span(ng:switch-when='header')
+        div.form-actions
+          input.btn(type='submit', value='Add Field')
+      h2 Preview
+      div(ng:repeat='field in fields | orderBy: "order"')
+        ng:switch(on='field.type')
+          h3(ng:switch-when='header')
+            | {{field.name}}
+            span.order {{field.order}}
+            button.edit(ng:click='editField(field)') Edit
+            button.delete(ng:click='splice(field, fields)') Remove
+          .input.{{field.type}}(ng:switch-default='ng:switch-default', ng:class='field.required && \'required\'')
+            label
+              button.edit(ng:click='editField(field)') Edit
+              button.delete(ng:click='splice(field, fields)') Remove
+              | {{field.name}}
+              span.order {{field.order}}
+            ng:switch(on='field.type')
+              input(ng:switch-default='ng:switch-default', type='{{field.type}}', ng:model='field.value', ng:bind-attr='{required:\'{{field.required}}\'}', value='{{field.value}}', placeholder='{{field.placeholder}}')
+              input#field(ng:switch-when='checkbox', type='checkbox', ng:model='field.value', value='{{field.value}}', placeholder='{{field.instructions}}')
+              textarea(ng:switch-when='textarea', ng:model='field.value', placeholder='{{field.instructions}}') {{field.value}}
+              select(ng:switch-when='select', ng:model='field.value')
+                option(ng:repeat='option in field.options', value='{{option.value}}') {{option.name}}
+              select(ng:switch-when='multiple', ng:model='field.value', multiple='multiple')
+                option(ng:repeat='option in field.options', value='{{option.value}}') {{option.name}}
+              fieldset(ng:switch-when='radio')
+                label(ng:repeat='option in field.options')
+                  input(type='radio', ng:model='field.value', value='{{option.value}}')
+                  | {{option.name}}
+              fieldset(ng:switch-when='checkboxes')
+                label(ng:repeat='option in field.options')
+                  input(type='checkbox', ng:model='field.value[tokenize(option.name)]', value='{{option.value}}')
+                  | {{option.name}}
+      h2 Data:
+      pre.
+        {{fields}}        

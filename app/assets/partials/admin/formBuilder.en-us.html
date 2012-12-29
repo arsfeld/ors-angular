@@ -1,0 +1,108 @@
+
+<div id="jv-formbuilder">
+  <div ng-controller="FormBuilderCtrl">
+    <form ng:submit="saveField()" class="form-horizontal form">
+      <div class="control-group">
+        <label for="newField-name" class="control-label">Field Name</label>
+        <div class="controls">
+          <input id="newField-name" type="text" ng:model="newField.name" required="required"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label for="newField-required" class="control-label">Required</label>
+        <div class="controls">
+          <input id="newField-required" type="checkbox" ng:model="newField.required"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label for="newField-order" class="control-label">Order Weight</label>
+        <div class="controls">
+          <input id="newField-order" type="number" ng:model="newField.order" value="0" required="required" placeholder="0"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label for="newField-type" class="control-label">Field Type:</label>
+        <div class="controls">
+          <select id="newField-type" ng:model="newField.type" required="required" ui-select2="{width: 'resolve'}">
+            <option value="text" selected="selected">Text</option>
+            <option value="radio">Radio Buttons</option>
+            <option value="select">Drop Menu (Select)</option>
+            <option value="multiple">Multi-Select</option>
+            <option value="checkbox">Toggle (Checkbox)</option>
+            <option value="checkboxes">Checkboxes</option>
+            <option value="textarea">Paragraph(s)</option>
+            <option value="number">Number</option>
+            <option value="url">Url</option>
+            <option value="phone">Phone</option>
+            <option value="email">Email</option>
+            <option value="header">Heading</option>
+          </select>
+        </div>
+      </div>
+      <div class="control-group">
+        <ng:switch on="typeSwitch(newField.type)">
+          <div ng:switch-default="ng:switch-default" class="controls">
+            <label for="newField-placeholder">Instructions:</label>
+            <input id="newField-placeholder" type="text" ng:model="newField.placeholder"/>
+          </div>
+          <fieldset ng:switch-when="multiple">
+            <legend><a ng:click="addOption()">Add Option</a></legend>
+            <div ng:repeat="option in newField.options.$orderBy('order')" class="newOption"><strong>Option:</strong>
+              <button ng:click="splice(option, newField.options)" class="delete">Remove</button>
+              <label>Name:
+                <input type="text" ng:model="option.name" ng:required="ng:required"/>
+              </label>
+              <label>Value:
+                <input type="text" ng:model="option.value"/>
+              </label>
+              <label>Order:
+                <input type="number" ng:model="option.order"/>
+              </label>
+            </div>
+          </fieldset>
+        </ng:switch><span ng:switch-when="checkbox"></span><span ng:switch-when="header"></span>
+      </div>
+      <div class="form-actions">
+        <input type="submit" value="Add Field" class="btn"/>
+      </div>
+    </form>
+    <h2>Preview</h2>
+    <div ng:repeat="field in fields | orderBy: &quot;order&quot;">
+      <ng:switch on="field.type">
+        <h3 ng:switch-when="header">{{field.name}}<span class="order">{{field.order}}</span>
+          <button ng:click="editField(field)" class="edit">Edit</button>
+          <button ng:click="splice(field, fields)" class="delete">Remove</button>
+        </h3>
+        <div class="input">.{{field.type}}(ng:switch-default='ng:switch-default', ng:class='field.required && \'required\'')
+          <label>
+            <button ng:click="editField(field)" class="edit">Edit</button>
+            <button ng:click="splice(field, fields)" class="delete">Remove</button>{{field.name}}<span class="order">{{field.order}}</span>
+          </label>
+          <ng:switch on="field.type">
+            <input ng:switch-default="ng:switch-default" type="{{field.type}}" ng:model="field.value" ng:bind-attr="{required:'{{field.required}}'}" value="{{field.value}}" placeholder="{{field.placeholder}}"/>
+            <input id="field" ng:switch-when="checkbox" type="checkbox" ng:model="field.value" value="{{field.value}}" placeholder="{{field.instructions}}"/>
+            <textarea ng:switch-when="textarea" ng:model="field.value" placeholder="{{field.instructions}}">{{field.value}}</textarea>
+            <select ng:switch-when="select" ng:model="field.value">
+              <option ng:repeat="option in field.options" value="{{option.value}}">{{option.name}}</option>
+            </select>
+            <select ng:switch-when="multiple" ng:model="field.value" multiple="multiple">
+              <option ng:repeat="option in field.options" value="{{option.value}}">{{option.name}}</option>
+            </select>
+            <fieldset ng:switch-when="radio">
+              <label ng:repeat="option in field.options">
+                <input type="radio" ng:model="field.value" value="{{option.value}}"/>{{option.name}}
+              </label>
+            </fieldset>
+            <fieldset ng:switch-when="checkboxes">
+              <label ng:repeat="option in field.options">
+                <input type="checkbox" ng:model="field.value[tokenize(option.name)]" value="{{option.value}}"/>{{option.name}}
+              </label>
+            </fieldset>
+          </ng:switch>
+        </div>
+      </ng:switch>
+    </div>
+    <h2>Data:</h2>
+    <pre>{{fields}}        </pre>
+  </div>
+</div>
