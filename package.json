@@ -35,7 +35,6 @@
     "express": "*",
     "email-templates": "0.0.5",
     "ejs": "*",
-    "bcrypt": "0.7.x",
     "marked": "0.2.x",
     "mongoose": "3.x.x",
     "nodemailer": "0.3.x",
