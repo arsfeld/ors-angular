@@ -11,6 +11,8 @@ div.container-narrow(ng-controller='WelcomeController')
         option(ng-repeat="office in offices | orderBy: 'name'", 
           value="{{office.nick}}") {{office.name}}
     p
+      small Se você não encontrar sua cidade, <a>clique aqui.</a>
+    p
     a.btn.btn-large.btn-success 
       | Próximo passo  
       i.icon-circle-arrow-right
