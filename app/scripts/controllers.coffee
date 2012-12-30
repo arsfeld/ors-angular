@@ -238,9 +238,9 @@ angular.module('app.controllers', [
   $scope.editing = false
   $scope.tokenize = (slug1, slug2) ->
     result = slug1
-    result = result.replace(/[^-a-zA-Z0-9,&\s]+/g, "")
-    result = result.replace(/-/g, "_")
-    result = result.replace(/\s/g, "-")
+      .replace(/[^-a-zA-Z0-9,&\s]+/g, "")
+      .replace(/-/g, "_")
+      .replace(/\s/g, "-")
     result += "-" + $scope.token(slug2)  if slug2
     result
 
