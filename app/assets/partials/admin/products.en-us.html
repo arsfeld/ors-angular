@@ -9,7 +9,7 @@
         <div class="row-fluid">
           <div>
             <h2 class="pull-left">Products for </h2>
-            <div style="vertical-align: middle;">
+            <div style="position:absolute; top:50%;">
               <select ui-select2="{width: 'resolve'}" ng-model="office">
                 <option> <i class="icon-globe"></i> National</option>
                 <option ng-repeat="office in offices | orderBy: 'name'" value="{{office.nick}}">{{office.name}}</option>
