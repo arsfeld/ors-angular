@@ -8,7 +8,7 @@ div.row-fluid(ng-controller='ProductsController')
         .row-fluid
           div
             h2.pull-left Products for 
-            div.pull-right
+            div(style="position: absolute; bottom: 0; right: 0;")
               select(ui-select2="{width: 'resolve'}", ng-model="office")
                 option 
                   i.icon-globe
