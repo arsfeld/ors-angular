@@ -7,8 +7,8 @@ div
     .span6
       div(ng-controller='ProductsController')
         .row-fluid
-          h2 Products for
-
+          div(style="vertical-align: middle;")
+            h2.pull-left Products for
             select(ui-select2="{width: 'resolve'}", ng-model="office")
               option 
                 i.icon-globe
