@@ -8,7 +8,7 @@
       <div ng-controller="ProductsController">
         <div class="row-fluid">
           <h2>Products</h2>
-          <p>Products for 
+          <p style="vertical-align: center;">Products for 
             <select ui-select2="{width: 'resolve'}" ng-model="office">
               <option> <i class="icon-globe"></i> National</option>
               <option ng-repeat="office in offices | orderBy: 'name'" value="{{office.nick}}">{{office.name}}</option>
