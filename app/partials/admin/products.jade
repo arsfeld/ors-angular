@@ -6,7 +6,7 @@ div.row-fluid(ng-controller='ProductsController')
     .span9
       div
         .row-fluid
-          div
+          div(style="position: relative;")
             h2.pull-left Products for 
             div(style="position: absolute; bottom: 0; right: 0;")
               select(ui-select2="{width: 'resolve'}", ng-model="office")
