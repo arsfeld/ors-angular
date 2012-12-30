@@ -6,9 +6,9 @@ div.row-fluid(ng-controller='ProductsController')
     .span9
       div
         .row-fluid
-          div(style="line-height: 1em")
-            h2(style="display: inline;") Products for 
-            div(style="display: inline; vertical-align: middle;")
+          div
+            h2.pull-left Products for 
+            div.pull-right
               select(ui-select2="{width: 'resolve'}", ng-model="office")
                 option 
                   i.icon-globe
