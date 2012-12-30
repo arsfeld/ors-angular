@@ -12,11 +12,11 @@
         .control-group
           label.control-label(for='newField-order') Order Weight
           .controls
-            input#newField-order(type='number', ng:model='newField.order', value='0', required, placeholder='0')
+            input#newField-order(type='number', ng-model='newField.order', value='0', required, placeholder='0')
         .control-group
           label.control-label(for='newField-type') Field Type:
           .controls
-            select#newField-type(ng:model='newField.type', required, ui-select2="{width: 'resolve'}")
+            select#newField-type(ng-model='newField.type', required, ui-select2="{width: 'resolve'}")
               option(value='text', selected='selected') Text
               option(value='radio') Radio Buttons
               option(value='select') Drop Menu (Select)

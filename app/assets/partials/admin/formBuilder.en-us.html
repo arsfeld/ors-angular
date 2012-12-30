@@ -17,13 +17,13 @@
       <div class="control-group">
         <label for="newField-order" class="control-label">Order Weight</label>
         <div class="controls">
-          <input id="newField-order" type="number" ng:model="newField.order" value="0" required="required" placeholder="0"/>
+          <input id="newField-order" type="number" ng-model="newField.order" value="0" required="required" placeholder="0"/>
         </div>
       </div>
       <div class="control-group">
         <label for="newField-type" class="control-label">Field Type:</label>
         <div class="controls">
-          <select id="newField-type" ng:model="newField.type" required="required" ui-select2="{width: 'resolve'}">
+          <select id="newField-type" ng-model="newField.type" required="required" ui-select2="{width: 'resolve'}">
             <option value="text" selected="selected">Text</option>
             <option value="radio">Radio Buttons</option>
             <option value="select">Drop Menu (Select)</option>
