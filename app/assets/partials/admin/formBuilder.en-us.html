@@ -5,13 +5,13 @@
       <div class="control-group">
         <label for="newField-name" class="control-label">Field Name</label>
         <div class="controls">
-          <input id="newField-name" type="text" ng:model="newField.name" required="required"/>
+          <input id="newField-name" type="text" ng-model="newField.name" required="required"/>
         </div>
       </div>
       <div class="control-group">
         <label for="newField-required" class="control-label">Required</label>
         <div class="controls">
-          <input id="newField-required" type="checkbox" ng:model="newField.required"/>
+          <input id="newField-required" type="checkbox" ng-model="newField.required"/>
         </div>
       </div>
       <div class="control-group">
@@ -40,8 +40,8 @@
         </div>
       </div>
       <div class="control-group">
-        <ng:switch on="typeSwitch(newField.type)">
-          <div ng:switch-default="ng:switch-default" class="controls">
+        <ng-switch on="typeSwitch(newField.type)">
+          <div ng-switch-default="ng-switch-default" class="controls">
             <label for="newField-placeholder">Instructions:</label>
             <input id="newField-placeholder" type="text" ng:model="newField.placeholder"/>
           </div>
@@ -60,7 +60,7 @@
               </label>
             </div>
           </fieldset>
-        </ng:switch><span ng:switch-when="checkbox"></span><span ng:switch-when="header"></span>
+        </ng-switch><span ng:switch-when="checkbox"></span><span ng:switch-when="header"></span>
       </div>
       <div class="form-actions">
         <input type="submit" value="Add Field" class="btn"/>
