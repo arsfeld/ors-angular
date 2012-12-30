@@ -9,11 +9,12 @@ div
         .row-fluid
           h2 Products
 
-          select(ui-select2="{width: 'resolve'}", ng-model="office")
-            option 
-              i.icon-globe
-              | National
-            option(ng-repeat="office in offices | orderBy: 'name'", value="{{office.nick}}") {{office.name}}
+          p Products for 
+            select(ui-select2="{width: 'resolve'}", ng-model="office")
+              option 
+                i.icon-globe
+                |  National
+              option(ng-repeat="office in offices | orderBy: 'name'", value="{{office.nick}}") {{office.name}}
 
           div.modal.fade(ui-modal, ng-model="questionsDialog")
             .modal-header
