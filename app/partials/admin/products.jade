@@ -7,15 +7,15 @@ div
     .span6
       div(ng-controller='ProductsController')
         .row-fluid
-          h2 Products
+          h2 Products for
 
-          div(style="vertical-align: middle;")
-            |  Products for 
             select(ui-select2="{width: 'resolve'}", ng-model="office")
               option 
                 i.icon-globe
                 |  National
               option(ng-repeat="office in offices | orderBy: 'name'", value="{{office.nick}}") {{office.name}}
+          //div(style="vertical-align: middle;")
+            |  Products for 
 
           div.modal.fade(ui-modal, ng-model="questionsDialog")
             .modal-header
