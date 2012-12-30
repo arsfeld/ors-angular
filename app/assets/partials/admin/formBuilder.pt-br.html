@@ -39,7 +39,7 @@
           </select>
         </div>
       </div>
-      <div class="control-group">
+      <div class="control-group"> {{typeSwitch(newField.type)}}
         <ng-switch on="typeSwitch(newField.type)">
           <div ng-switch-default="ng-switch-default" class="controls">
             <label for="newField-placeholder">Instructions:</label>

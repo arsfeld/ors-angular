@@ -30,6 +30,7 @@
               option(value='email') Email
               option(value='header') Heading
         .control-group
+          |  {{typeSwitch(newField.type)}}
           ng-switch(on='typeSwitch(newField.type)')
             .controls(ng-switch-default)
               label(for='newField-placeholder') Instructions:
