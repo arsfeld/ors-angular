@@ -67,7 +67,7 @@
       </div>
     </form>
     <h2>Preview</h2>
-    <div ng:repeat="field in fields | orderBy: &quot;order&quot;">
+    <div ng-repeat="field in fields | orderBy: &quot;order&quot;">
       <ng:switch on="field.type">
         <h3 ng:switch-when="header">{{field.name}}<span class="order">{{field.order}}</span>
           <button ng:click="editField(field)" class="edit">Edit</button>

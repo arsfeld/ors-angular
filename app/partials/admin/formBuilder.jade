@@ -55,7 +55,7 @@
         div.form-actions
           input.btn(type='submit', value='Add Field')
       h2 Preview
-      div(ng:repeat='field in fields | orderBy: "order"')
+      div(ng-repeat='field in fields | orderBy: "order"')
         ng:switch(on='field.type')
           h3(ng:switch-when='header')
             | {{field.name}}
