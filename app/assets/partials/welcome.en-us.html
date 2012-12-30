@@ -1,11 +1,10 @@
 
 <div ng-controller="WelcomeController" class="container-narrow">
   <div ng-show="offices" class="jumbotron">
+    <h1>Bem-vindo à AIESEC!</h1>
     <p class="lead">
        
       Aqui você pode se cadastrar para as oportunidades abertas na AIESEC.
-      Ao se registrar, um representante local da AIESEC irá entrar em contato
-      com você o mais breve possível.
     </p>
     <p class="lead">Para começar, selecione o escritório local mais próximo de você:</p>
     <select ui-select2="{width: 'resolve', placeholder: 'Selecione'}" data-placeholder="Selecione" ng-model="office">
