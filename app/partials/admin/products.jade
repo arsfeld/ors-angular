@@ -91,13 +91,14 @@ div
                     small {{product.slug}}
                 td {{product.office}}
                 td.right-text.middle.edit-buttons
-                  a.btn(href="#",
-                    ng-click="$copy(product, $parent.product); \
-                              $parent.deleting = false; \
-                              $parent.editDialog = true")
-                    i.icon-edit
-                    |  #{__("Edit")}
-                  a.btn(href="#",
-                    ng-click="$parent.questionsDialog = true")
-                    i.icon-edit
-                    |  #{__("Edit questions")}
+                  p
+                    a.btn(href="#",
+                      ng-click="$copy(product, $parent.product); \
+                                $parent.deleting = false; \
+                                $parent.editDialog = true")
+                      i.icon-edit
+                      |  #{__("Edit")}
+                    a.btn(href="#",
+                      ng-click="$parent.questionsDialog = true")
+                      i.icon-edit
+                      |  #{__("Edit questions")}
