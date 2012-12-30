@@ -68,7 +68,7 @@
     </form>
     <h2>Preview</h2>
     <div ng-repeat="field in fields | orderBy: &quot;order&quot;">
-      <ng:switch on="field.type">
+      <ng-switch on="field.type">
         <h3 ng:switch-when="header">{{field.name}}<span class="order">{{field.order}}</span>
           <button ng:click="editField(field)" class="edit">Edit</button>
           <button ng:click="splice(field, fields)" class="delete">Remove</button>
@@ -100,7 +100,7 @@
             </fieldset>
           </ng:switch>
         </div>
-      </ng:switch>
+      </ng-switch>
     </div>
     <h2>Data:</h2>
     <pre>{{fields}}        </pre>
