@@ -1,11 +1,10 @@
 
 
-div
-  .row-fluid
+div.row-fluid(ng-controller='ProductsController')
     .span3
       div(ng-include="'/partials/admin/nav.html'")
     .span6
-      div(ng-controller='ProductsController')
+      div
         .row-fluid
           div(style="line-height: 1em")
             h2(style="display: inline;") Products for 
