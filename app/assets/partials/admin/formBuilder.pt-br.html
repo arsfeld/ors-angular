@@ -43,7 +43,7 @@
         <ng-switch on="typeSwitch(newField.type)">
           <div ng-switch-default="ng-switch-default" class="controls">
             <label for="newField-placeholder">Instructions:</label>
-            <input id="newField-placeholder" type="text" ng:model="newField.placeholder"/>
+            <input id="newField-placeholder" type="text" ng-model="newField.placeholder"/>
           </div>
           <fieldset ng-switch-when="multiple">
             <legend><a ng:click="addOption()">Add Option</a></legend>
@@ -59,8 +59,8 @@
                 <input type="number" ng:model="option.order"/>
               </label>
             </div>
-          </fieldset>
-        </ng-switch><span ng:switch-when="checkbox"></span><span ng:switch-when="header"></span>
+          </fieldset><span ng:switch-when="checkbox"></span><span ng:switch-when="header"></span>
+        </ng-switch>
       </div>
       <div class="form-actions">
         <input type="submit" value="Add Field" class="btn"/>

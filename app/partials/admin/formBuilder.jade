@@ -34,7 +34,7 @@
           ng-switch(on='typeSwitch(newField.type)')
             .controls(ng-switch-default)
               label(for='newField-placeholder') Instructions:
-              input#newField-placeholder(type='text', ng:model='newField.placeholder')
+              input#newField-placeholder(type='text', ng-model='newField.placeholder')
             fieldset(ng-switch-when='multiple')
               legend
                 a(ng:click='addOption()') Add Option
@@ -50,8 +50,8 @@
                 label
                   | Order:
                   input(type='number', ng:model='option.order')
-          span(ng:switch-when='checkbox')
-          span(ng:switch-when='header')
+            span(ng:switch-when='checkbox')
+            span(ng:switch-when='header')
         div.form-actions
           input.btn(type='submit', value='Add Field')
       h2 Preview
