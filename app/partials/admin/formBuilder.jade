@@ -35,7 +35,7 @@
             .controls(ng-switch-default)
               label(for='newField-placeholder') Instructions:
               input#newField-placeholder(type='text', ng:model='newField.placeholder')
-            fieldset(ng:switch-when='multiple')
+            fieldset(ng-switch-when='multiple')
               legend
                 a(ng:click='addOption()') Add Option
               .newOption(ng:repeat='option in newField.options.$orderBy(\'order\')')

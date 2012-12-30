@@ -45,7 +45,7 @@
             <label for="newField-placeholder">Instructions:</label>
             <input id="newField-placeholder" type="text" ng:model="newField.placeholder"/>
           </div>
-          <fieldset ng:switch-when="multiple">
+          <fieldset ng-switch-when="multiple">
             <legend><a ng:click="addOption()">Add Option</a></legend>
             <div ng:repeat="option in newField.options.$orderBy('order')" class="newOption"><strong>Option:</strong>
               <button ng:click="splice(option, newField.options)" class="delete">Remove</button>
