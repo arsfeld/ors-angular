@@ -31,7 +31,7 @@
               option(value='header') Heading
         .control-group
           ng-switch(on='typeSwitch(newField.type)')
-            .controls(ng:switch-default='ng:switch-default')
+            .controls(ng-switch-default)
               label(for='newField-placeholder') Instructions:
               input#newField-placeholder(type='text', ng:model='newField.placeholder')
             fieldset(ng:switch-when='multiple')
