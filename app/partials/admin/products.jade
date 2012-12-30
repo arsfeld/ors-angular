@@ -69,7 +69,7 @@ div
                 ng-disabled="productForm.$invalid") 
                 | Save
 
-          table.table-striped.table
+          table.table-striped.table.grid
             thead
               tr
                 th
@@ -90,7 +90,7 @@ div
                   p
                     small {{product.slug}}
                 td {{product.office}}
-                td.right-text.middle
+                td.right-text.middle.edit-icons
                   a.btn(href="#",
                     ng-click="$copy(product, $parent.product); \
                               $parent.deleting = false; \

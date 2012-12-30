@@ -63,7 +63,7 @@
                  
                 Save</a></div>
           </div>
-          <table class="table-striped table">
+          <table class="table-striped table grid">
             <thead>
               <tr>
                 <th>
@@ -82,7 +82,7 @@
                   <p><small>{{product.slug}}</small></p>
                 </td>
                 <td>{{product.office}}</td>
-                <td class="right-text middle"><a href="#" ng-click="$copy(product, $parent.product);                               $parent.deleting = false;                               $parent.editDialog = true" class="btn"><i class="icon-edit"></i> Edit</a><a href="#" ng-click="$parent.questionsDialog = true" class="btn"><i class="icon-edit"></i> Edit questions</a></td>
+                <td class="right-text middle edit-icons"><a href="#" ng-click="$copy(product, $parent.product);                               $parent.deleting = false;                               $parent.editDialog = true" class="btn"><i class="icon-edit"></i> Edit</a><a href="#" ng-click="$parent.questionsDialog = true" class="btn"><i class="icon-edit"></i> Edit questions</a></td>
               </tr>
             </tbody>
           </table>
