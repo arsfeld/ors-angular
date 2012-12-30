@@ -10,6 +10,8 @@
     <select ui-select2="{width: 'resolve', placeholder: 'Selecione'}" data-placeholder="Selecione" ng-model="office">
       <option ng-repeat="office in offices | orderBy: 'name'" value="{{office.nick}}">{{office.name}}</option>
     </select>
-    <p></p><a class="btn btn-large btn-success">Próximo passo ></a>
+    <p></p><a class="btn btn-large btn-success">
+       
+      Próximo passo<i class="icon-circle-arrow-right"></i></a>
   </div>
 </div>
