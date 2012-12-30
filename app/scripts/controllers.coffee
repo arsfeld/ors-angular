@@ -246,7 +246,7 @@ angular.module('app.controllers', [
 
   $scope.saveField = ->
     $scope.newField.value = {} if $scope.newField.type is "checkboxes"
-    if $scope.editing isnt false
+    if not $scope.editing
       $scope.fields[$scope.editing] = $scope.newField
       $scope.editing = false
     else
