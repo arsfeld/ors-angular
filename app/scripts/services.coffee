@@ -60,5 +60,8 @@ angular.module('app.models', ['ngResource', 'apiResource', 'config'])
 )
 
 .factory('Translation', ($apiResource) ->
-  User = $apiResource 'translations', true
+  class Language extends $apiResource('translations', true)
+    @getLanguage = (langId) ->
+      if langId not in @all
 )
+
