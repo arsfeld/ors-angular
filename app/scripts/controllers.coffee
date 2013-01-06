@@ -22,8 +22,8 @@ angular.module('app.controllers', [
 
   $locale.id = "pt-br"
 
-  $scope.products = Product.all()
-  $scope.offices = Office.all()
+  #$scope.products = Product.all()
+  #$scope.offices = Office.all()
 
   $rootScope.$copy = angular.copy
 
@@ -62,6 +62,15 @@ angular.module('app.controllers', [
   #
   $scope.getClass = (id) ->
     if $scope.activeNavId.substring(0, id.length) == id then 'active' else ''
+])
+
+.controller('AccountLoginCtrl', [
+  '$scope'
+  'config'
+
+($scope, config) ->
+  window.location.replace config.AUTH_URL + "/login"
+
 ])
 
 .controller('OfficesController', [
@@ -163,13 +172,26 @@ angular.module('app.controllers', [
   refresh = () ->
     Product.load()
 
-  $scope.products = Product.all()
+  #refresh()
+
+  loadOffices = () ->
+    $scope.$watch 'selectedOffice', () ->
+      national = if $scope.selectedOffice != "" then \
+        Product.forOffice "" else []
+      local = Product.forOffice $scope.selectedOffice
+      $scope.products = local.concat national
+
+  Product.$on 'load', () ->
+    loadOffices()
+  
+  loadOffices()
+
   $scope.offices = Office.all()
 
   $scope.product = {}
 
-  Product.$on 'load', () ->
-    $scope.products = Product.all()
+  #Product.$on 'load', () ->
+  #  $scope.products = Product.all()
 
   $scope.name_changed = () ->
     $scope.product.slug = $scope.product.name.toLowerCase()
@@ -177,6 +199,7 @@ angular.module('app.controllers', [
       .replace('õ', 'o')
       .replace('é', 'e')
       .replace('ê', 'e')
+      .replace('ó', 'o')
       #.replace(/-+/g, '')
       .replace(/\s+/g, '-')
       .replace(/[^a-z0-9-]/g, '')
@@ -185,6 +208,7 @@ angular.module('app.controllers', [
       @deleteDialog = false
       refresh()
   $scope.save = () ->
+    @product.officeNick = $scope.selectedOffice
     new Product(@product).save () =>
       @product = {}
       refresh()
@@ -272,10 +296,19 @@ angular.module('app.controllers', [
 
 .controller('WelcomeController', [
   '$scope'
-  'Product'
+  'Office'
 
-($scope, Product) ->
-  $scope.office = 0
+($scope, Office) ->
+
+  $scope.offices = Office.all()
+
+  $scope.office = ""
+
+  $scope.$watch 'office', () ->
+    console.log "[Watch] Office = #{$scope.office}"
+
+  $scope.officeChanged = () ->
+    console.log "Office changed to #{$scope.office}"
 ])
 
 .controller('RegistrationController', [
@@ -287,16 +320,33 @@ angular.module('app.controllers', [
   'Registration'
 
 ($scope, $rootScope, $routeParams, Product, Office, Registration) ->
-  $rootScope.$watch 'allProducts', () ->
-    if not $rootScope.allProducts?
+  $rootScope.$watch 'products', () ->
+    if not $rootScope.products?
       return
-    product = (product for product in $rootScope.allProducts when \
+    product = (product for product in $rootScope.products when \
       product.slug == $routeParams.productId)
     $scope.product = product[0]
     $scope.registration = {product: $scope.product.slug, subscribe: true}
 
+  $scope.office = Office.byNick $routeParams.officeId
+  if !$scope.office?
+    $scope.office = Office.byName $routeParams.officeId
+
   $scope.register = () ->
     new Registration($scope.registration).save()
+
+])
+
+.controller('DashboardController', [
+  '$scope',
+  'Office',
+  'Product',
+  'Registration',
+
+  ($scope, Office, Product, Registration) ->
+    $scope.offices = Office.all()
+    $scope.products = Product.all()
+
 ])
 
 .controller('RegistrationsController', [

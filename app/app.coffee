@@ -47,7 +47,7 @@ App = angular.module('app', [
 
       .when '/welcome',
         templateUrl: '/partials/welcome.html'
-      .when '/register/:productId',
+      .when '/register/:officeId',
         templateUrl: '/partials/registration.html'
 
       # Authentication

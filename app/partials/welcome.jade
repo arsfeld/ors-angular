@@ -5,15 +5,25 @@ div.container-narrow(ng-controller='WelcomeController')
     h1 Bem-vindo à AIESEC!
     p.lead 
       | Aqui você pode se cadastrar para as oportunidades abertas na AIESEC.
-
     p.lead Para começar, selecione o escritório local mais próximo de você:
-    select(ui-select2="{width: 'resolve', placeholder: 'Selecione'}", data-placeholder="Selecione", ng-model="office")
+    select(ui-select2="{width: 'resolve', placeholder: 'Selecione'}", 
+           data-placeholder="Selecione um escritório local", 
+           ng-model="office",
+           ui-event="{ change: 'officeChanged($event, $params)' }")
+        option(value="")
         option(ng-repeat="office in offices | orderBy: 'name'", 
-          value="{{office.nick}}") {{office.name}}
+          value="{{office.name}}") {{office.name}}
     p
       small Se você não encontrar sua cidade, <a>clique aqui.</a>
     p
     p
-    a.btn.btn-large.btn-success 
-      | Próximo passo 
-      i.icon-chevron-right(style="margin-left: 8px")
+    div(ng-show="office == ''")
+      a.btn.btn-large.btn-success(href="#", ng-disabled="true")
+        | Próximo passo 
+        i.icon-chevron-right(style="margin-left: 8px")
+    div(ng-hide="office == ''")
+      a.btn.btn-large.btn-success(
+        href="/register/{{office || '_'}}/", 
+        ng-disabled="office == ''")
+        | Próximo passo 
+        i.icon-chevron-right(style="margin-left: 8px")

@@ -104,7 +104,7 @@
 
 body {
 	padding-top: 60px;
-	font-family: "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", "Trebuchet MS", Helvetica, Arial, Verdana, sans-serif;
+	font-family: "Calibri", "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", "Trebuchet MS", Helvetica, Arial, Verdana, sans-serif;
 }
 
 #office-form {
@@ -201,3 +201,32 @@ body {
     padding: 14px 24px;
   }
 
+.ui-show {
+	opacity: 1;
+	-webkit-transition: opacity 0.5s ease, top 3s ease-out;
+	-moz-transition: opacity 0.5s ease, top 3s ease-out;
+	-ms-transition: opacity 0.5s ease, top 3s ease-out;
+	-o-transition: opacity 0.5s ease, top 3s ease-out;
+	transition: opacity 0.5s ease, top 3s ease-out;
+}
+
+.ui-hide {
+	opacity: 0;
+	position: absolute;
+	top: -100%;
+	z-index: -1;
+}
+
+.admin-header {
+	position: relative;
+
+	.admin-header-inner {
+		position: absolute; 
+		bottom: 0; 
+		right: 0;
+
+		.admin-header-office {
+			float: left;
+		}
+	}
+}

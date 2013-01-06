@@ -27,5 +27,6 @@
 	"Create product": "Create product",
 	"Two to four letter name of the product": "Two to four letter name of the product",
 	"Edit questions": "Edit questions",
-	"Questions": "Questions"
+	"Questions": "Questions",
+	"Products": "Products"
 }

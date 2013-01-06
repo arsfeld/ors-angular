@@ -1,14 +1,23 @@
 
 div
-  div.row-fluid(ng-controller='OfficesController')
+  div.row-fluid(ng-controller='DashboardController')
     .span3
       div(ng-include="'/partials/admin/nav.html'")
     .span9
         .row-fluid
-          h2 #{__("Dashboard")}
+          div.admin-header
+            h2 #{__("Dashboard")}
+            div.admin-header-inner
+              select.admin-header-offices(ui-select2="{width: 'resolve'}", ng-model="selectedOffice")
+                option(value="")
+                  i.icon-globe
+                  |  National
+                option(ng-repeat="office in offices | orderBy: 'name'", value="{{office.nick}}") {{office.name}}
 
-          select(ui-select2="{width: 'resolve'}", ng-model="office")
-            option(ng-repeat="office in offices | orderBy: 'name'", value="{{office.nick}}") {{office.name}}
-
-
-          h3 Registrations
+          table.table-striped.table.grid
+            thead
+              tr
+                th
+            tbody
+              tr(ng-repeat="product in products | filter: search | orderBy: 'name' | orderBy: 'officeNick' ")
+                td {{product.name}}

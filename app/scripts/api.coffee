@@ -4,7 +4,8 @@ angular.module('apiResource', ['config', 'ngResource'])
     'config'
 
     ($resource, config) ->
-      (collectionName) ->
+      (collectionName, loadOnStartup) ->
+
         Collection = $resource "#{config.API_BASE_URL}/db/" +
                                "#{collectionName}/:id",
           id:'@_id',
@@ -23,7 +24,7 @@ angular.module('apiResource', ['config', 'ngResource'])
               cb(@items)
 
         Collection.all = () ->
-          return this.items
+          return @items
 
         Collection.$on = (event, callback) ->
           @callbacks = @callbacks || {}
@@ -58,6 +59,9 @@ angular.module('apiResource', ['config', 'ngResource'])
 
         Collection::remove = (cb, errorcb) ->
           Collection.remove id: @_id, cb, errorcb
+
+        if loadOnStartup
+          Collection.load()
 
         Collection
   ]

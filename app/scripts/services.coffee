@@ -5,7 +5,7 @@
 angular.module('app.models', ['ngResource', 'apiResource', 'config'])
 
 .factory('Office', ($apiResource, User) ->
-  Office = $apiResource 'offices'
+  Office = $apiResource 'offices', true
 
   #Office = Model "offices", () ->
   #  @persistence Model.REST, "#{config.API_BASE_URL}/db/offices/:id"
@@ -18,27 +18,43 @@ angular.module('app.models', ['ngResource', 'apiResource', 'config'])
         if user.email == i
           return user
 
-  Office.load()
+  Office.byNick = (nick) ->
+    for office in Office.all()
+      if office.nick.toLowerCase() == nick?.toLowerCase()
+        return office
+    return
+
+  Office.byName = (name) ->
+    for office in Office.all()
+      if office.name.toLowerCase() == name?.toLowerCase()
+        return office
+    return
 
   Office
 )
 
-.factory('Product', ($apiResource) ->
-  Product = $apiResource 'products'
+.factory('Product', ($apiResource, Office) ->
+  Function::property = (prop, desc) ->
+    Object.defineProperty @prototype, prop, desc
 
-  Product.load()
+  class Product extends $apiResource('products', true)
+    constructor: ->
 
-  Product
+    @property 'office',
+      get: ->
+        console.log "looking up for #{@officeNick}"
+        Office.byNick @officeNick
+      set: () ->
+
+    @forOffice = (officeNick) ->
+      Product.all().filter (product) ->
+        return product.officeNick?.toLowerCase() == officeNick?.toLowerCase()
 )
 
 .factory('Registration', ($apiResource) ->
-  Registration = $apiResource 'registration'
+  Registration = $apiResource 'registration', true
 )
 
 .factory('User', ($apiResource) ->
-  User = $apiResource 'users'
-
-  User.load()
-
-  User
+  User = $apiResource 'users', true
 )

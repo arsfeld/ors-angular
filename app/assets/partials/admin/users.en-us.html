@@ -15,7 +15,7 @@
           </div>
           <div class="modal-body">
             <div class="row-fluid">
-              <form id="user-form" name="userForm" ng-hide="deleting" class="form-horizontal form-inline">
+              <form id="user-form" name="userForm" ui-toggle="!deleting" class="form-horizontal form-inline">
                 <div ng-class="{error: userForm.name.$invalid}" class="control-group">
                   <label for="name" class="control-label">Full name</label>
                   <div class="controls">
@@ -43,7 +43,7 @@
                   </div>
                 </div>
               </form>
-              <div ng-show="deleting" class="alert alert-error fade in">
+              <div ui-toggle="deleting" class="alert alert-error">
                 <p>
                    <strong>Warning!</strong> Are you sure you want to delete
                    {{user.email}}?

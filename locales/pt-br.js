@@ -23,9 +23,10 @@
 	"Two to four letter name of the office": "Two to four letter name of the office",
 	"Name": "Name",
 	"Dashboard": "Dashboard",
-	"Edit product": "Edit product",
-	"Create product": "Create product",
+	"Edit product": "Editar produto",
+	"Create product": "Criar produto",
 	"Two to four letter name of the product": "Two to four letter name of the product",
-	"Edit questions": "Edit questions",
-	"Questions": "Questions"
+	"Edit questions": "Editar questões",
+	"Questions": "Questionário",
+	"Products": "Produtos"
 }

@@ -1,16 +1,32 @@
 
 <div>
-  <div ng-controller="OfficesController" class="row-fluid">
+  <div ng-controller="DashboardController" class="row-fluid">
     <div class="span3">
       <div ng-include="'/partials/admin/nav.html'"></div>
     </div>
     <div class="span9">
       <div class="row-fluid">
-        <h2>Dashboard</h2>
-        <select ui-select2="{width: 'resolve'}" ng-model="office">
-          <option ng-repeat="office in offices | orderBy: 'name'" value="{{office.nick}}">{{office.name}}</option>
-        </select>
-        <h3>Registrations</h3>
+        <div class="admin-header">
+          <h2>Dashboard</h2>
+          <div class="admin-header-inner">
+            <select ui-select2="{width: 'resolve'}" ng-model="selectedOffice" class="admin-header-offices">
+              <option value=""><i class="icon-globe"></i> National</option>
+              <option ng-repeat="office in offices | orderBy: 'name'" value="{{office.nick}}">{{office.name}}</option>
+            </select>
+          </div>
+        </div>
+        <table class="table-striped table grid">
+          <thead>
+            <tr>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="product in products | filter: search | orderBy: 'name' | orderBy: 'officeNick' ">
+              <td>{{product.name}}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

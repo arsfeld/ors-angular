@@ -1,16 +1,8 @@
 
 <div ng-controller="RegistrationController">
   <div class="span6 offset2">
-    <h3>Cadastro em {{product.name}}</h3>
+    <h3>Cadastro em {{office.name}}</h3>
     <form name="registrationForm" class="form-horizontal">
-      <p>Por favor, selecione o escritório mais próximo de você.</p>
-      <div class="control-group">
-        <div class="controls">
-          <select ui-select2="{width: 'resolve'}" ng-model="registration.office">
-            <option ng-repeat="office in allOffices | orderBy: 'name'" value="{{office.nick}}">{{office.name}}</option>
-          </select>
-        </div>
-      </div>
       <div ng-class="{error: registrationForm.name.$invalid}" class="control-group">
         <label for="name" class="control-label">Nome completo</label>
         <div class="controls">
@@ -94,7 +86,7 @@
       <div ng-class="{error: registrationForm.yearIngress.$invalid}" class="control-group">
         <label for="yearIngress" class="control-label">Ano de ingresso</label>
         <div class="controls">
-          <input type="text" name="yearIngress" ng-model="registration.yearIngress" placeholder=""/>
+          <input type="number" name="yearIngress" ng-model="registration.yearIngress" placeholder=""/>
         </div>
       </div>
       <div ng-class="{error: registrationForm.indication.$invalid}" class="control-group">

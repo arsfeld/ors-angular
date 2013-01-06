@@ -6,11 +6,11 @@ div.row-fluid(ng-controller='ProductsController')
     .span9
       div
         .row-fluid
-          div(style="position: relative;")
+          .admin-header
             h2 Products 
-            div(style="position: absolute; bottom: 0; right: 0;")
-              select(ui-select2="{width: 'resolve'}", ng-model="office", style="float: left")
-                option 
+            .admin-header-inner
+              select.admin-header-offices(ui-select2="{width: 'resolve'}", ng-model="selectedOffice")
+                option(value="")
                   i.icon-globe
                   |  National
                 option(ng-repeat="office in offices | orderBy: 'name'", value="{{office.nick}}") {{office.name}}
@@ -45,8 +45,13 @@ div.row-fluid(ng-controller='ProductsController')
                   .control-group(ng-class="{error: productForm.image.$invalid}")
                     label.control-label Image URL
                     .controls
-                      input(type="text", name="name", ng-model="product.image", required)
+                      input(type="text", name="image", ng-model="product.image", required)
                       span.help-inline(ng-show="productForm.image.$error.required") Required
+                  .control-group(ng-class="{error: productForm.moreInfo.$invalid}")
+                    label.control-label More info URL
+                    .controls
+                      input(type="text", name="moreInfo", ng-model="product.moreInfo", required)
+                      span.help-inline(ng-show="productForm.moreInfo.$error.required") Required 
 
                 // Delete confirmation
                 .alert.alert-error.fade.in(ng-show="deleting")
@@ -74,27 +79,34 @@ div.row-fluid(ng-controller='ProductsController')
                 th
                   input.search-query(type="text", ng-model="search", 
                     class="products-query", placeholder="Search")
-                th
+                th.centered
                   | Office
                 th.right-text.middle
                   a.btn.btn-primary(
                     ng-click="product = {}; deleting = false; editDialog = true") 
                     | Add product
             tbody
-              tr(ng-repeat="product in products | filter: search | orderBy: 'name' ")
+              tr(ng-repeat="product in products | filter: search | orderBy: 'name' | orderBy: 'officeNick' ")
                 td
-                  div
+                  //div
                     img(src="{{product.image}}", width=64)
                   span {{product.name}}
                   p
                     small {{product.slug}}
-                td {{product.office}}
+                td.centered
+                  div(ng-show="product.officeNick") 
+                    i.icon-globe
+                    |  {{product.office.name}}
+                  div(ng-hide="product.officeNick")
+                    i.icon-bookmark
+                    |  National
                 td.edit-buttons
                   p
                     a.btn(href="#",
                       ng-click="$copy(product, $parent.product); \
                                 $parent.deleting = false; \
-                                $parent.editDialog = true")
+                                $parent.editDialog = true",
+                      ng-show="product.officeNick == selectedOffice")
                       i.icon-edit
                       |  #{__("Edit")}
                     | 

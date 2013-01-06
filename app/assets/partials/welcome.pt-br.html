@@ -7,13 +7,14 @@
       Aqui você pode se cadastrar para as oportunidades abertas na AIESEC.
     </p>
     <p class="lead">Para começar, selecione o escritório local mais próximo de você:</p>
-    <select ui-select2="{width: 'resolve', placeholder: 'Selecione'}" data-placeholder="Selecione" ng-model="office">
-      <option ng-repeat="office in offices | orderBy: 'name'" value="{{office.nick}}">{{office.name}}</option>
+    <select ui-select2="{width: 'resolve', placeholder: 'Selecione'}" data-placeholder="Selecione um escritório local" ng-model="office" ui-event="{ change: 'officeChanged($event, $params)' }">
+      <option value=""></option>
+      <option ng-repeat="office in offices | orderBy: 'name'" value="{{office.name}}">{{office.name}}</option>
     </select>
     <p><small>Se você não encontrar sua cidade, <a>clique aqui.</a></small></p>
     <p></p>
-    <p></p><a class="btn btn-large btn-success">
-       
-      Próximo passo <i style="margin-left: 8px" class="icon-chevron-right"></i></a>
+    <p></p>
+    <div ng-show="office == ''"><a href="#" ng-disabled="true" class="btn btn-large btn-success">Próximo passo <i style="margin-left: 8px" class="icon-chevron-right"></i></a></div>
+    <div ng-hide="office == ''"><a href="/register/{{office || '_'}}/" ng-disabled="office == ''" class="btn btn-large btn-success">Próximo passo <i style="margin-left: 8px" class="icon-chevron-right"></i></a></div>
   </div>
 </div>

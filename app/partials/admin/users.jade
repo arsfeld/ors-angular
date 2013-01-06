@@ -14,7 +14,7 @@ div
               h3(ng-hide="user._id") #{__("Create user")}
             .modal-body
               .row-fluid
-                form.form-horizontal.form-inline(id="user-form", name="userForm", ng-hide="deleting")
+                form.form-horizontal.form-inline(id="user-form", name="userForm", ui-toggle="!deleting")
                   .control-group(ng-class="{error: userForm.name.$invalid}")
                     label.control-label(for="name") Full name
                     .controls
@@ -37,7 +37,7 @@ div
                     .controls
                       input(type="text", name="name", ng-model="user.position", 
                         placeholder="VP GIP OGX")
-                .alert.alert-error.fade.in(ng-show="deleting")
+                .alert.alert-error(ui-toggle="deleting")
                   p  <strong>Warning!</strong> Are you sure you want to delete
                     |  {{user.email}}?
                   //p  There is no going back!

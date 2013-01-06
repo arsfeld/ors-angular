@@ -1,13 +1,8 @@
 
 div(ng-controller='RegistrationController')
   .span6.offset2
-    h3 Cadastro em {{product.name}}
+    h3 Cadastro em {{office.name}}
     form.form-horizontal(name="registrationForm")
-      p Por favor, selecione o escritório mais próximo de você.
-      .control-group
-        .controls
-          select(ui-select2="{width: 'resolve'}", ng-model="registration.office")
-            option(ng-repeat="office in allOffices | orderBy: 'name'", value="{{office.nick}}") {{office.name}}
       .control-group(ng-class="{error: registrationForm.name.$invalid}")
         label.control-label(for="name") Nome completo
         .controls
@@ -81,7 +76,7 @@ div(ng-controller='RegistrationController')
       .control-group(ng-class="{error: registrationForm.yearIngress.$invalid}")
         label.control-label(for="yearIngress") Ano de ingresso
         .controls
-          input(type="text", name="yearIngress", ng-model="registration.yearIngress", 
+          input(type="number", name="yearIngress", ng-model="registration.yearIngress", 
           	placeholder="")
       .control-group(ng-class="{error: registrationForm.indication.$invalid}")
         label.control-label(for="yearIngress") Como ficou sabendo da AIESEC?

@@ -18,7 +18,7 @@ div
                 form.form-horizontal.form-inline(
                   id="office-form", 
                   name="officeForm", 
-                  ng-hide="deleting")
+                  ui-toggle="!deleting")
                   .control-group(ng-class="{error: officeForm.name.$invalid}")
                     label.control-label(for="name") Name
                     .controls
@@ -49,7 +49,7 @@ div
                   //a.pull-right.btn.btn-warning Add admin
 
                 // Delete confirmation
-                .alert.alert-error.fade.in(ng-show="deleting")
+                .alert.alert-error(ui-toggle="deleting")
                   p  <strong>Warning!</strong> Are you sure you want to delete
                     |  {{office.name}}?
                   p
@@ -57,7 +57,7 @@ div
                     |  
                     a.btn(ng-click="deleting = false") Cancel
 
-            .modal-footer(ng-hide="deleting")
+            .modal-footer(ui-toggle="!deleting")
               a.pull-left.btn.btn-danger(ng-click="deleting = true", 
                 ng-show="office._id") Delete
               a.btn(ng-click='editDialog = false') Cancel

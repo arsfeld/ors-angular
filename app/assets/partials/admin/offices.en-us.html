@@ -15,7 +15,7 @@
           </div>
           <div class="modal-body">
             <div class="row-fluid">
-              <form id="office-form" name="officeForm" ng-hide="deleting" class="form-horizontal form-inline">
+              <form id="office-form" name="officeForm" ui-toggle="!deleting" class="form-horizontal form-inline">
                 <div ng-class="{error: officeForm.name.$invalid}" class="control-group">
                   <label for="name" class="control-label">Name</label>
                   <div class="controls">
@@ -45,7 +45,7 @@
                 <!--a.pull-right.btn.btn-warning Add admin-->
               </form>
               <!-- Delete confirmation-->
-              <div ng-show="deleting" class="alert alert-error fade in">
+              <div ui-toggle="deleting" class="alert alert-error">
                 <p>
                    <strong>Warning!</strong> Are you sure you want to delete
                    {{office.name}}?
@@ -54,7 +54,7 @@
               </div>
             </div>
           </div>
-          <div ng-hide="deleting" class="modal-footer"><a ng-click="deleting = true" ng-show="office._id" class="pull-left btn btn-danger">Delete</a><a ng-click="editDialog = false" class="btn">Cancel</a><a ng-click="editDialog = false; save()" ng-disabled="officeForm.$invalid" class="btn btn-primary">
+          <div ui-toggle="!deleting" class="modal-footer"><a ng-click="deleting = true" ng-show="office._id" class="pull-left btn btn-danger">Delete</a><a ng-click="editDialog = false" class="btn">Cancel</a><a ng-click="editDialog = false; save()" ng-disabled="officeForm.$invalid" class="btn btn-primary">
                
               Save</a></div>
         </div><span></span>

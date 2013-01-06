@@ -1,21 +1,23 @@
 "use strict"
 
 express = require("express")
-user = require("./user/api")
-session = require("./session/api")
+#session = require("./session/api")
 fs = require("fs")
 http = require("http")
 path = require("path")
-config = require("./config")
 mongoose = require("mongoose")
-SessionMongoose = require("session-mongoose")
+#SessionMongoose = require("session-mongoose")
 passport = require("passport")
-auth = require("./auth/routes")
-dbrest = require "./dbrest"
+
+user = require("./user/api")
+config = require("./config")
+{DBRest} = require("./dbrest")
+
+GoogleStrategy = require('passport-google').Strategy
 
 # Strategies
-passwordRoutes = require("./auth/password/routes")
-passwordApi = require("./auth/password/api")
+#passwordRoutes = require("./auth/password/routes")
+#passwordApi = require("./auth/password/api")
 
 #var FacebookStrategy = require('passport-facebook').Strategy;
 API_BASE_URL = "/-/api/v1"
@@ -70,33 +72,57 @@ app.configure "test", ->
 
   mongoose.connect app.get("dbUrl"), opts
 
-
 # Routes //
 app.get "/", (req, res) ->
   res.render "index.html"
 
+#passport.use new GoogleStrategy(
+#  returnUrl: 
+#)
+
+addGoogleStrategy = (req, res, next) ->
+  if passport._strategies['google']?
+    return
+  passport.use new GoogleStrategy(
+    returnURL: "#{req.protocol}://#{req.headers.host}#{AUTH_URL}/login/google"
+    realm: "#{req.protocol}://#{req.headers.host}"
+
+    (identifier, profile, done) ->
+      console.log identifier
+      console.log profile
+      
+  )
+  next()
+
 # auth
-app.get AUTH_URL + "/logout", auth.logout
-app.post AUTH_URL + "/password", passwordRoutes.start
+app.get AUTH_URL + "/login", addGoogleStrategy, passport.authenticate("google")
+app.get AUTH_URL + '/login/google', 
+  passport.authenticate 'google', 
+    successRedirect: '/'
+    failureRedirect: AUTH_URL + '/login'
+#app.get AUTH_URL + "/logout", auth.logout
+#app.post AUTH_URL + "/password", passwordRoutes.start
 
 #app.get(API_BASE_URL + '/auth/facebook/callback', facebook.callback);
 #app.get(API_BASE_URL + '/auth/google', facebook.start);
 #app.get(API_BASE_URL + '/auth/google/callback', facebook.callback);
 
 # API
-app.get API_BASE_URL + "/auth/password", passwordApi.list
-app.post API_BASE_URL + "/auth/password", passwordApi.create
-app.get API_BASE_URL + "/users", user.list
-app.post API_BASE_URL + "/users", user.create
-app.get API_BASE_URL + "/users/me", user.current
-app.get API_BASE_URL + "/users/:userId", user.read
-app.put API_BASE_URL + "/users/:userId", user.update
-app.delete API_BASE_URL + '/users/:userId', user.delete
+#app.get API_BASE_URL + "/auth/password", passwordApi.list
+#app.post API_BASE_URL + "/auth/password", passwordApi.create
+#app.get API_BASE_URL + "/users", user.list
+#app.post API_BASE_URL + "/users", user.create
+#app.get API_BASE_URL + "/users/me", user.current
+#app.get API_BASE_URL + "/users/:userId", user.read
+#app.put API_BASE_URL + "/users/:userId", user.update
+#app.delete API_BASE_URL + '/users/:userId', user.delete
 
-app.get API_BASE_URL + "/db/:collection/:id?", dbrest.query
-app.post API_BASE_URL + "/db/:collection", dbrest.create
-app.put API_BASE_URL + "/db/:collection/:id", dbrest.update
-app.del API_BASE_URL + "/db/:collection/:id", dbrest.delete
+dbrest = new DBRest()
+
+app.get  API_BASE_URL + "/db/:collection/:id?", dbrest.query
+app.post API_BASE_URL + "/db/:collection",      dbrest.create
+app.put  API_BASE_URL + "/db/:collection/:id",  dbrest.update
+app.del  API_BASE_URL + "/db/:collection/:id",  dbrest.delete
 
 # Blocks any attempts to load mal-formed URLs
 app.all '/-/*', (req, res) ->
