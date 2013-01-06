@@ -14,7 +14,7 @@ angular.module('app.directives', [
 
   (Translation, $locale) ->
     (input) ->
-      if input in Translation.all()?[$locale.id]
+      if input in Translation.all()?[$locale.id]?
         return Translation.all()[$locale.id][input]
       else
         return "TRANSLATEME: #{input}"
