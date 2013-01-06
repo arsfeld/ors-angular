@@ -10,11 +10,12 @@ angular.module('app.directives', [
 
 .filter 'translate', [
   'Translation',
+  '$locale'
 
-  (Translation) ->
+  (Translation, $locale) ->
     (input) ->
-      if input in Translation.all()
-        return Translation[input]
+      if input in Translation.all()[$locale.id]
+        return Translation.all()[$locale.id][input]
       else
         return "TRANSLATEME: #{input}"
 ]
