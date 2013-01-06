@@ -62,10 +62,10 @@ angular.module('app.models', ['ngResource', 'apiResource', 'config'])
 .factory('Translation', ($apiResource) ->
   class Language extends $apiResource('translations', true)
     @getLanguage = (langId) ->
-      if langId not in @all
-        new Language
-          langId: langId
-      else
-        @all()[langId]
+      for lang in @all
+        if lang.langId == langId
+          return lang
+      new Language
+        langId: langId
 )
 
