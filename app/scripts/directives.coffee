@@ -8,6 +8,13 @@ angular.module('app.directives', [
   'app.models'
 ])
 
+.filter 'translate', [
+  'Translation',
+
+  (Translation) ->
+    (input) ->
+
+
 .directive 'tooltip', () ->
   restrict:'A',
   link: (scope, element, attrs) ->
