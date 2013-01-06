@@ -13,7 +13,7 @@ angular.module('app.directives', [
 
   (Translation) ->
     (input) ->
-
+]
 
 .directive 'tooltip', () ->
   restrict:'A',
