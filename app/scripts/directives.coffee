@@ -17,7 +17,7 @@ angular.module('app.directives', [
       if input in Translation.all()?[$locale.id]?
         return Translation.all()[$locale.id][input]
       else
-        return "TRANSLATEME: #{input}"
+        return "__'#{input}'__"
 ])
 
 .directive 'tooltip', () ->
