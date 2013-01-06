@@ -3,7 +3,7 @@
 ### Filters ###
 
 angular.module('app.filters', [
-	'app.models'
+  'app.models'
 ])
 
 .filter('translate', [
