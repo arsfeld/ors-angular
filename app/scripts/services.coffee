@@ -65,7 +65,8 @@ angular.module('app.models', ['ngResource', 'apiResource', 'config'])
       for lang in @all
         if lang.langId == langId
           return lang
-      new Language
+      lang = new Language
         langId: langId
+      lang.$save()
 )
 
