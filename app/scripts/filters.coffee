@@ -17,5 +17,6 @@ angular.module('app.filters', [
       if input in Translation.all()?[$locale.id]?
         return Translation.all()[$locale.id][input]
       else
-        return "**'#{input}'**"
+        #return "**'#{input}'**"
+        return input
 ])
