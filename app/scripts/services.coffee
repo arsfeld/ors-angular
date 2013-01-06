@@ -58,3 +58,7 @@ angular.module('app.models', ['ngResource', 'apiResource', 'config'])
 .factory('User', ($apiResource) ->
   User = $apiResource 'users', true
 )
+
+.factory('Translation', ($apiResource) ->
+  User = $apiResource 'translations', true
+)
