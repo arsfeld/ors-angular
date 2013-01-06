@@ -68,5 +68,6 @@ angular.module('app.models', ['ngResource', 'apiResource', 'config'])
       lang = new Language
         langId: langId
       lang.$save()
+      return lang
 )
 
