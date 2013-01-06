@@ -63,7 +63,8 @@ angular.module('app.models', ['ngResource', 'apiResource', 'config'])
   class Language extends $apiResource('translations', true)
     @getLanguage = (langId) ->
       if langId not in @all
-        new Language(langId)
+        new Language
+          langId: langId
       else
         @all()[langId]
 )
