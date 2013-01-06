@@ -8,7 +8,7 @@ angular.module('app.directives', [
   'app.models'
 ])
 
-.filter 'translate', [
+.filter('translate', [
   'Translation',
   '$locale'
 
@@ -18,7 +18,7 @@ angular.module('app.directives', [
         return Translation.all()[$locale.id][input]
       else
         return "TRANSLATEME: #{input}"
-]
+])
 
 .directive 'tooltip', () ->
   restrict:'A',
