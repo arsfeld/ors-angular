@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"off",
+				"offices"
+			],
+			[
+				"auth",
+				"authenticate"
+			],
+			[
+				"add",
+				"addGoogleStrategy"
+			],
+			[
+				"Produ",
+				"ProductResource"
+			],
+			[
+				"produ",
+				"product"
+			],
+			[
+				"load",
+				"loadOnStartup"
+			],
+			[
+				"type",
+				"typeSwitch"
+			],
+			[
+				"font-",
+				"font-family"
+			],
+			[
 				"ques",
 				"questionsDialog"
 			],
@@ -172,43 +204,66 @@
 	"buffers":
 	[
 		{
-			"file": "app/partials/admin/offices.jade",
-			"settings":
-			{
-				"buffer_size": 4773,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "app/scripts/controllers.coffee",
 			"settings":
 			{
-				"buffer_size": 7141,
+				"buffer_size": 8181,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/partials/admin/products.jade",
+			"file": "server/dbrest.coffee",
 			"settings":
 			{
-				"buffer_size": 4041,
+				"buffer_size": 2442,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/partials/admin/formBuilder.jade",
-			"settings":
-			{
-				"buffer_size": 4761,
-				"line_ending": "Unix",
-				"name": "#jv-formbuilder"
 			}
 		},
 		{
 			"file": "app/scripts/services.coffee",
 			"settings":
 			{
-				"buffer_size": 787,
+				"buffer_size": 1793,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/scripts/directives.coffee",
+			"settings":
+			{
+				"buffer_size": 2017,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/partials/admin/dashboard.jade",
+			"settings":
+			{
+				"buffer_size": 814,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/app.coffee",
+			"settings":
+			{
+				"buffer_size": 2252,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/partials/welcome.jade",
+			"settings":
+			{
+				"buffer_size": 1162,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/scripts/filters.coffee",
+			"settings":
+			{
+				"buffer_size": 426,
 				"line_ending": "Unix"
 			}
 		}
@@ -261,10 +316,34 @@
 	},
 	"file_history":
 	[
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/admin/registrations.jade",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/styles/app.less",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/admin/products.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/admin/users.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/node_modules/passport/lib/passport/middleware/authenticate.js",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/node_modules/passport/lib/passport/index.js",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/server/index.coffee",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/vendor/scripts/angular/angular-resource.js",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/scripts/api.coffee",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/admin/offices.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/registration.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/welcome.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/server/dbrest.coffee",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/account/login.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/node_modules/passport-google/lib/passport-google/strategy.js",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/_public/js/app.js",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/server/auth/routes.js",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/app.coffee",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/locales/en-us.js",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/admin/nav.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/locales/pt-br.js",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/scripts/directives.coffee",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/vendor/scripts/angular-ui-0.3.2.js",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/admin/formBuilder.jade",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/vendor/styles/bootstrap.css",
+		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/scripts/config.coffee",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/admin/products_edit.jade",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/package.json",
-		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/welcome.jade",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/ors-angular.sublime-workspace",
 		"/Users/alexandrerosenfeld/Code/node/sapling/app/scripts/ds/stores/rest.js",
 		"/Users/alexandrerosenfeld/Code/node/sapling/app/scripts/account/controllers/overview.js",
@@ -272,21 +351,15 @@
 		"/Users/alexandrerosenfeld/Code/node/static-i18n-jade-brunch/README.md",
 		"/Users/alexandrerosenfeld/Code/node/static-i18n-jade-brunch/CHANGELOG.md",
 		"/Users/alexandrerosenfeld/Code/node/static-i18n-jade-brunch/src/index.coffee",
-		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/locales/en-us.js",
-		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/locales/pt-br.js",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/vendor/scripts/angular/angular.js",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/node_modules/static-i18n-jade-brunch/src/index.coffee",
-		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/server/index.coffee",
-		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/_public/js/app.js",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/_public/partials/admin/nav.en-us.html",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/_public/index.html",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/node_modules/static-i18n-jade-brunch/package.json",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/nav.jade",
-		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/admin/nav.jade",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/index.jade",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/locales/pt-BR.js",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/_public/partials/admin/nav.pt-BR.html",
-		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/scripts/config.coffee",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/assets/index.en.html",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/node_modules/static-jade-brunch/src/index.coffee",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/node_modules/static-jade-brunch/lib/index.js",
@@ -294,14 +367,8 @@
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/scripts/session.coffee",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/README.md",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/scripts/flash.coffee",
-		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/registration.jade",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/scripts/controllers.coffee",
-		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/admin/registrations.jade",
-		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/app.coffee",
-		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/admin/offices.jade",
-		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/admin/products.jade",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/faculdades.json",
-		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/scripts/directives.coffee",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/scripts/services.coffee",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/admin/offices_edit.jade",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/config.coffee",
@@ -315,12 +382,10 @@
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/account/recovery.jade",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/account/signup.jade",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/account/overview.jade",
-		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/account/login.jade",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/account/email.jade",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/account/nav.jade",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/account/menu.jade",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/partials/account/connected.jade",
-		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/vendor/scripts/angular-ui-0.3.2.js",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/node_modules/jade-brunch/src/index.coffee",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/scripts/mongolab.coffee",
 		"/Users/alexandrerosenfeld/SparkleShare/ors-angular/app/scripts/filters.coffee",
@@ -378,17 +443,7 @@
 		"/Users/alexandrerosenfeld/Code/derby/app1/styles/app/index.styl",
 		"/Users/alexandrerosenfeld/Code/derby/app1/styles/base.styl",
 		"/Users/alexandrerosenfeld/Code/derby/derby-examples/directory/views/app/index.html",
-		"/Users/alexandrerosenfeld/Code/derby/app1/src/server/index.coffee",
-		"/Users/alexandrerosenfeld/Code/meteor/ors/ors.js",
-		"/Users/alexandrerosenfeld/Downloads/template.tex",
-		"/Users/alexandrerosenfeld/Code/meteor/ors/ors.html",
-		"/Users/alexandrerosenfeld/Documents/discurso rock.txt",
-		"/Users/alexandrerosenfeld/Code/libmshare/src/dmap/dmap-structure.c",
-		"/Users/alexandrerosenfeld/Code/libmshare/src/dmap/dmap-share.c",
-		"/Users/alexandrerosenfeld/Code/libmshare/test/dmap_test.c",
-		"/Users/alexandrerosenfeld/Code/libmshare/src/Makefile.am",
-		"/Users/alexandrerosenfeld/Code/libmshare/configure.ac",
-		"/Users/alexandrerosenfeld/Code/libmshare/src/dmap/dmap-structure.vala"
+		"/Users/alexandrerosenfeld/Code/derby/app1/src/server/index.coffee"
 	],
 	"find":
 	{
@@ -399,6 +454,7 @@
 		"height": 0.0,
 		"where_history":
 		[
+			"/Users/alexandrerosenfeld/SparkleShare/ors-angular/server",
 			"/Users/alexandrerosenfeld/Code/node/sapling/app",
 			"/Users/alexandrerosenfeld/Code/node/sapling/app/scripts"
 		]
@@ -408,6 +464,17 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"language",
+			"passport",
+			"returnurl",
+			"passwordroutes",
+			"auth",
+			"foroffice",
+			"office",
+			"bynick",
+			"modal",
+			"fade",
+			"font",
 			"scope",
 			"office",
 			"login(",
@@ -495,51 +562,50 @@
 	"groups":
 	[
 		{
-			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/partials/admin/offices.jade",
+					"file": "app/scripts/controllers.coffee",
 					"settings":
 					{
-						"buffer_size": 4773,
+						"buffer_size": 8181,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								788,
-								779
+								337,
+								337
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"syntax": "Packages/CoffeeScript/CoffeeScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 273.0,
+						"translation.y": 105.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/scripts/controllers.coffee",
+					"file": "server/dbrest.coffee",
 					"settings":
 					{
-						"buffer_size": 7141,
+						"buffer_size": 2442,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6305,
-								6305
+								145,
+								145
 							]
 						],
 						"settings":
@@ -549,82 +615,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3674.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "app/partials/admin/products.jade",
-					"settings":
-					{
-						"buffer_size": 4041,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								207,
-								229
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 176.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/partials/admin/formBuilder.jade",
-					"settings":
-					{
-						"buffer_size": 4761,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1595,
-								1595
-							]
-						],
-						"settings":
-						{
-							"auto_name": "#jv-formbuilder",
-							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 329.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
 					"file": "app/scripts/services.coffee",
 					"settings":
 					{
-						"buffer_size": 787,
+						"buffer_size": 1793,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								470,
-								470
+								1759,
+								1759
 							]
 						],
 						"settings":
@@ -634,7 +643,147 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 52.0,
+						"translation.y": 462.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/scripts/directives.coffee",
+					"settings":
+					{
+						"buffer_size": 2017,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								159,
+								159
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CoffeeScript/CoffeeScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/partials/admin/dashboard.jade",
+					"settings":
+					{
+						"buffer_size": 814,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								245,
+								245
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/app.coffee",
+					"settings":
+					{
+						"buffer_size": 2252,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CoffeeScript/CoffeeScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/partials/welcome.jade",
+					"settings":
+					{
+						"buffer_size": 1162,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								120,
+								120
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/scripts/filters.coffee",
+					"settings":
+					{
+						"buffer_size": 426,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								423,
+								423
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CoffeeScript/CoffeeScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
